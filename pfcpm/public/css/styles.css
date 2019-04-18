@@ -1,0 +1,108 @@
+#imglogo{
+    position: relative;
+    max-width: 100%;
+}
+
+.img2{
+    position: relative;
+    width: 625px;
+    height: 405px;
+    left: 605px;
+    top: 5px;
+}
+
+.navbar.navbar-expand-lg.navbar-light ul li a {
+    color: red; 
+}
+
+.navbar-light{
+    background: #2147CC;   
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+}
+
+
+/*Tela Login*/
+
+h1{
+    text-align: center;
+}
+
+.img_login{
+    
+    background-color: #000000;
+
+}
+
+#img{
+    margin: 10px;
+    position: relative;
+    left: 280px;
+}
+
+#divexterna{
+    
+    background-size: 100%;
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    top: 100px;
+    border: 2px solid black;
+    
+}
+
+#matricula{
+    top: -10px;
+    width: 30%;
+    left: 230px;
+    position: relative;
+    margin: 10px;
+}
+
+#s{
+    top: -10px;
+    width: 30%;
+    left: 230px;
+    position: relative;
+    margin: 10px;
+}
+
+#label{
+    position: relative;
+    left:34%;
+    margin:10px;
+}
+
+#btn{
+    position: relative;
+    left: 278px;
+    margin:20px;
+    top: -10px;
+    height: 40px;
+    width: 90px;
+     
+
+}
+
+#senha{
+    width: 30%;
+    left: 250px;
+    position: relative;
+    margin: 10px;
+}
+
+body#tela{
+    background-image: url("../imgs/PMBA.png" );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 50%;
+   
+
+}
+
+#btmenu{
+    width: 150px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
