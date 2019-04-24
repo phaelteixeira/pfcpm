@@ -14,7 +14,15 @@ class CreateDispensaTable extends Migration
     public function up()
     {
         Schema::create('dispensa', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('nome');
+            $table->integer('matricula');
+            $table->integer('pelotao');
+            $table->string('servico');
+            $table->date('data_servico');
+            $table->time('hora_inicial');
+            $table->time('hora_final');
+            $table->text('descricao');
             $table->timestamps();
         });
     }
