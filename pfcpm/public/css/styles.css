@@ -1,6 +1,9 @@
-#imglogo{
+#tel{
     position: relative;
-    max-width: 100%;
+    background-image: url("../imgs/PMBA.png");
+    background-repeat: no-repeat;
+    background-position-y: 170px;;
+    background-position-x: 400px;
 }
 
 .img2{
@@ -12,7 +15,7 @@
 }
 
 .navbar.navbar-expand-lg.navbar-light ul li a {
-    color: red; 
+    color: white; 
 }
 
 .navbar-light{
@@ -104,4 +107,8 @@ body#tela{
     width: 150px;
     border-radius: 10px;
     margin-bottom: 20px;
+}
+
+#dropdown{
+    color: black;
 }

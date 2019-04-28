@@ -15,8 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('inicial', function(){
+    return view('inicial');
+});
+
 Route::get('/menu', function(){
     return view('menu_principal');
+});
+
+Route::get('sus', function(){
+    return view('cadastrar_suspeito');
 });
 
 /*Rota da tela de login */
@@ -31,7 +39,7 @@ Route::get('/cad_pol', function () {
 Auth::routes();
 Route::resource('policiais', 'PolicialController');
 Route::resource('suspeitos', 'SuspeitoController');
-
+Route::resource('inicio', 'HomeController');
 
 
 Auth::routes();
