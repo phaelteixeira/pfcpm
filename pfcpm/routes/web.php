@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('tela_login');
 });
 
 Route::get('inicial', function(){
@@ -27,10 +27,7 @@ Route::get('sus', function(){
     return view('cadastrar_suspeito');
 });
 
-/*Rota da tela de login */
-Route::get('login_ini', function(){
-    return view('tela_login');
-});
+
 
 Route::get('/cad_pol', function () {
     return view('policial_cadastrar');
@@ -40,6 +37,9 @@ Auth::routes();
 Route::resource('policiais', 'PolicialController');
 Route::resource('suspeitos', 'SuspeitoController');
 Route::resource('inicio', 'HomeController');
+Route::resource('dispenca', 'DispencaController');
+Route::resource('permulta', 'PermultaController');
+Route::resource('abono', 'AbonoController');
 
 
 Auth::routes();

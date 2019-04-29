@@ -3,37 +3,40 @@
 @section('body')
     <form>
         <div id="div_susp">
-            <div>
-                <label for="nome">Nome</label>
-                <input class="form-control" name="nome" id="nome" size=30>
+            <div class="nomesus">
+                <label for="nomesus">Nome</label>
+                <input class="form-control" name="nome" id="nomesus" size=30>
             </div>
-            <div>
-                <label for="vulgo">Vulgo</label>
-                <input class="form-control" name="vulgo" id="vulgo"> 
+            <div class="vulgosus">
+                <label for="vulgosus">Vulgo</label>
+                <input class="form-control" name="vulgo" id="vulgosus"> 
             </div>
-            <div>
-                <label for="foto">Foto</label>,
-                <input type="file" name="foto" id="foto">
+            <div class="fotosus">
+                <label for="fotosus">Foto</label>,
+                <input type="file" name="foto" id="fotosus">
             </div>
-            <div>
-                <label for="cpf">CPF</label>
-                <input class="form-control" name="cpf" id="cpf">
+            <div class="cpfsus">
+                <label for="cpfsus">CPF</label>
+                <input class="form-control" name="cpf" id="cpfsus">
             </div>
-            <div>
-                <label for="rg">RG</label>
-                <input class="form-control" name="rg" id="rg">
+            <div class="rgsus">
+                <label for="rgsus">RG</label>
+                <input class="form-control" name="rg" id="rgsus">
             </div>
-            <div>
-                <label for="cidade">Cidade</label>
-                <input class="form-control" name="cidade" id="cidade">
+            <div class="cidadesus">
+                <label for="cidadesus">Cidade</label>
+                <input class="form-control" name="cidade" id="cidadesus">
             </div>
-            <div>
-                <label for="estado">Estado</label>
-                <input class="form-control" name="estado" id="cidade">
+            <div class="estadosus">
+                <label for="estadosus">Estado</label>
+                <input class="form-control" name="estado" id="cidadesus">
             </div>
-            <div>
-                <label for="crime">Tipo de Crimes</label>
-                <input class="form-control" name="crime" id="crime">
+            <div class="crimesus">
+                <label for="crimesus">Tipo de Crimes</label>
+                <input class="form-control" name="crime" id="crimesus">
+            </div>
+            <div class="btnsus" >
+                <button type="submit" id="btnsus" class="btn btn-primary" >Cadastrar</button>
             </div>
         </div>
     </form>

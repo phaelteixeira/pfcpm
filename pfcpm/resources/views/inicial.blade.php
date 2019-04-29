@@ -32,12 +32,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Exibir
+                            Solicitações
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a id="dropdown" class="dropdown-item" href="">Solicitações</a>
-                            <a id="dropdown" class="dropdown-item" href=""></a>
-                            <a id="dropdown" class="dropdown-item" href=""></a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permulta.create')}}">Permulta</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('dispenca.create')}}">Dispença</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
                         </div>
                     </li>        
                     <li class="nav-item dropdown">

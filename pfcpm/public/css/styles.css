@@ -2,8 +2,8 @@
     position: relative;
     background-image: url("../imgs/PMBA.png");
     background-repeat: no-repeat;
-    background-position-y: 170px;;
-    background-position-x: 400px;
+    background-position-y: 170px;
+    background-position-x: 450px;
 }
 
 .img2{
@@ -111,4 +111,113 @@ body#tela{
 
 #dropdown{
     color: black;
+}
+
+/*Teste*/
+
+h1#titu{
+    text-align: center;
+}
+
+/*Tela suspeito*/
+
+div#div_susp{
+    font-weight: bold;
+    color: black;
+}
+
+.nomesus{
+    margin-right: 50%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+input#nomesus{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+.vulgosus{
+    position: absolute;
+    margin-left: 52%;
+    width: 39%;
+    top: 85px;
+}
+
+input#vulgosus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.fotosus{
+    position: relative;
+    top: 37px;
+    margin-left: 20px;
+}
+
+input#fotosus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.cpfsus{
+    position: absolute;
+    margin-left: 20px;
+    top:240px;
+}
+
+input#cpfsus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.rgsus{
+    position: absolute;
+    top: 240px;
+    margin-left: 60px;
+}
+
+input#rgsus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.cidadesus{
+    position: relative;
+    top: 180px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#cidadesus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.estadosus{
+    position: relative;
+    top: 190px;
+    margin-right: 94%;
+    margin-left: 20px;
+}
+
+input#estadosus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.crimesus{
+    position: relative;
+    top: 200px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#crimesus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.btnsus{
+    position: absolute;
+    margin-left: 89%;
+    margin-top: 15%;
+}
+
+button#btnsus{
+    width: 140%;
 }
