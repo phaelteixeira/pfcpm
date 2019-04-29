@@ -151,7 +151,7 @@ input#vulgosus{
 
 .fotosus{
     position: relative;
-    top: 37px;
+    top: 30px;
     margin-left: 20px;
 }
 
@@ -172,7 +172,7 @@ input#cpfsus{
 .rgsus{
     position: absolute;
     top: 240px;
-    margin-left: 60px;
+    margin-left: 260px;
 }
 
 input#rgsus{
@@ -181,7 +181,7 @@ input#rgsus{
 
 .cidadesus{
     position: relative;
-    top: 180px;
+    top: 130px;
     margin-left: 20px;
     margin-right: 70%;
 }
@@ -192,7 +192,7 @@ input#cidadesus{
 
 .estadosus{
     position: relative;
-    top: 190px;
+    top: 140px;
     margin-right: 94%;
     margin-left: 20px;
 }
@@ -203,7 +203,7 @@ input#estadosus{
 
 .crimesus{
     position: relative;
-    top: 200px;
+    top: 150px;
     margin-left: 20px;
     margin-right: 70%;
 }
