@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <div id="divexterna">

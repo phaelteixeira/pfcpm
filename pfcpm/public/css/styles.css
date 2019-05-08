@@ -221,3 +221,96 @@ input#crimesus{
 button#btnsus{
     width: 140%;
 }
+
+
+/*Tela  cadastro Policial*/
+
+div#div_pol{
+    font-weight: bold;
+    color: black;
+}
+
+.nomepol{
+    margin-right: 50%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+input#nomepol{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+.fotopol{
+    position: relative;
+    top: 30px;
+    margin-left: 20px;
+}
+
+input#fotopol{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.cpfpol{
+    position: absolute;
+    margin-left: 20px;
+    top:240px;
+}
+
+input#cpfpol{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.rgpol{
+    position: absolute;
+    top: 240px;
+    margin-left: 260px;
+}
+
+input#rgpol{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.cidadepol{
+    position: relative;
+    top: 130px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#cidadepol{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.estadopol{
+    position: relative;
+    top: 140px;
+    margin-right: 94%;
+    margin-left: 20px;
+}
+
+input#estadopol{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.btnpol{
+    position: absolute;
+    margin-left: 89%;
+    margin-top: 15%;
+}
+
+.pelotaopol{
+    position: absolute;
+    top: 395px;
+    margin-right: 80%;
+    margin-left: 100px;
+}
+
+input#pelotao{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+button#btnpol{
+    width: 140%;
+}
