@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Policial;
+use App\Permulta;
 use Illuminate\Http\Request;
 
-class PolicialController extends Controller
+class PermultaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,7 @@ class PolicialController extends Controller
      */
     public function index()
     {
-        $policiais = Policial::all();
-        return view('policiais_listar', compact('policiais'));
+        //
     }
 
     /**
@@ -25,7 +24,7 @@ class PolicialController extends Controller
      */
     public function create()
     {
-        return view('policial_cadastrar');
+        return view('permulta');
     }
 
     /**
@@ -36,24 +35,16 @@ class PolicialController extends Controller
      */
     public function store(Request $request)
     {
-        $policial = new Policial();
-        $policial->num_mat = $request->input("num_mat");
-        $policial->nome = $request->input("nome");
-        $policial->endereço = $request->input("endereço");
-        $policial->rg = $request->input("rg");
-        $policial->cpf = $request->input("cpf");
-        $policial->senha = $request->input("senha");
-        $policial->save();
-        return redirect()->route('policials.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Policial  $policial
+     * @param  \App\Permulta  $permulta
      * @return \Illuminate\Http\Response
      */
-    public function show(Policial $policial)
+    public function show(Permulta $permulta)
     {
         //
     }
@@ -61,10 +52,10 @@ class PolicialController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Policial  $policial
+     * @param  \App\Permulta  $permulta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Policial $policial)
+    public function edit(Permulta $permulta)
     {
         //
     }
@@ -73,10 +64,10 @@ class PolicialController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Policial  $policial
+     * @param  \App\Permulta  $permulta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Policial $policial)
+    public function update(Request $request, Permulta $permulta)
     {
         //
     }
@@ -84,10 +75,10 @@ class PolicialController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Policial  $policial
+     * @param  \App\Permulta  $permulta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Policial $policial)
+    public function destroy(Permulta $permulta)
     {
         //
     }
