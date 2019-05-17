@@ -1,5 +1,4 @@
 @extends('inicial')
-@implements('login')
 
 @section('body')
     <form>
