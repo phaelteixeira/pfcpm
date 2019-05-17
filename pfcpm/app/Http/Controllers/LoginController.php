@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Dispenca;
+use App\Login;
 use Illuminate\Http\Request;
 
-class DispencaController extends Controller
+class LoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class DispencaController extends Controller
      */
     public function create()
     {
-        return view('dispenca');
+        return view()
     }
 
     /**
@@ -35,16 +35,16 @@ class DispencaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dispenca  $dispenca
+     * @param  \App\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function show(Dispenca $dispenca)
+    public function show(Login $login)
     {
         //
     }
@@ -52,10 +52,10 @@ class DispencaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dispenca  $dispenca
+     * @param  \App\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dispenca $dispenca)
+    public function edit(Login $login)
     {
         //
     }
@@ -64,10 +64,10 @@ class DispencaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dispenca  $dispenca
+     * @param  \App\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dispenca $dispenca)
+    public function update(Request $request, Login $login)
     {
         //
     }
@@ -75,10 +75,10 @@ class DispencaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dispenca  $dispenca
+     * @param  \App\Login  $login
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dispenca $dispenca)
+    public function destroy(Login $login)
     {
         //
     }

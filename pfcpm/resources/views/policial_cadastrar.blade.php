@@ -1,12 +1,19 @@
 @extends('inicial')
 
 @section('body')
-<form>
+<form action="{{route('policiais.store')}}" method="post">
+    @csrf
         <div id="div_pol">
             <div class="nomepol">
                 <label for="nomepol">Nome</label>
                 <input class="form-control" name="nome" id="nomepol" size=30>
             </div>
+
+            <div class="mat">
+                <label for="num_mat">Número da matrícula</label>
+                <input class="form-control" name="num_mat" id="num_mat" size=30>
+            </div>
+
             <div class="fotopol">
                 <label for="fotopol">Foto</label>,
                 <input type="file" name="foto" id="fotopol">
@@ -31,9 +38,16 @@
                 <label for="pelotao">Pelotão</label>
                 <input class="form-control" name="pelotao" id="pelotao">
             </div>
+
+            <div class="sen">
+                <label for="senhap">Senha</label>
+                <input class="form-control" name="senha" id="senhap">
+            </div>
+
             <div class="btnpol" >
                 <button type="submit" id="btnpol" class="btn btn-primary" >Cadastrar</button>
             </div>
+            
         </div>
     </form>
 @endsection('body')

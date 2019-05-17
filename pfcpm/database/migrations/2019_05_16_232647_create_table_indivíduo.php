@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePolicialsTable extends Migration
+class CreateTableIndivíduo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,18 @@ class CreatePolicialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('policials', function (Blueprint $table) {
+        Schema::create('individuos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('num_mat');
             $table->string('nome');
-            $table->string('cidade');
-            $table->string('estado');
-            $table->string('pelotao');
-            $table->string('rg');
             $table->string('cpf');
-            $table->string('senha');
+            $table->string('rg');
+            $table->string('sexo');
+            $table->string('endereco');
+            $table->string('localAtuacao');
+            $table->string('dataNascimento');
+            $table->string('foto');
+            $table->string('nomePai');
+            $table->string('nomeMae');
             $table->timestamps();
         });
     }
@@ -34,6 +36,6 @@ class CreatePolicialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('policials');
+        //
     }
 }

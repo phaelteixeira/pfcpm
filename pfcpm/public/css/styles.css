@@ -242,6 +242,18 @@ input#nomepol{
     background-size: 50px;
 }
 
+.mat{
+    margin-left: 52%;
+    margin-right: 35%;
+    margin-top: -68px;
+}
+
+input#num_mat{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
 .fotopol{
     position: relative;
     top: 30px;
@@ -313,4 +325,14 @@ input#pelotao{
 
 button#btnpol{
     width: 140%;
+}
+
+.sen{
+    margin-top: 12%;
+    margin-left: 20px;
+    margin-right: 80%;
+}
+
+input#senhap{
+    background-color: rgba(0, 0, 0, 0.1)
 }

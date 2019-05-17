@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Login;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +27,12 @@ class HomeController extends Controller
     public function create()
     {
         return view('inicial');
+    }
+
+    public function store (Request $request)
+    {
+        
+
     }
 
     public function show(HomeController $homeController)

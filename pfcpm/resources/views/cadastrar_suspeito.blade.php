@@ -1,7 +1,7 @@
 @extends('inicial')
 
 @section('body')
-    <form>
+    <form action="{{route(suspeito.store)}}" method="post">
         <div id="div_susp">
             <div class="nomesus">
                 <label for="nomesus">Nome</label>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePermultasTable extends Migration
+class CreatePermutasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePermultasTable extends Migration
      */
     public function up()
     {
-        Schema::create('permultas', function (Blueprint $table) {
+        Schema::create('permutas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreatePermultasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permultas');
+        Schema::dropIfExists('permutas');
     }
 }

@@ -33,14 +33,17 @@ Route::get('/cad_pol', function () {
     return view('policial_cadastrar');
 });
 
+
+
 Auth::routes();
 Route::resource('policiais', 'PolicialController');
 Route::resource('suspeitos', 'SuspeitoController');
 Route::resource('inicio', 'HomeController');
-Route::resource('dispenca', 'DispencaController');
-Route::resource('permulta', 'PermultaController');
+Route::resource('dispenca', 'DispensaController');
+Route::resource('permulta', 'PermutaController');
 Route::resource('abono', 'AbonoController');
-
+Route::resource('login', 'LoginController');
+Route::post('/login', 'LoginController@store');
 
 Auth::routes();
 
