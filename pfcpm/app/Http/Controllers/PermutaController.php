@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Permulta;
+use App\Permuta;
 use Illuminate\Http\Request;
 
-class PermultaController extends Controller
+class PermutaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class PermultaController extends Controller
      */
     public function create()
     {
-        return view('permulta');
+        return view('permuta');
     }
 
     /**
@@ -41,10 +41,10 @@ class PermultaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Permulta  $permulta
+     * @param  \App\Permuta  $permuta
      * @return \Illuminate\Http\Response
      */
-    public function show(Permulta $permulta)
+    public function show(Permuta $permuta)
     {
         //
     }
@@ -52,10 +52,10 @@ class PermultaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Permulta  $permulta
+     * @param  \App\Permuta  $permuta
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permulta $permulta)
+    public function edit(Permuta $permuta)
     {
         //
     }
@@ -64,10 +64,10 @@ class PermultaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Permulta  $permulta
+     * @param  \App\Permuta  $permuta
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Permulta $permulta)
+    public function update(Request $request, Permuta $permuta)
     {
         //
     }
@@ -75,10 +75,10 @@ class PermultaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Permulta  $permulta
+     * @param  \App\Permuta  $permuta
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Permulta $permulta)
+    public function destroy(Permuta $permuta)
     {
         //
     }

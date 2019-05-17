@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Policial;
-use App\Login;
 use Illuminate\Http\Request;
 
 class PolicialController extends Controller
@@ -37,16 +36,16 @@ class PolicialController extends Controller
      */
     public function store(Request $request)
     {
-        $policials = new Policial();
-        $policials->num_mat = $request->input("num_mat");
-        $policials->nome = $request->input("nome");
-        $policials->cidade = $request->input("cidade");
-        $policials->estado = $request->input("estado");
-        $policials->pelotao = $request->input("pelotao");
-        $policials->rg = $request->input("rg");
-        $policials->cpf = $request->input("cpf");
-        $policials->senha = $request->input("senha");
-        $policials->save();
+        $policia = new Policial();
+        $policia->num_mat = $request->input("num_mat");
+        $policia->nome = $request->input("nome");
+        $policia->cidade = $request->input("cidade");
+        $policia->estado = $request->input("estado");
+        $policia->pelotao = $request->input("pelotao");
+        $policia->rg = $request->input("rg");
+        $policia->cpf = $request->input("cpf");
+        $policia->senha = $request->input("senha");
+        $policia->save();
         return redirect()->route('policiais.index');
     }
 

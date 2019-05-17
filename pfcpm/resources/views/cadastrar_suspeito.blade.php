@@ -1,7 +1,9 @@
 @extends('inicial')
 
 @section('body')
-    <form action="{{route(suspeito.store)}}" method="post">
+    <form action="{{route('suspeitos.store')}}" method="POST">
+        @csrf
+        <h1>Cadastro de Suspeitos</h1>
         <div id="div_susp">
             <div class="nomesus">
                 <label for="nomesus">Nome</label>
@@ -12,7 +14,7 @@
                 <input class="form-control" name="vulgo" id="vulgosus"> 
             </div>
             <div class="fotosus">
-                <label for="fotosus">Foto</label>,
+                <label for="fotosus">Foto:</label>
                 <input type="file" name="foto" id="fotosus">
             </div>
             <div class="cpfsus">
@@ -35,6 +37,31 @@
                 <label for="crimesus">Tipo de Crimes</label>
                 <input class="form-control" name="crime" id="crimesus">
             </div>
+            <div class="atu">
+                <label for="localAtu">Local de Atuação</label>
+                <input class="form-control" name="localAtuacao" id="localAtu">
+            </div>
+            <div class="datanasc">
+                <label for="crimesus">Data de Nascimento</label>
+                <input class="form-control" name="dataNascimento" id="datanasc">
+            </div>
+            <div class="sexo">
+                <label for="sexosus">Sexo</label><br>
+                <select id="sex" name="sexo">
+                    <option name="sexo">-------</option>
+                    <option name="sexo">Masculino</option>
+                    <option name="sexo">Feminino</option>
+                </select>
+            </div>
+            <div class="pai">
+                <label for="pai">Nome do Pai</label>
+                <input class="form-control" name="nomePai" id="pai">
+            </div>
+            <div class="mae">
+                <label for="mae">Nome da Mãe</label>
+                <input class="form-control" name="nomeMae" id="mae">
+            </div>
+            
             <div class="btnsus" >
                 <button type="submit" id="btnsus" class="btn btn-primary" >Cadastrar</button>
             </div>

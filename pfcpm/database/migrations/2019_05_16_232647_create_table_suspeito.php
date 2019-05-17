@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableIndivíduo extends Migration
+class CreateTableSuspeito extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateTableIndivíduo extends Migration
      */
     public function up()
     {
-        Schema::create('individuos', function (Blueprint $table) {
+        Schema::create('suspeitos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
+            $table->string('vulgo');
             $table->string('cpf');
             $table->string('rg');
             $table->string('sexo');
-            $table->string('endereco');
+            $table->string('estado');
+            $table->string('cidade');
             $table->string('localAtuacao');
             $table->string('dataNascimento');
             $table->string('foto');
