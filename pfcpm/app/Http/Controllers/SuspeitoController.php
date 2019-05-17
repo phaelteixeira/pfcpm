@@ -14,8 +14,8 @@ class SuspeitoController extends Controller
      */
     public function index()
     {
-        $sus = Suspeito::all();
-        return view('lista_suspeito', compact('sus'));
+        $suspeito = Suspeito::all();
+        return view('lista_suspeito', compact('suspeito'));
     }
 
     /**
