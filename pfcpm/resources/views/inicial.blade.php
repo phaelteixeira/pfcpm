@@ -35,6 +35,7 @@
                             Solicitações
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+
                             <a id="dropdown" class="dropdown-item" href="{{route('permuta.create')}}">Permuta</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('dispensa.create')}}">Dispensa</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
