@@ -51,7 +51,6 @@ h1{
     width: 50%;
     margin: 0 auto;
     top: 100px;
-    
 }
 
 #matricula{
@@ -128,7 +127,7 @@ div#div_susp{
 .nomesus{
     margin-right: 50%;
     margin-left: 20px;
-    margin-top: 5px;
+    margin-top: -15px;
 }
 
 input#nomesus{
@@ -138,10 +137,10 @@ input#nomesus{
 }
 
 .vulgosus{
-    position: absolute;
-    margin-left: 52%;
+    position: relative;
+    margin-left: 20px;
     width: 39%;
-    top: 85px;
+    top: 5px;
 }
 
 input#vulgosus{
@@ -161,7 +160,7 @@ input#fotosus{
 .cpfsus{
     position: absolute;
     margin-left: 20px;
-    top:240px;
+    top:330px;
 }
 
 input#cpfsus{
@@ -170,8 +169,8 @@ input#cpfsus{
 
 .rgsus{
     position: absolute;
-    top: 240px;
-    margin-left: 260px;
+    top: 330px;
+    margin-left: 225px;
 }
 
 input#rgsus{
@@ -180,8 +179,8 @@ input#rgsus{
 
 .cidadesus{
     position: relative;
-    top: 130px;
-    margin-left: 20px;
+    top: 208px;
+    margin-left: 100px;
     margin-right: 70%;
 }
 
@@ -211,10 +210,69 @@ input#crimesus{
     background-color: rgba(0, 0, 0, 0.1)
 }
 
+.datanasc{
+    position: relative;
+    top: -142px;
+    margin-left: 20px;
+    margin-right: 85%;
+}
+
+.sexo{
+    position: relative;
+    top: -210px;
+    margin-left: 228px;
+    margin-right: 85%;
+}
+
+select#sex{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+input#datanasc{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.atu{
+    position: relative;
+    top: 160px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#localAtu{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.mae{
+    position: relative;
+    top: 50px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#mae{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+.pai{
+    position: relative;
+    top: 40px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+input#pai{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
 .btnsus{
     position: absolute;
-    margin-left: 89%;
-    margin-top: 15%;
+    left: 83%;
+    margin: 20px;
+    top: 120%;
+    width: 10%;
 }
 
 button#btnsus{
@@ -241,9 +299,22 @@ input#nomepol{
     background-size: 50px;
 }
 
+.mat{
+    position: relative;
+    margin-left: 20px;
+    margin-right: 1162px;
+    top: 70px;
+}
+
+input#num_mat{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
 .fotopol{
     position: relative;
-    top: 30px;
+    top: -47px;
     margin-left: 20px;
 }
 
@@ -254,7 +325,7 @@ input#fotopol{
 .cpfpol{
     position: absolute;
     margin-left: 20px;
-    top:240px;
+    top:350px;
 }
 
 input#cpfpol{
@@ -263,8 +334,8 @@ input#cpfpol{
 
 .rgpol{
     position: absolute;
-    top: 240px;
-    margin-left: 260px;
+    top: 350px;
+    margin-left: 230px;
 }
 
 input#rgpol{
@@ -274,8 +345,8 @@ input#rgpol{
 .cidadepol{
     position: relative;
     top: 130px;
-    margin-left: 20px;
-    margin-right: 70%;
+    margin-left: 8%;
+    margin-right: 955px;
 }
 
 input#cidadepol{
@@ -284,7 +355,7 @@ input#cidadepol{
 
 .estadopol{
     position: relative;
-    top: 140px;
+    top: 60px;
     margin-right: 94%;
     margin-left: 20px;
 }
@@ -295,15 +366,15 @@ input#estadopol{
 
 .btnpol{
     position: absolute;
-    margin-left: 89%;
-    margin-top: 15%;
+    margin-left: 83%;
+    margin-top: 4%;
 }
 
 .pelotaopol{
     position: absolute;
-    top: 395px;
-    margin-right: 80%;
-    margin-left: 100px;
+    top: 510px;
+    margin-right: 68%;
+    margin-left: 230px;
 }
 
 input#pelotao{
@@ -312,4 +383,16 @@ input#pelotao{
 
 button#btnpol{
     width: 140%;
+    margin: 20px;
+}
+
+.sen{
+    position: relative;
+    top: 74px;
+    margin-left: 20px;
+    margin-right: 85%;
+}
+
+input#senhap{
+    background-color: rgba(0, 0, 0, 0.1)
 }

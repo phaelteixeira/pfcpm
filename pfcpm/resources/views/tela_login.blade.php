@@ -12,7 +12,7 @@
     <div id="divexterna">
         <img id="img" src="/imgs/PMBA.png" width="100" height="100" alt="">
         <h1>Login</h1>
-        <form action="{{route('inicio.create')}}" method="GET"> 
+        <form action="{{route('login.create')}}" method="GET"> 
             <div >   
             @csrf   
                 <label id= "label" for="matricula">Nº da matrícula</label>
