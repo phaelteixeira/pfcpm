@@ -22,7 +22,7 @@ class CreatePermutaTable extends Migration
             $table->time('hora_inicial');
             $table->time('hora_final');
             $table->text('comandante_servico');
-            $talbe->text('descricao');
+            $table->text('descricao');
             $table->string('solicitante');
             $table->string('substituto');
             $table->timestamps();
