@@ -39,7 +39,7 @@ Auth::routes();
 Route::resource('policiais', 'PolicialController');
 Route::resource('suspeitos', 'SuspeitoController');
 Route::resource('inicio', 'HomeController');
-Route::resource('dispenca', 'DispensaController');
+Route::resource('dispensa', 'DispensaController');
 Route::resource('permulta', 'PermutaController');
 Route::resource('abono', 'AbonoController');
 Route::resource('login', 'LoginController');

@@ -101,6 +101,7 @@ body#tela{
     background-size: 100%;
     left: 50%;
 
+    
 }
 
 #btmenu{
@@ -113,11 +114,90 @@ body#tela{
     color: black;
 }
 
-/*Teste*/
+/*dispensa*/
+
 
 h1#titu{
     text-align: center;
 }
+
+div#dispensa{
+    font-weight: bold;
+    color: black;
+}
+
+
+.local{
+    margin-right: 60%;
+    margin-left: 20px;
+    margin-top: 5px
+}
+
+.dia{
+    margin-right: 85%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.data{
+    margin-right: 85%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.hora{
+    margin-right: 90%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.virtude{
+    margin-right: 67%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+input:hora{
+    position: absolute;
+    margin-left: 20px;
+    top:240px;
+}
+
+.as{
+    position: absolute;
+    top: 287px;
+    margin-left: 250px;
+}
+
+input#hora  {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea#virtude{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+    
+}
+
+input#dia{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+input#data{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+input#local{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
 
 /*Tela suspeito*/
 

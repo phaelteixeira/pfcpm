@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body id="tel">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -36,7 +37,7 @@
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a id="dropdown" class="dropdown-item" href="{{route('permulta.create')}}">Permulta</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('dispenca.create')}}">Dispença</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('dispensa.create')}}">Dispensa</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
                         </div>
                     </li>        
