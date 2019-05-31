@@ -1,9 +1,11 @@
 #tel{
     position: relative;
-    background-image: url("../imgs/PMBA.png");
+    background-image:linear-gradient( rgba(255,255,255,.7) 0%,rgba(255,255,255,.7) 100%), url("../imgs/PMBA.png");
     background-repeat: no-repeat;
-    background-position-y: 170px;
-    background-position-x: 450px;
+    background-position: center center;
+    background-position-x: top center;
+    background-attachment: fixed;
+    
 }
 
 .img2{
@@ -340,5 +342,38 @@ button#btnpol{
 }
 
 input#senhap{
-    background-color: rgba(0, 0, 0, 0.1)
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*TELA PERMUTA*/
+div#permuta{
+    text-align:  center;
+}
+
+div#spo{
+    position: absolute;
+    text-align: center;
+    border: 1px solid black;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+div#cmd{
+    position: absolute;
+    text-align: center;
+    border: 1px solid black;
+    left: 75%;
+    top: 90px;
+    padding: 5px;
+    padding-top: 5px;
+    line-height: -320pt;
+    width: 250px;
+}
+
+p#via{
+    position: relative;
+    top: -20px;
+    text-align: left;
+    padding-left: 10px;
+
 }
