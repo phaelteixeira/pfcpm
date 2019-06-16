@@ -212,7 +212,7 @@ input#pai{
     position: absolute;
     left: 83%;
     margin: 20px;
-    top: 120%;
+    top: 100%;
     width: 10%;
 }
 
@@ -224,7 +224,22 @@ button#btnsus{
 table#tbsus{
     position: relative;
     padding: 30px;
-    background-color: rgba(0, 0, 0, 0.8)
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.descri{
+    position: relative;
+    top: 60px;
+    margin-left: 20px;
+    margin-right: 90%;
+    width: 20px;
+    word-wrap: break-word ;
+}
+
+textarea#descri{
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 386px;
+    height: 150px;
 }
 
 
@@ -352,28 +367,48 @@ div#permuta{
 
 div#spo{
     position: absolute;
+    top: 150px;
     text-align: center;
     border: 1px solid black;
     margin-left: 20px;
     padding: 10px;
+    width: 180px;
+    height: 110px;
+    left: 200px;
 }
 
 div#cmd{
-    position: absolute;
+    position: relative;
     text-align: center;
     border: 1px solid black;
-    left: 75%;
-    top: 90px;
+    right: -660px;
+    top: -159px;
     padding: 5px;
     padding-top: 5px;
     line-height: -320pt;
-    width: 250px;
+    width: 260px;
+    height: 130px;
 }
 
 p#via{
     position: relative;
-    top: -20px;
+    top: -40px;
     text-align: left;
-    padding-left: 10px;
+    left: -10px;
+    text-decoration: underline
 
+}
+
+p#sp{
+    text-align: center;
+}
+
+h1#tpermuta{
+    font-size: 19pt;   
+}
+
+p#spo{
+    position: relative;
+    top: -45px;
+    text-align: center
 }

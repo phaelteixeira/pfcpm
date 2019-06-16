@@ -40,7 +40,17 @@
                             <a id="dropdown" class="dropdown-item" href="{{route('dispensa.create')}}">Dispensa</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
                         </div>
-                    </li>        
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Listas
+                        </a>
+                        <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                            <a id="dropdown" class="dropdown-item" href="{{route('policiais.index')}}">Policial</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
+                        </div>
+                    </li>         
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             Usuário <span class="caret"></span>

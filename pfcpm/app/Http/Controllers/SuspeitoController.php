@@ -72,7 +72,7 @@ class SuspeitoController extends Controller
      */
     public function edit(Suspeito $suspeito)
     {
-        //
+        return view('suspeitoeditar', compact('suspeito'));
     }
 
     /**
@@ -84,7 +84,20 @@ class SuspeitoController extends Controller
      */
     public function update(Request $request, Suspeito $suspeito)
     {
-        //
+        $sus->nome = $request->input('nome');
+        $sus->vulgo = $request->input('vulgo');
+        $sus->cpf = $request->input('cpf');
+        $sus->rg = $request->input('rg');
+        $sus->sexo = $request->input('sexo');
+        $sus->estado = $request->input('estado');
+        $sus->cidade = $request->input('cidade');
+        $sus->localAtuacao = $request->input('localAtuacao');
+        $sus->dataNascimento = $request->input('dataNascimento');
+        $sus->foto = $request->input('foto');
+        $sus->nomePai = $request->input('nomePai');
+        $sus->nomeMae = $request->input('nomeMae');
+        $sus->save();
+        return redirect()->route('suspeitos.index');
     }
 
     /**
@@ -95,6 +108,7 @@ class SuspeitoController extends Controller
      */
     public function destroy(Suspeito $suspeito)
     {
-        //
+        $suspeito->delete();
+        return redirect()->route('suspeitos.index');
     }
 }

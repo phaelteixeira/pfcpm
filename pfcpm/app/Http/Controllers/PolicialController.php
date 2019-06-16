@@ -15,7 +15,7 @@ class PolicialController extends Controller
     public function index()
     {
         $policiais = Policial::all();
-        return view('policiais_listar', compact('policiais'));
+        return view('lista_policiais', compact('policiais'));
     }
 
     /**
@@ -68,7 +68,7 @@ class PolicialController extends Controller
      */
     public function edit(Policial $policial)
     {
-        //
+        return view('policialeditar', compact('policial'));
     }
 
     /**
@@ -80,7 +80,16 @@ class PolicialController extends Controller
      */
     public function update(Request $request, Policial $policial)
     {
-        //
+        $policia->num_mat = $request->input("num_mat");
+        $policia->nome = $request->input("nome");
+        $policia->cidade = $request->input("cidade");
+        $policia->estado = $request->input("estado");
+        $policia->pelotao = $request->input("pelotao");
+        $policia->rg = $request->input("rg");
+        $policia->cpf = $request->input("cpf");
+        $policia->senha = $request->input("senha");
+        $policia->save();
+        return redirect()->route('policiais.index');
     }
 
     /**
@@ -91,6 +100,7 @@ class PolicialController extends Controller
      */
     public function destroy(Policial $policial)
     {
-        //
+        $policial->delete();
+        return redirect()->route('policiais.index');
     }
 }

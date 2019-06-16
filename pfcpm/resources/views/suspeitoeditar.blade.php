@@ -61,11 +61,6 @@
                 <label for="mae">Nome da Mãe:</label>
                 <input class="form-control" name="nomeMae" id="mae">
             </div>
-
-            <div class="descri">
-                <label for="descri">?</label>
-                <textarea class="text-break"  name="descri" id="descri"></textarea>
-            </div>
             
             <div class="btnsus" >
                 <button type="submit" id="btnsus" class="btn btn-primary" >Cadastrar</button>

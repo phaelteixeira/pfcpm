@@ -7,37 +7,29 @@
         <tr>
         <th scope="col">ID</th>
         <th scope="col">NOME</th>
-        <th scope="col">VULGO</th>
+        <th scope="col">MATRÍCULA</th>
         <th scope="col">CPF</th>
         <th scope="col">RG</th>
         <th scope="col">SEXO</th>
         <th scope="col">ESTADO</th>
         <th scope="col">CIDADE</th>
-        <th scope="col">LOCAL DE ATUAÇÃO</th>
-        <th scope="col">DATA DE NASCIMENTO</th>
-        <th scope="col">NOME DO PAI</th>
-        <th scope="col">NOME DA MÃE</th>
-        <th scope="col">FOTO</th>
+        <th scope="col">PELOTÃO</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($suspeito as $sus)
+        @foreach($policiais as $sus)
             <tr>
                 <td>{{$sus->id}}</td>
                 <td>{{$sus->nome}}</td>
-                <td>{{$sus->vulgo}}</td>
+                <td>{{$sus->num_mat}}</td>
                 <td>{{$sus->cpf}}</td>
                 <td>{{$sus->rg}}</td>
                 <td>{{$sus->sexo}}</td>
                 <td>{{$sus->estado}}</td>
                 <td>{{$sus->cidade}}</td>
-                <td>{{$sus->localAtuacao}}</td>
-                <td>{{$sus->dataNascimento}}</td>
-                <td>{{$sus->nomePai}}</td>
-                <td>{{$sus->nomeMae}}</td>
-                <td>{{$sus->foto}}</td>
+                <td>{{$sus->pelotao}}</td>
                 <td>
-                <form action = "{{route('suspeitos.destroy', $sus)}}" method = "POST">
+                <form action = "{{route('policiais.destroy', $sus)}}" method = "post">
                     @csrf
                     <a class = "btn btn-success" href="{{route('suspeitos.edit', $sus)}}">Editar</a>
                     @method('DELETE')
