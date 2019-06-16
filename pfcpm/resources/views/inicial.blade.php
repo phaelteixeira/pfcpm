@@ -40,24 +40,34 @@
                             <a id="dropdown" class="dropdown-item" href="{{route('dispensa.create')}}">Dispensa</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
                         </div>
-                    </li>        
+                    </li>
                     <li class="nav-item dropdown">
-                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                    Usuário <span class="caret"></span>
-                                                </a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Listas
+                        </a>
+                        <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                    <a id="dropdown" class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                                    document.getElementById('logout-form').submit();">
-                                                        {{ __('Sair') }}
-                                                    </a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('policiais.index')}}">Policial</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
+                        </div>
+                    </li>         
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Usuário <span class="caret"></span>
+                        </a>
 
-                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                        @csrf
-                                                    </form>
-                                                </div>
-                                            </li>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a id="dropdown" class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                                {{ __('Sair') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>

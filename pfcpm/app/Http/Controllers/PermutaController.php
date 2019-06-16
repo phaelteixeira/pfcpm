@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Permuta;
 use Illuminate\Http\Request;
+use App\Policial;
 
 class PermutaController extends Controller
 {
@@ -14,7 +15,8 @@ class PermutaController extends Controller
      */
     public function index()
     {
-        //
+        $policia = Policial::all();
+        return view('permuta', compact('policia'));
     }
 
     /**
@@ -24,7 +26,8 @@ class PermutaController extends Controller
      */
     public function create()
     {
-        return view('permuta');
+        $policia = Policial::all();
+        return view('permuta', compact('policia'));
     }
 
     /**

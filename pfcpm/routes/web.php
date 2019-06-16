@@ -36,14 +36,15 @@ Route::get('/cad_pol', function () {
 
 
 Auth::routes();
-Route::resource('policiais', 'PolicialController');
 Route::resource('suspeitos', 'SuspeitoController');
+Route::resource('policiais', 'PolicialController');
 Route::resource('inicio', 'HomeController');
 Route::resource('dispensa', 'DispensaController');
 Route::resource('permuta', 'PermutaController');
 Route::resource('abono', 'AbonoController');
 Route::resource('login', 'LoginController');
 Route::post('/login', 'LoginController@store');
+Route::put('/policiais', 'PolicialController@update');
 
 Auth::routes();
 
