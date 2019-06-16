@@ -10,15 +10,25 @@
                 <input class="form-control" name="nome" id="nomepol" size=30>
             </div>
 
+            <div class="fotopol">
+                <label for="fotopol">Foto:</label>
+                <input type="file" name="foto" id="fotopol">
+            </div>
+
             <div class="mat">
                 <label for="num_mat">Número de matrícula:</label>
                 <input class="form-control" name="num_mat" id="num_mat" size=30>
             </div>
 
-            <div class="fotopol">
-                <label for="fotopol">Foto:</label>
-                <input type="file" name="foto" id="fotopol">
+            <div class="sexopol">
+                <label for="sexo">Sexo:</label><br>
+                <select id="sex" name="sexo">
+                    <option name="sexo">-------</option>
+                    <option name="sexo">Masculino</option>
+                    <option name="sexo">Feminino</option>
+                </select>
             </div>
+
             <div class="cpfpol">
                 <label for="cpfpol">CPF:</label>
                 <input class="form-control" name="cpf" id="cpfpol">
@@ -42,7 +52,7 @@
 
             <div class="sen">
                 <label for="senhap">Senha:</label>
-                <input class="form-control" name="senha" id="senhap">
+                <input type="password" class="form-control" name="senha" id="senhap">
             </div>
 
             <div class="btnpol" >

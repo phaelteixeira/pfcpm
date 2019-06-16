@@ -16,7 +16,7 @@
             <div style="position: relative; top:100px">
                 <h1 id="tpermuta"><b>PERMUTA</b></h1>
                 <p style="position: relative; right:80px">Eu, {{$policial->nome}}, Mat.:{{$policial->num_mat}} solicito a V.Sª permulta do serviço </p>
-                <p>para o qual estou devidamente escalado no ____________________ no dia ___/___/___ das _____às_____</p>
+                <p style="position: relative; right:-7px">para o qual estou devidamente escalado no <input name="permutalocal" id="permutalocal"> no dia ___/___/___ das _____às_____</p>
                 <p style="position: relative; right:9px">como o,_________________________, Mat.:_______________ que se encontra escalado no ___________</p>
                 <p style="position: relative; right:9px">no dia ____/____/____, das______às_________, tendo em vista___________________________________</p>
                 <p style="position: relative; right:9px">__________________________________________________________________________________________</p>
@@ -25,6 +25,7 @@
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
             </div>
             @endforeach
+            <button classs="btn btn-primary">Solicitar Permuta</button>
         </div>
     </form>
 @endsection('body')

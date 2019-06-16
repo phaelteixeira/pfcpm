@@ -1,8 +1,8 @@
 @extends('inicial')
 
 @section('body')
-    <h1>Lista de Suspeitos</h1>
-        <table id="tbsus" class="table table-bordered table-dark">
+    <h1>Lista de polpeitos</h1>
+        <table id="tbpol" class="table table-bordered table-dark">
     <thead>
         <tr>
         <th scope="col">ID</th>
@@ -17,21 +17,21 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($policiais as $sus)
+        @foreach($policiais as $pol)
             <tr>
-                <td>{{$sus->id}}</td>
-                <td>{{$sus->nome}}</td>
-                <td>{{$sus->num_mat}}</td>
-                <td>{{$sus->cpf}}</td>
-                <td>{{$sus->rg}}</td>
-                <td>{{$sus->sexo}}</td>
-                <td>{{$sus->estado}}</td>
-                <td>{{$sus->cidade}}</td>
-                <td>{{$sus->pelotao}}</td>
+                <td>{{$pol->id}}</td>
+                <td>{{$pol->nome}}</td>
+                <td>{{$pol->num_mat}}</td>
+                <td>{{$pol->cpf}}</td>
+                <td>{{$pol->rg}}</td>
+                <td>{{$pol->sexo}}</td>
+                <td>{{$pol->estado}}</td>
+                <td>{{$pol->cidade}}</td>
+                <td>{{$pol->pelotao}}</td>
                 <td>
-                <form action = "{{route('policiais.destroy', $sus)}}" method = "post">
+                <form action="{{route('policiais.destroy', $pol)}}" method = "POST">
                     @csrf
-                    <a class = "btn btn-success" href="{{route('suspeitos.edit', $sus)}}">Editar</a>
+                    <a class = "btn btn-success" href="{{route('policiais.edit', $pol)}}">Editar</a>
                     @method('DELETE')
                     <button type = "submit" class = "btn btn-danger">Excluir</button>
                 </form>

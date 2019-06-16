@@ -84,19 +84,19 @@ class SuspeitoController extends Controller
      */
     public function update(Request $request, Suspeito $suspeito)
     {
-        $sus->nome = $request->input('nome');
-        $sus->vulgo = $request->input('vulgo');
-        $sus->cpf = $request->input('cpf');
-        $sus->rg = $request->input('rg');
-        $sus->sexo = $request->input('sexo');
-        $sus->estado = $request->input('estado');
-        $sus->cidade = $request->input('cidade');
-        $sus->localAtuacao = $request->input('localAtuacao');
-        $sus->dataNascimento = $request->input('dataNascimento');
-        $sus->foto = $request->input('foto');
-        $sus->nomePai = $request->input('nomePai');
-        $sus->nomeMae = $request->input('nomeMae');
-        $sus->save();
+        $suspeito->nome = $request->input('nome');
+        $suspeito->vulgo = $request->input('vulgo');
+        $suspeito->cpf = $request->input('cpf');
+        $suspeito->rg = $request->input('rg');
+        $suspeito->sexo = $request->input('sexo');
+        $suspeito->estado = $request->input('estado');
+        $suspeito->cidade = $request->input('cidade');
+        $suspeito->localAtuacao = $request->input('localAtuacao');
+        $suspeito->dataNascimento = $request->input('dataNascimento');
+        $suspeito->foto = $request->input('foto');
+        $suspeito->nomePai = $request->input('nomePai');
+        $suspeito->nomeMae = $request->input('nomeMae');
+        $suspeito->save();
         return redirect()->route('suspeitos.index');
     }
 
