@@ -116,6 +116,13 @@ input:hora{
     margin-left: 250px;
 }
 
+.ass{
+    position: relative;
+    margin-top: -68px;
+    margin-left: 200px;
+    margin-right: 78%;
+}
+
 
 input#hora  {
     background-color: rgba(0, 0, 0, 0.1);
@@ -180,6 +187,10 @@ input#vulgosus{
 }
 
 input#fotosus{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+input#imp{
     background-color: rgba(0, 0, 0, 0.1)
 }
 

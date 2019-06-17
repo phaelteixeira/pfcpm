@@ -49,6 +49,7 @@
 
                             <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permuta.index')}}">Permutas Solicitadas</a>
                         </div>
                     </li>         
                     <li class="nav-item dropdown">

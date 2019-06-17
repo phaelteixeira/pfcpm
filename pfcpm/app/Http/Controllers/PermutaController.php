@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Permuta;
-use Illuminate\Http\Request;
 use App\Policial;
+use Illuminate\Http\Request;
 
 class PermutaController extends Controller
 {
@@ -16,7 +16,8 @@ class PermutaController extends Controller
     public function index()
     {
         $policia = Policial::all();
-        return view('permuta', compact('policia'));
+        $permutas = Permuta::all();
+        return view('listapermuta', compact('policia', 'permutas'));
     }
 
     /**
@@ -27,7 +28,7 @@ class PermutaController extends Controller
     public function create()
     {
         $policia = Policial::all();
-        return view('permuta', compact('policia'));
+        return view('telapermuta', compact('policia'));
     }
 
     /**
@@ -38,7 +39,22 @@ class PermutaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permutas = new Permuta();
+        $permutas->nome = $request->input('nome');
+        $permutas->matricula = $request->input('matricula');
+        $permutas->local = $request->input('local');
+        $permutas->dia_do_servico = $request->input('dia');
+        $permutas->hora_inicial = $request->input('das');
+        $permutas->hora_final = $request->input('as');
+        $permutas->escalado = "";
+        $permutas->escaladoMatricula = "";
+        $permutas->escaladoLocal = "";
+        $permutas->escaladoDia_do_servico = "";
+        $permutas->escaladoHora_inicial = "";
+        $permutas->escaladoHora_final = "";
+        $permutas->virtude = "";
+        $permutas->save();
+        return redirect()->route('permuta.index');
     }
 
     /**
@@ -49,7 +65,8 @@ class PermutaController extends Controller
      */
     public function show(Permuta $permuta)
     {
-        //
+        $permutas = Permuta::all();
+        return view('permutaespera', compact('permutas'));
     }
 
     /**
@@ -60,7 +77,7 @@ class PermutaController extends Controller
      */
     public function edit(Permuta $permuta)
     {
-        //
+        return view ('permutasubistituto', compact('permuta'));
     }
 
     /**
@@ -72,7 +89,14 @@ class PermutaController extends Controller
      */
     public function update(Request $request, Permuta $permuta)
     {
-        //
+        $permuta->escalado = $request->input('nome');
+        $permuta->escaladoMatricula = $request->input('matricula');
+        $permuta->escaladoLocal = $request->input('local');
+        $permuta->escaladoDia_do_servico = $request->input('dia');
+        $permuta->escaladoHora_inicial = $request->input('das');
+        $permuta->escaladoHora_final = $request->input('as');
+        $permuta->save();
+        return redirect()->route('permuta.index');
     }
 
     /**
