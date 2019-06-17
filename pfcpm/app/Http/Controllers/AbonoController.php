@@ -26,16 +26,19 @@ class AbonoController extends Controller
     {
         return view('abono_servico');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $abono = new Abono();
+        $abono->num_mat = $request->input("num_mat");
+        $abono->nome = $request->input("nome");
+        $abono->substituto = $request->input("substituto");
+        $abono->servico = $request->input("servico");
+        $abono->funcao = $request->input("funcao");
+        $abono->data = $request->input("data");
+        $abono->horario = $request->input("horario");
+        $abono->dt_hoje = $request->input("dt_hoje");
+        $abono->save();
+        return redirect()->route('abono.index');
     }
 
     /**
