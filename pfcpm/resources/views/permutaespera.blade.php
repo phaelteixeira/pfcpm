@@ -1,7 +1,7 @@
 @extends('inicial')
 
 @section('body')
-    <form action="{{route('permuta.index')}}" >
+    <form>
         <h1 id="titu"> Solicitação de Permuta</h1>
         <div id="permuta">
             @foreach($permutas as $permuta)
@@ -23,9 +23,10 @@
                 <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
                 <p>Feira de Santana, ____/____/_____</p>
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
+            
+                <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permuta.edit', $permuta)}}">Aceitar</a>
             </div>
             @endforeach
-            <button classs="btn btn-primary">Solicitar Permuta</button>
         </div>
     </form>
 @endsection('body')

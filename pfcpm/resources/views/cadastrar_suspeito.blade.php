@@ -1,7 +1,7 @@
 @extends('inicial')
 
 @section('body')
-    <form action="{{route('suspeitos.store')}}" method="POST">
+    <form action="{{route('suspeitos.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <h1>Cadastro de Suspeitos</h1>
         <div id="div_susp">
@@ -43,7 +43,7 @@
             </div>
             <div class="datanasc">
                 <label for="crimesus">Data de Nascimento:</label>
-                <input class="form-control" name="dataNascimento" id="datanasc">
+                <input type="date" class="form-control" name="dataNascimento" id="datanasc">
             </div>
             <div class="sexo">
                 <label for="sexosus">Sexo:</label><br>
@@ -63,7 +63,7 @@
             </div>
 
             <div class="descri">
-                <label for="descri">?</label>
+                <label for="descri">Obs:</label>
                 <textarea class="text-break"  name="descri" id="descri"></textarea>
             </div>
             

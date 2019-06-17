@@ -22,11 +22,13 @@ class CreateTableSuspeito extends Migration
             $table->string('sexo');
             $table->string('estado');
             $table->string('cidade');
+            $table->string('crime');
             $table->string('localAtuacao');
             $table->string('dataNascimento');
             $table->string('foto');
             $table->string('nomePai');
             $table->string('nomeMae');
+            $table->string('obs');
             $table->timestamps();
         });
     }

@@ -1,7 +1,7 @@
 @extends('inicial')
 
 @section('body')
-    <form action="{{route('suspeitos.update', $suspeito)}}" method="POST">
+    <form action="{{route('suspeitos.update', $suspeito)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <h1>Editar registro do Suspeitos</h1>
@@ -36,7 +36,7 @@
             </div>
             <div class="crimesus">
                 <label for="crimesus">Tipo de Crimes:</label>
-                <input class="form-control" name="crime" id="crimesus" value={{$suspeito->tipo}}>
+                <input class="form-control" name="crime" id="crimesus" value={{$suspeito->crime}}>
             </div>
             <div class="atu">
                 <label for="localAtu">Local de Atuação:</label>
@@ -44,23 +44,28 @@
             </div>
             <div class="datanasc">
                 <label for="crimesus">Data de Nascimento:</label>
-                <input class="form-control" name="dataNascimento" id="datanasc" value={{$suspeito->dataNascimento}}>
+                <input type="date" class="form-control" name="dataNascimento" id="datanasc" value={{$suspeito->dataNascimento}}>
             </div>
             <div class="sexo">
                 <label for="sexosus">Sexo:</label><br>
                 <select id="sex" name="sexo">
-                    <option name="sexo">{{$suspeito->nome}}</option>
+                    <option name="sexo">{{$suspeito->sexo}}</option>
                     <option name="sexo">Masculino</option>
                     <option name="sexo">Feminino</option>
                 </select>
             </div>
             <div class="pai">
                 <label for="pai">Nome do Pai:</label>
-                <input class="form-control" name="nomePai" id="pai" value={{$suspeito->pai}}>
+                <input class="form-control" name="nomePai" id="pai" value={{$suspeito->nomePai}}>
             </div>
             <div class="mae">
                 <label for="mae">Nome da Mãe:</label>
-                <input class="form-control" name="nomeMae" id="mae" value={{$suspeito->mae}}>
+                <input class="form-control" name="nomeMae" id="mae" value={{$suspeito->nomeMae}}>
+            </div>
+
+            <div class="descri">
+                <label for="descri">Obs:</label>
+                <textarea class="text-break"  name="descri" id="descri">{{$suspeito->obs}}</textarea>
             </div>
             
             <div class="btnsus" >

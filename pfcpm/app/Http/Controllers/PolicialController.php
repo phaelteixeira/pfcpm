@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Policial;
+use App\Patente;
 use Illuminate\Http\Request;
 
 class PolicialController extends Controller
@@ -14,8 +15,8 @@ class PolicialController extends Controller
      */
     public function index()
     {
-        $policiais = Policial::all();
-        return view('lista_policiais', compact('policiais'));
+        $policial = Policial::all();
+        return view('lista_policiais', compact('policial'));
     }
 
     /**
@@ -25,7 +26,8 @@ class PolicialController extends Controller
      */
     public function create()
     {
-        return view('policial_cadastrar');
+        $patente = new Patente();
+        return view('policial_cadastrar', compact('patente'));
     }
 
     /**
@@ -39,7 +41,11 @@ class PolicialController extends Controller
         $policia = new Policial();
         $policia->num_mat = $request->input("num_mat");
         $policia->nome = $request->input("nome");
+        $policia->patente = $requeste->inpput('patente');
+        $path=$request->file("foto")->store('imagens', 'public');
+        $policia->foto = $path;
         $policia->sexo = $request->input('sexo');
+        $policia->dataNascimento = $request->input('dataNascimento');
         $policia->cidade = $request->input("cidade");
         $policia->estado = $request->input("estado");
         $policia->pelotao = $request->input("pelotao");
@@ -47,7 +53,7 @@ class PolicialController extends Controller
         $policia->cpf = $request->input("cpf");
         $policia->senha = $request->input("senha");
         $policia->save();
-        return redirect()->route('policiais.index');
+        return redirect()->route('policial.index');
     }
 
     /**
@@ -58,7 +64,7 @@ class PolicialController extends Controller
      */
     public function show(Policial $policial)
     {
-        //
+        return view('registroPolicial', compact('policial'));
     }
 
     /**
@@ -69,8 +75,7 @@ class PolicialController extends Controller
      */
     public function edit(Policial $policial)
     {
-        $policia = new Policial();
-        return view('policialeditar', compact('policial', 'policia'));
+        return view('policialeditar', compact('policial'));
     }
 
     /**
@@ -84,15 +89,19 @@ class PolicialController extends Controller
     {
         $policial->num_mat = $request->input("num_mat");
         $policial->nome = $request->input("nome");
+        $policial->patente = $requeste->inpput('patente');
+        $path=$request->file("foto")->store('imagens', 'public');
+        $policial->foto = $path;
         $policial->sexo = $request->input('sexo');
         $policial->cidade = $request->input("cidade");
+        $policial->dataNascimento = $request->input('dataNascimento');
         $policial->estado = $request->input("estado");
         $policial->pelotao = $request->input("pelotao");
         $policial->rg = $request->input("rg");
         $policial->cpf = $request->input("cpf");
         $policial->senha = $request->input("senha");
         $policial->save();
-        return redirect()->route('policiais.index');
+        return redirect()->route('policial.index');
     }
 
     /**
@@ -104,6 +113,6 @@ class PolicialController extends Controller
     public function destroy(Policial $policial)
     {
         $policial->delete();
-        return redirect()->route('policiais.index');
+        return redirect()->route('policial.index');
     }
 }

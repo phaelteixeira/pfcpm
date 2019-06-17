@@ -27,7 +27,7 @@
                         </a>
                         <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.create')}}">Cadastrar Suspeito</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('policiais.create')}}">Cadastrar Policial</a>            
+                            <a id="dropdown" class="dropdown-item" href="{{route('policial.create')}}">Cadastrar Policial</a>            
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -47,8 +47,9 @@
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a id="dropdown" class="dropdown-item" href="{{route('policiais.index')}}">Policial</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permuta.index')}}">Permutas Solicitadas</a>
                         </div>
                     </li>         
                     <li class="nav-item dropdown">

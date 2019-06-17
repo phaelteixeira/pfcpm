@@ -44,11 +44,14 @@ class SuspeitoController extends Controller
         $sus->sexo = $request->input('sexo');
         $sus->estado = $request->input('estado');
         $sus->cidade = $request->input('cidade');
+        $sus->crime = $request->input('crime');
         $sus->localAtuacao = $request->input('localAtuacao');
         $sus->dataNascimento = $request->input('dataNascimento');
-        $sus->foto = $request->input('foto');
+        $path=$request->file("foto")->store('imagens', 'public');
+        $sus->foto = $path;
         $sus->nomePai = $request->input('nomePai');
         $sus->nomeMae = $request->input('nomeMae');
+        $sus->obs = $request->input('descri');
         $sus->save();
         return redirect()->route('suspeitos.index');
     }
@@ -61,7 +64,7 @@ class SuspeitoController extends Controller
      */
     public function show(Suspeito $suspeito)
     {
-        //
+        return view('registroSuspeito', compact('suspeito'));
     }
 
     /**
@@ -91,11 +94,14 @@ class SuspeitoController extends Controller
         $suspeito->sexo = $request->input('sexo');
         $suspeito->estado = $request->input('estado');
         $suspeito->cidade = $request->input('cidade');
+        $suspeito->crime = $request->input('crime');
         $suspeito->localAtuacao = $request->input('localAtuacao');
         $suspeito->dataNascimento = $request->input('dataNascimento');
-        $suspeito->foto = $request->input('foto');
+        $path=$request->file("foto")->store('imagens', 'public');
+        $suspeito->foto = $path;
         $suspeito->nomePai = $request->input('nomePai');
         $suspeito->nomeMae = $request->input('nomeMae');
+        $suspeito->obs = $request->input('descri');
         $suspeito->save();
         return redirect()->route('suspeitos.index');
     }
