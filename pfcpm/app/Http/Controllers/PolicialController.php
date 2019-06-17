@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Policial;
+use App\Patente;
 use Illuminate\Http\Request;
 
 class PolicialController extends Controller
@@ -25,7 +26,8 @@ class PolicialController extends Controller
      */
     public function create()
     {
-        return view('policial_cadastrar');
+        $patente = new Patente();
+        return view('policial_cadastrar', compact('patente'));
     }
 
     /**
@@ -39,9 +41,11 @@ class PolicialController extends Controller
         $policia = new Policial();
         $policia->num_mat = $request->input("num_mat");
         $policia->nome = $request->input("nome");
+        $policia->patente = $requeste->inpput('patente');
         $path=$request->file("foto")->store('imagens', 'public');
         $policia->foto = $path;
         $policia->sexo = $request->input('sexo');
+        $policia->dataNascimento = $request->input('dataNascimento');
         $policia->cidade = $request->input("cidade");
         $policia->estado = $request->input("estado");
         $policia->pelotao = $request->input("pelotao");
@@ -85,10 +89,12 @@ class PolicialController extends Controller
     {
         $policial->num_mat = $request->input("num_mat");
         $policial->nome = $request->input("nome");
+        $policial->patente = $requeste->inpput('patente');
         $path=$request->file("foto")->store('imagens', 'public');
         $policial->foto = $path;
         $policial->sexo = $request->input('sexo');
         $policial->cidade = $request->input("cidade");
+        $policial->dataNascimento = $request->input('dataNascimento');
         $policial->estado = $request->input("estado");
         $policial->pelotao = $request->input("pelotao");
         $policial->rg = $request->input("rg");

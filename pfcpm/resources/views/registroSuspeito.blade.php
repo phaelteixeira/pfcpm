@@ -8,7 +8,7 @@
             <p style="font-weight: bold;" class="registroSf"><br> <img style="width: 100px; height: 100px;" src="../storage/{{$suspeito->foto}}"/></p>
             <p style="font-weight: bold;" class="registroSv">VULGO:<br><p class="registrovulgo">{{$suspeito->vulgo}}</p></p>
             <P style="font-weight: bold;" class="registroSex">SEXO:<br><p class="registroSsexo">{{$suspeito->sexo}}</p></P>
-            <P style="font-weight: bold;" class="registroSdata">DATA DE NASCIMENTO:<br><p class="registrodatan">{{$suspeito->dataNascimento}}</p></P>
+            <P style="font-weight: bold;" class="registroSdata">DATA DE NASCIMENTO:<br><p class="registrodatan">{{date( 'd/m/Y' , strtotime($suspeito->dataNascimento))}}</p></P>
             <P style="font-weight: bold;" class="registroScp">CPF:<br><p class="registroScpf">{{$suspeito->cpf}}</p></P>
             <P style="font-weight: bold;" class="registroSr">RG:<br><p class="registroSrg">{{$suspeito->rg}}</p></P>
             <p style="font-weight: bold;" class="registroSe">ESTADO:<br><p class="registroSestado">{{$suspeito->estado}}</p></p>

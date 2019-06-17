@@ -45,6 +45,12 @@
                 <label for="estadopol">Estado:</label>
                 <input class="form-control" name="estado" id="estadopol">
             </div>
+
+            <div class="datanascP">
+                <label for="datanasc">Data de Nascimento:</label>
+                <input type="date" class="form-control" name="dataNascimento" id="datanasc">
+            </div>
+
             <div class="pelotaopol">
                 <label for="pelotao">Unidade:</label>
                 <input class="form-control" name="pelotao" id="pelotao">
@@ -53,6 +59,16 @@
             <div class="sen">
                 <label for="senhap">Senha:</label>
                 <input type="password" class="form-control" name="senha" id="senhap">
+            </div>
+
+            <div class="patente">
+                <label for="pelotao">Patente:</label>
+                <input type="password" class="form-control" name="patente" id="patente">
+            </div>
+
+            <div class="sen">
+                <label for="senhap">Confirmar Senha:</label>
+                <input type="password" class="form-control" name="Csenha" id="senhap">
             </div>
 
             <div class="btnpol" >

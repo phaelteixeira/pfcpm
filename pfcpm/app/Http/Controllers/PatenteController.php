@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Dispensa;
+use App\Patente;
 use Illuminate\Http\Request;
 
-class DispensaController extends Controller
+class PatenteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class DispensaController extends Controller
      */
     public function index()
     {
-        $dispensa = Dispensa::all();
-        return view ('listaDispensa', compact('dispensa'));
+        $patente = Patente::all();
+        return view ('patentelistar', compact('patente'));
     }
 
     /**
@@ -25,7 +25,7 @@ class DispensaController extends Controller
      */
     public function create()
     {
-        return view('dispensa');
+        //
     }
 
     /**
@@ -36,23 +36,15 @@ class DispensaController extends Controller
      */
     public function store(Request $request)
     {
-        $dispensa = new Dispensa();
-        $dispensa->escalado = $request->input("escalado");
-        $dispensa->dia_do_servico = $request->input("dia");
-        $dispensa->hora_inicial = $request->input("das");
-        $dispensa->hora_final = $request->input("as");
-        $dispensa->virtude = $request->input("virtude");
-        $dispensa->save();
-        return redirect()->route('dispensa.create');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dispensa  $dispensa
+     * @param  \App\Patente  $patente
      * @return \Illuminate\Http\Response
      */
-    public function show(Dispensa $dispensa)
+    public function show(Patente $patente)
     {
         //
     }
@@ -60,10 +52,10 @@ class DispensaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Dispensa  $dispensa
+     * @param  \App\Patente  $patente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Dispensa $dispensa)
+    public function edit(Patente $patente)
     {
         //
     }
@@ -72,10 +64,10 @@ class DispensaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Dispensa  $dispensa
+     * @param  \App\Patente  $patente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Dispensa $dispensa)
+    public function update(Request $request, Patente $patente)
     {
         //
     }
@@ -83,10 +75,10 @@ class DispensaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Dispensa  $dispensa
+     * @param  \App\Patente  $patente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dispensa $dispensa)
+    public function destroy(Patente $patente)
     {
         //
     }

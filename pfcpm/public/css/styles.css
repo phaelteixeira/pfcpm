@@ -58,6 +58,91 @@ h1{
     color: black;
 }
 
+
+/*dispensa*/
+
+
+h1#titu{
+    text-align: center;
+}
+
+div#dispensa{
+    font-weight: bold;
+    color: black;
+}
+
+#btndispensa{
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 200px;
+
+}
+
+.escalado{
+    margin-right: 80%;
+    margin-left: 20px;
+    margin-top: 5px
+}
+
+.dia{
+    margin-right: 85%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+
+.hora{
+    margin-right: 90%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.virtude{
+    margin-right: 67%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+input:hora{
+    position: absolute;
+    margin-left: 20px;
+    top:240px;
+}
+
+.as{
+    position: absolute;
+    top: 287px;
+    margin-left: 250px;
+}
+
+
+input#hora  {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+textarea#virtude{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+    
+}
+
+input#dia{  
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+
+
+input#escalado{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-size: 50px;
+}
+
+
 /*Tela suspeito*/
 
 div#div_susp{
@@ -330,6 +415,13 @@ input#cidadepol{
     margin-left: 20px;
 }
 
+.datanascP{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 85%;
+}
+
 input#estadopol{
     background-color: rgba(0, 0, 0, 0.1)
 }
@@ -348,6 +440,10 @@ input#estadopol{
 }
 
 input#pelotao{
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+input#patente{
     background-color: rgba(0, 0, 0, 0.1)
 }
 
@@ -438,6 +534,13 @@ p#spo{
 
 .registropolicia{
     margin-left: 5%;
+}
+
+.patente{
+    position: relative;
+    margin-top: -18px;
+    margin-left: 17%;
+    margin-right: 69.5%;
 }
 
 .registron{

@@ -18,6 +18,8 @@ class CreatePolicialsTable extends Migration
             $table->string('num_mat');
             $table->string('nome');
             $table->string('foto');
+            $table->string('patente');
+            $table->string('dataNascimento');
             $table->string('sexo');
             $table->string('cidade');
             $table->string('estado');
