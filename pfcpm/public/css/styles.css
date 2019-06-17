@@ -425,3 +425,314 @@ p#spo{
     margin-left: 50%;
     margin-right: 50%;
 }
+
+/*TELA REGISTRO DE POLICIAL*/
+
+.registropolicial{
+    border: #000000 solid 1px;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-right: 25%;
+    height: 100%;
+}
+
+.registropolicia{
+    margin-left: 5%;
+}
+
+.registron{
+    position: relative;
+    margin-top: 18%;
+    margin-left: 20px;
+}
+
+.registronome{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.registrof{
+    position: absolute;
+    margin-top: -190px;
+    margin-left: 35.2%;
+}
+
+.registrom{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.registromatricula{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registros{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registrosexo{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registrocp{
+    position: relative;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.registrocpf{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registror{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registrorg{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registroe{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registroestado{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registroc{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registrocidade{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registrou{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registrounidade{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 10%;
+    padding-left: 10px;
+}
+
+/*TELA REGISTRO DE SUSPEITO*/
+
+.registrosuspeito{
+    border: #000000 solid 1px;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-right: 25%;
+    height: 100%;
+    
+}
+
+.registrosus{
+    margin-left: 5%;
+}
+
+
+.registroSf{
+    position: absolute;
+    margin-top: -190px;
+    margin-left: 35.2%;
+}
+
+.registroSn{
+    position: relative;
+    margin-top: 18%;
+    margin-left: 20px;
+}
+
+.registronome{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registroSv{
+    position: relative;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.registrovulgo{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.registroSdata{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 20px;
+     
+}
+
+.registrodatan{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registroSex{
+    position: relative; 
+    margin-top: 40px;
+    margin-left: 50%;
+}
+
+.registroSsexo{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registroScp{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registroScpf{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registroSr{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registroSrg{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registroSe{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registroSestado{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 60%;
+    text-align: center;
+}
+
+
+.registroSc{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registroScidade{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+
+.registroSu{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registropais{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 10%;
+    padding-left: 10px;
+}
+
+.registroObs{
+    position: relative;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+.registroObss{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 20px;
+    margin-right: 10%;
+    padding-left: 10px;
+}
+
+
+
