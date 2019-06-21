@@ -36,7 +36,7 @@
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a id="dropdown" class="dropdown-item" href="{{route('permuta.create')}}">Permuta</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permutas.create')}}">Permuta</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('dispensa.create')}}">Dispensa</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('abono.create')}}">Abono de Serviço</a>
                         </div>
@@ -49,7 +49,8 @@
 
                             <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('permuta.index')}}">Permutas Solicitadas</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permutas.index')}}">Permutas Solicitadas</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('index')}}">Permutas Aceitas</a>
                         </div>
                     </li>         
                     <li class="nav-item dropdown">

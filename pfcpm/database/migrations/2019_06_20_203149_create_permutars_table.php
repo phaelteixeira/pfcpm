@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePermutasTable extends Migration
+class CreatePermutarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePermutasTable extends Migration
      */
     public function up()
     {
-        Schema::create('permutas', function (Blueprint $table) {
+        Schema::create('permutars', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
             $table->string('matricula');
@@ -28,6 +28,7 @@ class CreatePermutasTable extends Migration
             $table->string('escaladoHora_inicial');
             $table->string('escaladoHora_final');
             $table->string('virtude');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -39,6 +40,6 @@ class CreatePermutasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permutas');
+        Schema::dropIfExists('permutars');
     }
 }

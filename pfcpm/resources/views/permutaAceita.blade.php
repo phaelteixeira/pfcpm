@@ -22,7 +22,7 @@
                 <p>Feira de Santana, ____/____/_____</p>
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
             
-                <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permutas.edit', $permuta)}}">Aceitar</a>
+                <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permutas.edit', $permuta)}}">OK</a>
             </div>
         </div>
     </form>

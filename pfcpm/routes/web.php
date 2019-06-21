@@ -40,10 +40,11 @@ Route::resource('suspeitos', 'SuspeitoController');
 Route::resource('policial', 'PolicialController');
 Route::resource('inicio', 'HomeController');
 Route::resource('dispensa', 'DispensaController');
-Route::resource('permuta', 'PermutaController');
 Route::resource('abono', 'AbonoController');
 Route::resource('login', 'LoginController');
-Route::post('/login', 'LoginController@store');
+Route::resource('permutas', 'PermutarController');
+Route::get('permuta', 'PermutarController@indexer')->name('index');
+
 
 Auth::routes();
 

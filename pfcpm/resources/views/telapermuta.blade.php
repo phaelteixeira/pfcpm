@@ -1,7 +1,7 @@
 @extends('inicial')
 
 @section('body')
-    <form  action="{{route('permuta.store')}}" method="POST">
+    <form  action="{{route('permutas.store')}}" method="POST">
         @csrf
         <div>
             <h1 id="titu">Solicitação de Permuta</h1>
@@ -33,6 +33,12 @@
                 <label for="hora">Às:</label>
                 <input type="time" class="form-control" name="as" id="hora"  size=30> 
             </div>
-        <button type="submit" id="btndispensa" class="btn btn-primary">OK</button>
+            <div class="virtude">
+                <label for="virtude">Tendo em vista:</label><br>
+                <textarea name="virtude" id="virtude" ></textarea>
+            </div>
+            <div class="btnpermuta">
+                <button type="submit" id="btnpermuta" class="btn btn-primary">OK</button>
+            </div>
     </form>
 @endsection('body')
