@@ -41,7 +41,7 @@ class PolicialController extends Controller
         $policia = new Policial();
         $policia->num_mat = $request->input("num_mat");
         $policia->nome = $request->input("nome");
-        $policia->patente = $requeste->inpput('patente');
+        $policia->patente = $request->input('patente');
         $path=$request->file("foto")->store('imagens', 'public');
         $policia->foto = $path;
         $policia->sexo = $request->input('sexo');
