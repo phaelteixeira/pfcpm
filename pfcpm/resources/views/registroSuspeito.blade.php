@@ -13,6 +13,7 @@
             <P style="font-weight: bold;" class="registroSr">RG:<br><p class="registroSrg">{{$suspeito->rg}}</p></P>
             <p style="font-weight: bold;" class="registroSe">ESTADO:<br><p class="registroSestado">{{$suspeito->estado}}</p></p>
             <P style="font-weight: bold;" class="registroSc">CIDADE:<br><p class="registroScidade">{{$suspeito->cidade}}</p></P>
+            <P style="font-weight: bold;" class="registroSu">ENDEREÇO:<br><p class="registropais">{{$suspeito->endereco}}</p></P>
             <P style="font-weight: bold;" class="registroSu">NOMDE DO PAI:<br><p class="registropais">{{$suspeito->nomePai}}</p></P>
             <P style="font-weight: bold;" class="registroSu">NOMDE DA MÃE:<br><p class="registropais">{{$suspeito->nomeMae}}</p></P>
             <P style="font-weight: bold;" class="registroSu">CRIME:<br><p class="registropais">{{$suspeito->crime}}</p></P>
