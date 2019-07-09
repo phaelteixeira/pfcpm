@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Suspeito;
+use App\Crime;
 use Illuminate\Http\Request;
 
 class SuspeitoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +17,8 @@ class SuspeitoController extends Controller
     public function index()
     {
         $suspeito = Suspeito::all();
-        return view('lista_suspeito', compact('suspeito'));
+        $crimes = Crime::all();
+        return view('lista_suspeito', compact('suspeito', 'crimes'));
     }
 
     /**
@@ -54,7 +57,7 @@ class SuspeitoController extends Controller
         $sus->nomeMae = $request->input('nomeMae');
         $sus->obs = $request->input('descri');
         $sus->save();
-        return redirect()->route('suspeitos.index');
+        return redirect()->route('crimes.show', $sus);
     }
 
     /**
@@ -67,6 +70,7 @@ class SuspeitoController extends Controller
     {
         return view('registroSuspeito', compact('suspeito'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
