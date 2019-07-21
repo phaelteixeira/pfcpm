@@ -29,9 +29,6 @@ class CrimeController extends Controller
         
     }
 
-    public function crimeCreate(Suspeito $suspeito)
-    {
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -48,7 +45,7 @@ class CrimeController extends Controller
         $crime->crime    = $request->input('crime');
         $crime->data     = $request->input('data');
         $crime->save();
-        return redirect()->route('crimes.index');
+        return redirect()->route('suspeitos.index',compact('crime'));
     }
 
     /**
@@ -68,9 +65,9 @@ class CrimeController extends Controller
      * @param  \App\Crime  $crime
      * @return \Illuminate\Http\Response
      */
-    public function edit(Crime $crime)
+    public function edit(Suspeito $crime)
     {
-        //
+        return view('registrarCrime', compact('crime'));
     }
 
     /**

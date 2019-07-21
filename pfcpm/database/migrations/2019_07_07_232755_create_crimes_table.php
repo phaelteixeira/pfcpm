@@ -15,12 +15,13 @@ class CreateCrimesTable extends Migration
     {
         Schema::create('crimes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('id_suspeito');
             $table->string('suspeito');
             $table->string('comparsa');
             $table->string('crime');
             $table->string('data');
             $table->timestamps();
+            $table->bigInteger('id_suspeito')->unsigned();
+            $table->foreign('id_suspeito')->references('id')->on('suspeitos');
         });
     }
 

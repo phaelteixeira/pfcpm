@@ -23,7 +23,7 @@
 
         <form action="{{route('suspeitos.destroy', $suspeito)}}" method="POST">
             @csrf
-            <a style= " position:relative; left: 55px; width: 100px; " class = "btn btn-success" href="{{route('suspeitos.edit', $suspeito)}}">Editar</a>
+            <a style= " position:relative; left: 55px; width: 100px; " class = "btn btn-success" href="{{route('crimes.edit', $suspeito)}}">Registrar Crime</a>
             @method('DELETE')
             <button style=" position: relative; left: 58%; width:100px; margin:20px; " type="submit" class = "btn btn-danger">Excluir</button>
         </form> 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Suspeito;
 use App\Crime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SuspeitoController extends Controller
 {
@@ -18,8 +19,10 @@ class SuspeitoController extends Controller
     {
         $suspeito = Suspeito::all();
         $crimes = Crime::all();
-        return view('lista_suspeito', compact('suspeito', 'crimes'));
+        return view('lista_suspeito', compact('suspeito'));
+        
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +51,7 @@ class SuspeitoController extends Controller
         $sus->estado = $request->input('estado');
         $sus->cidade = $request->input('cidade');
         $sus->endereco = $request->input('enderecosus');
-        $sus->crime = $request->input('crime');
+        $sus->quantidadeCrime = '';
         $sus->localAtuacao = $request->input('localAtuacao');
         $sus->dataNascimento = $request->input('dataNascimento');
         $path=$request->file("foto")->store('imagens', 'public');
@@ -100,7 +103,7 @@ class SuspeitoController extends Controller
         $suspeito->estado = $request->input('estado');
         $suspeito->cidade = $request->input('cidade');
         $suspeito->endereco = $request->input('enderecosus');
-        $suspeito->crime = $request->input('crime');
+        $suspeito->quantidadeCrime = '';
         $suspeito->localAtuacao = $request->input('localAtuacao');
         $suspeito->dataNascimento = $request->input('dataNascimento');
         $path=$request->file("foto")->store('imagens', 'public');

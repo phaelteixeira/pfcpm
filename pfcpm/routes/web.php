@@ -46,6 +46,7 @@ Route::resource('login', 'LoginController');
 Route::resource('permutas', 'PermutarController');
 Route::resource('crimes', 'CrimeController');
 Route::get('permuta', 'PermutarController@indexer')->name('index');
+Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
 
 
 Auth::routes();

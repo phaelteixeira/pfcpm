@@ -49,10 +49,6 @@
                 <label for="enderecosus">Endereço:</label>
                 <input type="text" class="form-control" name="enderecosus" id="enderecosus">
             </div>
-            <div class="crimesus">
-                <label for="crimesus">Tipo de Crimes:</label>
-                <input class="form-control" name="crime" id="crimesus">
-            </div>
             <div class="atu">
                 <label for="localAtu">Local de Atuação:</label>
                 <input class="form-control" name="localAtuacao" id="localAtu">

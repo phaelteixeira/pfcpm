@@ -3,7 +3,7 @@
 @section('body')
     <h1>Crimes</h1>
     <form action="{{route('crimes.store')}}" method="POST">
-    @csrf   
+    @csrf
         <div id="div_susp">
             <div class="nomesus">
                 <label for="susp">Suspeito</label>
@@ -22,10 +22,10 @@
             <?php date_default_timezone_set('America/Sao_Paulo'); $now = new DateTime(); $datetime = $now->format('Y-m-d');?>
             <div class="dataprisao">
                 <label for="data">Data da prisão</label>
-                <input class="form-control" name="data" type="text" value="<?=date('d-m-Y')?>">
+                <input type="date" class="form-control" name="data" id="data" value="{{$datetime}}">
             </div>
             <div class="btnsus">
-                <button id="btnsus" type="submit" class="btn btn-primary">Finalizar cadastro</button>
+                <button id="btnsus" type="submit" class="btn btn-primary">Registrar</button>
             </div>
         </div>
     </form>

@@ -23,7 +23,7 @@ class CreateTableSuspeito extends Migration
             $table->string('estado');
             $table->string('cidade');
             $table->string('endereco');
-            $table->string('crime');
+            $table->string('quantidadeCrime');
             $table->string('localAtuacao');
             $table->string('dataNascimento');
             $table->string('foto');
