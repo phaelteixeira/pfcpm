@@ -1,6 +1,6 @@
 #tel{
     position: relative;
-    background-image:linear-gradient( rgba(255,255,255,.7) 0%,rgba(255,255,255,.7) 100%), url("../imgs/PMBA.png");
+    background-image:linear-gradient( rgba(255, 255, 255, 0.770) 0%,rgba(255, 255, 255, 0.770) 100%), url("../imgs/PMBA.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-position-x: top center;
@@ -182,7 +182,7 @@ input#vulgosus{
 
 .fotosus{
     position: relative;
-    top: 30px;
+    top: 20px;
     margin-left: 20px;
 }
 
@@ -197,7 +197,7 @@ input#imp{
 .cpfsus{
     position: absolute;
     margin-left: 20px;
-    top:330px;
+    top:340px;
 }
 
 input#cpfsus{
@@ -206,7 +206,7 @@ input#cpfsus{
 
 .rgsus{
     position: absolute;
-    top: 330px;
+    top: 340px;
     margin-left: 225px;
 }
 
@@ -216,7 +216,7 @@ input#rgsus{
 
 .cidadesus{
     position: relative;
-    top: 208px;
+    top: -7px;
     margin-left: 100px;
     margin-right: 70%;
 }
@@ -227,7 +227,7 @@ input#cidadesus{
 
 .estadosus{
     position: relative;
-    top: 140px;
+    top: 60px;
     margin-right: 94%;
     margin-left: 20px;
 }
@@ -236,9 +236,20 @@ input#estadosus{
     background-color: rgba(0, 0, 0, 0.1)
 }
 
+.enderecosus{
+    position: relative;
+    top: 10px;
+    margin-left: 20px;
+    margin-right: 70%;
+}
+
+#enderecosus{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .crimesus{
     position: relative;
-    top: 150px;
+    top: 20px;
     margin-left: 20px;
     margin-right: 70%;
 }
@@ -249,14 +260,14 @@ input#crimesus{
 
 .datanasc{
     position: relative;
-    top: -142px;
+    top: 110px;
     margin-left: 20px;
     margin-right: 85%;
 }
 
 .sexo{
     position: relative;
-    top: -210px;
+    top: 40px;
     margin-left: 228px;
     margin-right: 85%;
 }
@@ -273,7 +284,7 @@ input#datanasc{
 
 .atu{
     position: relative;
-    top: 160px;
+    top: 30px;
     margin-left: 20px;
     margin-right: 70%;
 }
@@ -360,8 +371,8 @@ input#nomepol{
 
 .sexopol{
     position: relative;
-    top:-30px;
-    margin-left: 228px;
+    top:-60px;
+    margin-left: 230px;
     margin-right: 85%;
 }
 
@@ -369,7 +380,7 @@ input#nomepol{
     position: relative;
     margin-left: 20px;
     margin-right: 1162px;
-    top: 40px;
+    top: 10px;
 }
 
 input#num_mat{
@@ -391,7 +402,7 @@ input#fotopol{
 .cpfpol{
     position: absolute;
     margin-left: 20px;
-    top:350px;
+    top:370px;
 }
 
 input#cpfpol{
@@ -400,7 +411,7 @@ input#cpfpol{
 
 .rgpol{
     position: absolute;
-    top: 350px;
+    top: 370px;
     margin-left: 230px;
 }
 
@@ -410,7 +421,7 @@ input#rgpol{
 
 .cidadepol{
     position: relative;
-    top: 80px;
+    top: -28px;
     margin-left: 8%;
     margin-right: 955px;
 }
@@ -421,16 +432,20 @@ input#cidadepol{
 
 .estadopol{
     position: relative;
-    top: 12px;
+    top: 40px;
     margin-right: 94%;
     margin-left: 20px;
 }
 
 .datanascP{
     position: relative;
-    margin-top: 50px;
+    margin-top: -10px;
     margin-left: 20px;
     margin-right: 85%;
+}
+
+#dataNascimento{
+    background-color: rgba(0, 0, 0, 0.1)
 }
 
 input#estadopol{
@@ -445,7 +460,7 @@ input#estadopol{
 
 .pelotaopol{
     position: absolute;
-    top: 554px;
+    top: 540px;
     margin-right: 68%;
     margin-left: 230px;
 }
@@ -465,9 +480,16 @@ button#btnpol{
 
 .sen{
     position: relative;
-    top: 50px;
+    top: 18px;
     margin-left: 20px;
     margin-right: 85%;
+}
+
+.confirmarsen{
+    position: relative;
+    top: -50px;
+    margin-left: 17%;
+    margin-right: 69.3%;
 }
 
 input#senhap{
@@ -572,9 +594,9 @@ textarea#virtude{
 
 .patente{
     position: relative;
-    margin-top: -18px;
-    margin-left: 17%;
-    margin-right: 69.5%;
+    margin-top: -47px;
+    margin-left: 26%;
+    margin-right: 66%;
 }
 
 .registron{
@@ -589,6 +611,7 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 30%;
     text-align: center;
+    font-size: 13pt;
 }
 
 .registrof{
@@ -608,6 +631,20 @@ textarea#virtude{
     border: #000000 solid 1px;
     margin-left: 20px;
     margin-right: 60%;
+    text-align: center;
+}
+
+.registropa{
+    position: relative;
+    margin-top: -80px;
+    margin-left: 50%;
+}
+
+.registropatente{
+    position: relative;
+    border: #000000 solid 1px;
+    margin-left: 50%;
+    margin-right: 10%;
     text-align: center;
 }
 
@@ -750,13 +787,13 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 10%;
     text-align: center;
+    font-size: 13pt;
 }
 
 .registroSdata{
     position: relative;
     margin-top: -80px;
     margin-left: 20px;
-     
 }
 
 .registrodatan{
@@ -765,6 +802,8 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 60%;
     text-align: center;
+    font-size: 13pt;
+
 }
 
 
@@ -780,6 +819,7 @@ textarea#virtude{
     margin-left: 50%;
     margin-right: 10%;
     text-align: center;
+    font-size: 13pt;
 }
 
 
@@ -795,6 +835,7 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 60%;
     text-align: center;
+    font-size: 13pt;
 }
 
 
@@ -810,6 +851,7 @@ textarea#virtude{
     margin-left: 50%;
     margin-right: 10%;
     text-align: center;
+    font-size: 13pt;
 }
 
 
@@ -825,6 +867,7 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 60%;
     text-align: center;
+    font-size: 13pt;
 }
 
 
@@ -840,6 +883,7 @@ textarea#virtude{
     margin-left: 50%;
     margin-right: 10%;
     text-align: center;
+    font-size: 13pt;
 }
 
 
@@ -855,8 +899,8 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 10%;
     padding-left: 10px;
+    font-size: 13pt;
 }
-
 .registroObs{
     position: relative;
     margin-top: 40px;
@@ -869,6 +913,7 @@ textarea#virtude{
     margin-left: 20px;
     margin-right: 10%;
     padding-left: 10px;
+    font-size: 13pt;
 }
 
 /*TELA PERMUTASUBISTITUTO*/
@@ -877,4 +922,49 @@ textarea#virtude{
     position: relative;
     left: 73%;
     top: -575px;
+}
+
+/*TELA CRIME*/
+
+.comparsa{
+    position: relative;
+    top: 20px;
+    margin-left: 20px;
+    margin-right: 59.6%;
+}
+
+.dataprisao{
+    position: relative;
+    top:30px;
+    margin-left: 20px;
+    margin-right: 85%;  
+}
+
+/*LISTA SUSPEITO*/
+
+.h4nome{
+    position: relative;
+    font-size: 13pt;
+}
+
+.h4vulgo{
+    position: relative;
+    font-size: 13pt;
+    top: -29px;
+    left: 40%;
+}
+
+.h4qtd{
+    position: relative;
+    font-size: 13pt;
+    top: -57px;
+    left: 80%;
+}
+
+li#tabsus{
+    height: 50px;
+}
+
+li#tabela2{
+    height: 50px;
 }

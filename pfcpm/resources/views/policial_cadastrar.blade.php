@@ -11,8 +11,13 @@
             </div>
 
             <div class="fotopol">
-                <label for="fotopol">Foto:</label>
+                <label for="fotopol">Foto:</label><br>
                 <input type="file" name="foto" id="fotopol">
+            </div>
+
+            <div class="patente">
+                <label for="pelotao">Patente:</label>
+                <input type="text" class="form-control" name="patente" id="patente">
             </div>
 
             <div class="mat">
@@ -37,18 +42,18 @@
                 <label for="rgpol">RG:</label>
                 <input class="form-control" name="rg" id="rgpol">
             </div>
-            <div class="cidadepol">
-                <label for="cidadepol">Cidade</label>
-                <input class="form-control" name="cidade" id="cidadepol">
-            </div>
             <div class="estadopol">
                 <label for="estadopol">Estado:</label>
                 <input class="form-control" name="estado" id="estadopol">
             </div>
+            <div class="cidadepol">
+                <label for="cidadepol">Cidade</label>
+                <input class="form-control" name="cidade" id="cidadepol">
+            </div>
 
             <div class="datanascP">
-                <label for="datanasc">Data de Nascimento:</label>
-                <input type="date" class="form-control" name="dataNascimento" id="datanasc">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" class="form-control" name="dataNascimento" id="dataNascimento">
             </div>
 
             <div class="pelotaopol">
@@ -61,12 +66,7 @@
                 <input type="password" class="form-control" name="senha" id="senhap">
             </div>
 
-            <div class="patente">
-                <label for="pelotao">Patente:</label>
-                <input type="password" class="form-control" name="patente" id="patente">
-            </div>
-
-            <div class="sen">
+            <div class="confirmarsen">
                 <label for="senhap">Confirmar Senha:</label>
                 <input type="password" class="form-control" name="Csenha" id="senhap">
             </div>

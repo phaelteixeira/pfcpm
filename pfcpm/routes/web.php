@@ -36,6 +36,7 @@ Route::get('/cad_pol', function () {
 
 
 Auth::routes();
+Route::get('suspeito/{$id}', 'SuspeitoController@crime')->name('viewCrime');
 Route::resource('suspeitos', 'SuspeitoController');
 Route::resource('policial', 'PolicialController');
 Route::resource('inicio', 'HomeController');
@@ -43,7 +44,9 @@ Route::resource('dispensa', 'DispensaController');
 Route::resource('abono', 'AbonoController');
 Route::resource('login', 'LoginController');
 Route::resource('permutas', 'PermutarController');
+Route::resource('crimes', 'CrimeController');
 Route::get('permuta', 'PermutarController@indexer')->name('index');
+Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
 
 
 Auth::routes();

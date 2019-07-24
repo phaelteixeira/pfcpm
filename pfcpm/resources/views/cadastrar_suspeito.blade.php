@@ -14,7 +14,7 @@
                 <input class="form-control" name="vulgo" id="vulgosus"> 
             </div>
             <div class="fotosus">
-                <label for="fotosus">Foto:</label>
+                <label for="fotosus">Foto:</label><br>
                 <input type="file" name="foto" id="fotosus">
             </div>
             <div class="cpfsus">
@@ -24,22 +24,6 @@
             <div class="rgsus">
                 <label for="rgsus">RG:</label>
                 <input class="form-control" name="rg" id="rgsus">
-            </div>
-            <div class="cidadesus">
-                <label for="cidadesus">Cidade:</label>
-                <input class="form-control" name="cidade" id="cidadesus">
-            </div>
-            <div class="estadosus">
-                <label for="estadosus">Estado:</label>
-                <input class="form-control" name="estado" id="cidadesus">
-            </div>
-            <div class="crimesus">
-                <label for="crimesus">Tipo de Crimes:</label>
-                <input class="form-control" name="crime" id="crimesus">
-            </div>
-            <div class="atu">
-                <label for="localAtu">Local de Atuação:</label>
-                <input class="form-control" name="localAtuacao" id="localAtu">
             </div>
             <div class="datanasc">
                 <label for="crimesus">Data de Nascimento:</label>
@@ -53,6 +37,23 @@
                     <option name="sexo">Feminino</option>
                 </select>
             </div>
+            <div class="estadosus">
+                <label for="estadosus">Estado:</label>
+                <input class="form-control" name="estado" id="cidadesus">
+            </div>
+            <div class="cidadesus">
+                <label for="cidadesus">Cidade:</label>
+                <input class="form-control" name="cidade" id="cidadesus">
+            </div>
+            <div class="enderecosus">
+                <label for="enderecosus">Endereço:</label>
+                <input type="text" class="form-control" name="enderecosus" id="enderecosus">
+            </div>
+            <div class="atu">
+                <label for="localAtu">Local de Atuação:</label>
+                <input class="form-control" name="localAtuacao" id="localAtu">
+            </div>
+            
             <div class="pai">
                 <label for="pai">Nome do Pai:</label>
                 <input class="form-control" name="nomePai" id="pai">

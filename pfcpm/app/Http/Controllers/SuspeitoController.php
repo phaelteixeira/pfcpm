@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Suspeito;
+use App\Crime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SuspeitoController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +18,11 @@ class SuspeitoController extends Controller
     public function index()
     {
         $suspeito = Suspeito::all();
+        $crimes = Crime::all();
         return view('lista_suspeito', compact('suspeito'));
+        
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,7 +50,8 @@ class SuspeitoController extends Controller
         $sus->sexo = $request->input('sexo');
         $sus->estado = $request->input('estado');
         $sus->cidade = $request->input('cidade');
-        $sus->crime = $request->input('crime');
+        $sus->endereco = $request->input('enderecosus');
+        $sus->quantidadeCrime = '';
         $sus->localAtuacao = $request->input('localAtuacao');
         $sus->dataNascimento = $request->input('dataNascimento');
         $path=$request->file("foto")->store('imagens', 'public');
@@ -53,7 +60,7 @@ class SuspeitoController extends Controller
         $sus->nomeMae = $request->input('nomeMae');
         $sus->obs = $request->input('descri');
         $sus->save();
-        return redirect()->route('suspeitos.index');
+        return redirect()->route('crimes.show', $sus);
     }
 
     /**
@@ -66,6 +73,7 @@ class SuspeitoController extends Controller
     {
         return view('registroSuspeito', compact('suspeito'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -94,7 +102,8 @@ class SuspeitoController extends Controller
         $suspeito->sexo = $request->input('sexo');
         $suspeito->estado = $request->input('estado');
         $suspeito->cidade = $request->input('cidade');
-        $suspeito->crime = $request->input('crime');
+        $suspeito->endereco = $request->input('enderecosus');
+        $suspeito->quantidadeCrime = '';
         $suspeito->localAtuacao = $request->input('localAtuacao');
         $suspeito->dataNascimento = $request->input('dataNascimento');
         $path=$request->file("foto")->store('imagens', 'public');
