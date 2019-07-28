@@ -32,7 +32,7 @@
                     </span>
                 @endif
             </div>
-            <a href="{{route('policial.create')}}">Cadastrar</a>
+            <a href="/cadastro">Cadastrar</a>
             <div>
                 <button id="btn" type="submit" class="btn btn-primary" >Entrar</button>
             </div>

@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('tela_login');
 })->name('/');
 
+Route::get('/cadastro', function(){
+    return view('cadastro');
+});
+
+
+Route::post('registro', 'Auth\RegisterController@create')->name('create');
+
 
 Route::group(['middleware'=>['auth']], function()
 {
@@ -29,7 +36,6 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('crimes', 'CrimeController');
     Route::get('permuta', 'PermutarController@indexer')->name('index');
     Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
-    Route::post('registro', 'Auth\RegisterController@create')->name('create');
     Route::get('/home', 'HomeController@index')->name('home');
 });
 

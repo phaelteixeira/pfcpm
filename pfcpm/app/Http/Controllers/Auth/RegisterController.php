@@ -78,7 +78,7 @@ class RegisterController extends Controller
             'password'          => bcrypt($request->senha),
         ]);
 
-        return redirect()->route('policial.index');
+        return redirect()->route('/');
         
     }
 
