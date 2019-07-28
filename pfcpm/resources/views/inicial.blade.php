@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 </head>
 <body id="tel">
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav style="border: none" class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">
                 <img src="/imgs/PMBA.png" width="50" height="50" alt="">
             </a>

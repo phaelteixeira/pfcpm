@@ -357,6 +357,11 @@ div#div_pol{
     color: black;
 }
 
+.patenteTela{
+    margin-top: -125px;
+    margin-left: 56%;
+}
+
 .nomepol{
     margin-right: 50%;
     margin-left: 20px;
@@ -364,34 +369,31 @@ div#div_pol{
 }
 
 input#nomepol{
-    position: relative;
     background-color: rgba(0, 0, 0, 0.1);
     background-size: 50px;
 }
 
 .sexopol{
     position: relative;
-    top:-60px;
+    top: 50px;
     margin-left: 230px;
-    margin-right: 85%;
+    margin-right: 10%;
 }
 
 .mat{
     position: relative;
-    margin-left: 20px;
-    margin-right: 1162px;
-    top: 10px;
+    margin-left: 5px;
+    top: 118px;
 }
 
 input#num_mat{
-    position: relative;
     background-color: rgba(0, 0, 0, 0.1);
     background-size: 50px;
 }
 
 .fotopol{
     position: relative;
-    top: 20px;
+    top: 30px;
     margin-left: 20px;
 }
 
@@ -400,9 +402,10 @@ input#fotopol{
 }
 
 .cpfpol{
-    position: absolute;
-    margin-left: 20px;
-    top:370px;
+    flex: auto;
+    position: relative;
+    top: 68px;
+    margin-left: 5px;
 }
 
 input#cpfpol{
@@ -410,9 +413,9 @@ input#cpfpol{
 }
 
 .rgpol{
-    position: absolute;
-    top: 370px;
-    margin-left: 230px;
+    flex: auto;
+    position: relative;
+    margin-left: 220px;
 }
 
 input#rgpol{
@@ -421,7 +424,7 @@ input#rgpol{
 
 .cidadepol{
     position: relative;
-    top: -28px;
+    top: 40px;
     margin-left: 8%;
     margin-right: 955px;
 }
@@ -432,14 +435,14 @@ input#cidadepol{
 
 .estadopol{
     position: relative;
-    top: 40px;
+    top: 110px;
     margin-right: 94%;
     margin-left: 20px;
 }
 
 .datanascP{
     position: relative;
-    margin-top: -10px;
+    top: 70px;
     margin-left: 20px;
     margin-right: 85%;
 }
@@ -460,7 +463,7 @@ input#estadopol{
 
 .pelotaopol{
     position: absolute;
-    top: 540px;
+    top: 618px;
     margin-right: 68%;
     margin-left: 230px;
 }
@@ -480,14 +483,14 @@ button#btnpol{
 
 .sen{
     position: relative;
-    top: 18px;
+    top: 100px;
     margin-left: 20px;
     margin-right: 85%;
 }
 
 .confirmarsen{
     position: relative;
-    top: -50px;
+    top: 33px;
     margin-left: 17%;
     margin-right: 69.3%;
 }

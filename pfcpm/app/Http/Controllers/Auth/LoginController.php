@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Auth;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -25,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -35,5 +39,25 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function login(Request $request)
+    {
+        $credenciais = $this->Validate(request(),[
+            $this->username() => 'required',
+            'password'        => 'required'  
+        ]);
+
+        if(Auth::attempt($credenciais))
+        {
+            return redirect()->route('inicio.create');
+        }else{
+            return redirect()->back()->with('msg',"Acesso negado com estas credenciais");
+        }
+    }
+
+    public function username()
+    {
+        return 'matricula';
     }
 }

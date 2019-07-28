@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,17 +29,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
-
+    protected $redirectTo = '/';
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -46,13 +42,9 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function __construct()
     {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        $this->middleware('guest');
     }
 
     /**
@@ -61,12 +53,50 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+        $validacao = $this->Validator($request->all());
+        if($validacao->fails())
+        {
+            return redirect()->back()
+            ->witherrors($validacao->errors())
+            ->withInput($request->all());
+        }
+
+        \DB::table('users')->insert([
+            'nome'              => $request->nome,
+            'matricula'         => $request->matricula,
+            'foto'              => $request->foto,
+            'patente'           => $request->patente,
+            'dataNascimento'    => $request->dataNascimento,
+            'sexo'              => $request->sexo,
+            'cidade'            => $request->cidade,
+            'estado'            => $request->estado,
+            'pelotao'           => $request->pelotao,
+            'rg'                => $request->rg,
+            'cpf'               => $request->cpf,
+            'password'          => bcrypt($request->senha),
         ]);
+
+        return redirect()->route('policial.index');
+        
+    }
+
+    public function Validator($data)
+    {
+        $regras=['nome'     => 'required',
+        'matricula'         => 'required',
+        'foto'              => 'required',
+        'patente'           => 'required',
+        'dataNascimento'    => 'required',
+        'sexo'              => 'required',
+        'cidade'            => 'required',
+        'estado'            => 'required',
+        'pelotao'           => 'required',
+        'rg'                => 'required',
+        'cpf'               => 'required',
+        'senha'             => 'required',];
+
+        return Validator::make($data, $regras);
     }
 }

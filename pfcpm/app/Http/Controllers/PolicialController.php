@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Policial;
+use App\User;
 use App\Patente;
 use Illuminate\Http\Request;
 
@@ -15,7 +15,7 @@ class PolicialController extends Controller
      */
     public function index()
     {
-        $policial = Policial::all();
+        $policial = User::all();
         return view('lista_policiais', compact('policial'));
     }
 
@@ -38,21 +38,20 @@ class PolicialController extends Controller
      */
     public function store(Request $request)
     {
-        $policia = new Policial();
-        $policia->num_mat = $request->input("num_mat");
-        $policia->nome = $request->input("nome");
-        $policia->patente = $request->input('patente');
-        $path=$request->file("foto")->store('imagens', 'public');
-        $policia->foto = $path;
-        $policia->sexo = $request->input('sexo');
-        $policia->dataNascimento = $request->input('dataNascimento');
-        $policia->cidade = $request->input("cidade");
-        $policia->estado = $request->input("estado");
-        $policia->pelotao = $request->input("pelotao");
-        $policia->rg = $request->input("rg");
-        $policia->cpf = $request->input("cpf");
-        $policia->senha = $request->input("senha");
-        $policia->save();
+        \DB::table('users')->insert([
+            'nome'              => $request->nome,
+            'matricula'         => $request->matricula,
+            'foto'              => $request->foto,
+            'patente'           => $request->patente,
+            'dataNascimento'    => $request->dataNascimento,
+            'sexo'              => $request->sexo,
+            'cidade'            => $request->cidade,
+            'estado'            => $request->estado,
+            'pelotao'           => $request->pelotao,
+            'rg'                => $request->rg,
+            'cpf'               => $request->cpf,
+            'senha'             => $request->senha,
+        ]);
         return redirect()->route('policial.index');
     }
 
@@ -62,7 +61,7 @@ class PolicialController extends Controller
      * @param  \App\Policial  $policial
      * @return \Illuminate\Http\Response
      */
-    public function show(Policial $policial)
+    public function show(User $policial)
     {
         return view('registroPolicial', compact('policial'));
     }
@@ -73,7 +72,7 @@ class PolicialController extends Controller
      * @param  \App\Policial  $policial
      * @return \Illuminate\Http\Response
      */
-    public function edit(Policial $policial)
+    public function edit(User $policial)
     {
         return view('policialeditar', compact('policial'));
     }
@@ -110,7 +109,7 @@ class PolicialController extends Controller
      * @param  \App\Policial  $policial
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Policial $policial)
+    public function destroy(User $policial)
     {
         $policial->delete();
         return redirect()->route('policial.index');

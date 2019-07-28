@@ -4,18 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePolicialsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * 
      * @return void
      */
     public function up()
     {
-        Schema::create('policials', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('num_mat');
+            $table->string('matricula')->unique();
             $table->string('nome');
             $table->string('foto');
             $table->string('patente');
@@ -26,7 +26,8 @@ class CreatePolicialsTable extends Migration
             $table->string('pelotao');
             $table->string('rg');
             $table->string('cpf');
-            $table->string('senha');
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -38,6 +39,6 @@ class CreatePolicialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('policials');
+        Schema::dropIfExists('users');
     }
 }
