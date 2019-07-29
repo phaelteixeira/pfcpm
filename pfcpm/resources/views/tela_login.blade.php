@@ -12,16 +12,27 @@
     <div id="divexterna">
         <img id="img" src="/imgs/PMBA.png" width="100" height="100" alt="">
         <h1>Login</h1>
-        <form action="{{route('login.create')}}" method="GET"> 
-            <div >   
-            @csrf   
+        <form action="{{route('login')}}" method="post"> 
+            {{csrf_field()}}
+            <div class="{{ $errors->has('matricula') ? 'has->error' : '' }}">   
                 <label id= "label" for="matricula">Nº da matrícula</label>
-                <input type="text" name="matricula" id="matricula" class="form-control" size=20 >
+                <input name="matricula" id="matricula" class="form-control" size=20 >
+                @if($errors->has('matricula'))
+                    <span class="help-block">
+                        {{ $errors->first('matricula') }}
+                    </span>
+                @endif
             </div>
-            <div>
+            <div class=" {{ $errors->has('senha') ? 'has-error' : '' }} " >
                 <label id= "label" for="senha">Senha</label>
-                <input id="s" type="password" name="senha" id="senha" class="form-control" size=20 > 
+                <input  type="password" name="password" id="senha" class="form-control" size=20 > 
+                @if( $errors->has('password') )
+                    <span class=" help-block " >
+                        {{ $errors->first('password') }}
+                    </span>
+                @endif
             </div>
+            <a href="/cadastro">Cadastrar</a>
             <div>
                 <button id="btn" type="submit" class="btn btn-primary" >Entrar</button>
             </div>

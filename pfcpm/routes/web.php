@@ -13,42 +13,33 @@
 
 Route::get('/', function () {
     return view('tela_login');
-});
+})->name('/');
 
-Route::get('inicial', function(){
-    return view('inicial');
-});
-
-Route::get('/menu', function(){
-    return view('menu_principal');
-});
-
-Route::get('sus', function(){
-    return view('cadastrar_suspeito');
+Route::get('/cadastro', function(){
+    return view('cadastro');
 });
 
 
+Route::post('registro', 'Auth\RegisterController@create')->name('create');
 
-Route::get('/cad_pol', function () {
-    return view('policial_cadastrar');
+
+Route::group(['middleware'=>['auth']], function()
+{
+    Route::get('suspeito/{$id}', 'SuspeitoController@crime')->name('viewCrime');
+    Route::resource('suspeitos', 'SuspeitoController');
+    Route::resource('policial', 'PolicialController');
+    Route::resource('inicio', 'HomeController');
+    Route::resource('dispensa', 'DispensaController');
+    Route::resource('abono', 'AbonoController');
+    Route::resource('login', 'LoginController');
+    Route::resource('permutas', 'PermutarController');
+    Route::resource('crimes', 'CrimeController');
+    Route::get('permuta', 'PermutarController@indexer')->name('index');
+    Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
+    Route::get('/home', 'HomeController@index')->name('home');
 });
 
 
 
 Auth::routes();
-Route::get('suspeito/{$id}', 'SuspeitoController@crime')->name('viewCrime');
-Route::resource('suspeitos', 'SuspeitoController');
-Route::resource('policial', 'PolicialController');
-Route::resource('inicio', 'HomeController');
-Route::resource('dispensa', 'DispensaController');
-Route::resource('abono', 'AbonoController');
-Route::resource('login', 'LoginController');
-Route::resource('permutas', 'PermutarController');
-Route::resource('crimes', 'CrimeController');
-Route::get('permuta', 'PermutarController@indexer')->name('index');
-Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
 
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

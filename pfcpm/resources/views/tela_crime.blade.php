@@ -21,8 +21,7 @@
             
             <?php date_default_timezone_set('America/Sao_Paulo'); $now = new DateTime(); $datetime = $now->format('Y-m-d');?>
             <div class="dataprisao">
-                <label for="data">Data da prisão</label>
-                <input class="form-control" name="data" type="text" value="<?=date('d-m-Y')?>">
+                <input class="form-control" name="data" type="hidden" value="{{$datetime}}">
             </div>
             <div class="btnsus">
                 <button id="btnsus" type="submit" class="btn btn-primary">Finalizar cadastro</button>
