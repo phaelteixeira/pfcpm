@@ -42,12 +42,12 @@
             <div class="solicitante">
                 <div class="escalado">
                     <label for="escalado">Eu: </label>
-                    <input id="imp" type="text" class="form-control" name="nomesub" id="nome" size=30>
+                    <input id="imp" type="text" class="form-control" value=" {{ Auth::User()->nome }} " name="nomesub" id="nome" size=30>
                 </div>
 
                 <div class="escalado">
                     <label for="escalado">Matricula: </label>
-                    <input id="imp" type="text" class="form-control" name="matriculasub" id="matricula" size=30>
+                    <input id="imp" type="text" class="form-control" name="matriculasub" value=" {{ Auth::User()->matricula }} " id="matricula" size=30>
                 </div>
 
                 <div class="escalado">

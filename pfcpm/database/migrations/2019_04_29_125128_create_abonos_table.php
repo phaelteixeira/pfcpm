@@ -14,7 +14,15 @@ class CreateAbonosTable extends Migration
     public function up()
     {
         Schema::create('abonos', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('nome');
+            $table->integer('num_mat');
+            $table->string('substituto');
+            $table->integer('mat_sub');
+            $table->string('servico');
+            $table->string('funcao');
+            $table->date('data');
+            $table->time('horario');
             $table->timestamps();
         });
     }

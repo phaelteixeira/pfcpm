@@ -8,12 +8,12 @@
 
             <div class="escalado">
                 <label for="escalado">Eu: </label>
-                <input id="imp" type="text" class="form-control" name="nome" id="nome" size=30>
+                <input id="imp" type="text" class="form-control" value="{{ Auth::User()->nome }}" name="nome" id="nome" size=30>
             </div>
 
             <div class="escalado">
                 <label for="escalado">Matricula: </label>
-                <input id="imp" type="text" class="form-control" name="matricula" id="matricula" size=30>
+                <input id="imp" type="text" class="form-control" value=" {{ Auth::User()->matricula }} " name="matricula" id="matricula" size=30>
             </div>
 
             <div class="escalado">

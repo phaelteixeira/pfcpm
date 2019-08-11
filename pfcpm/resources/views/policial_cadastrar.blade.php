@@ -17,7 +17,7 @@
 
             <div class="fotopol {{ $errors->has('foto') ? 'has->error' : '' }} ">
                 <label for="fotopol">Foto:</label><br>
-                <input type="file" name="foto" id="fotopol" value="{{ old('foto') }}">
+                <input type="file" name="foto" id="fotopol" value="{{ old('foto') }}"><br>
                 @if($errors->has('foto'))
                     <span class="help-block">
                         {{ $errors->first('foto') }}
@@ -25,9 +25,22 @@
                 @endif
             </div>
 
-            <div class="patenteTela col-sm-1 {{ $errors->has('patente') ? 'has-error' : '' }}">
+            <div class="patenteTela  {{ $errors->has('patente') ? 'has-error' : '' }}">
                 <label for="pelotao">Patente:</label>
-                <input type="text" class="form-control" name="patente" value="{{ old('patente') }}" id="patente">
+                <select name="patente" id="patente">
+                    <option disabled selected>---SELECIONE PATENTE---</option>
+                    <option  id="postos" disabled>======POSTOS======</option>
+                    <option name="patente">Coronel</option>
+                    <option name="patente">Tenente-Coronel</option>
+                    <option name="patente">Major</option>
+                    <option name="patente">Capitão</option>
+                    <option name="patente">1º Tenete</option>
+                    <option id="graduacao" disabled >====GRADUAÇÕES====</option>
+                    <option name="patente">Subtenente</option>
+                    <option name="patente">Sargento</option>
+                    <option name="patente">Cabo</option>
+                    <option name="patente">Soldado 1ª Classe</option>
+                </select>
                 @if($errors->has('patente'))
                     <span class="help-block">
                         {{ $errors->first('patente') }}
@@ -37,7 +50,7 @@
 
             <div class="mat col-sm-2 {{ $errors->has('matricula') ? 'has-error' : '' }}">
                 <label for="matricula">Número de matrícula:</label>
-                <input class="form-control" name="matricula" value="{{ old('matricula') }}" id="matricula" size=30>
+                <input class="form-control" name="matricula" value="{{ old('matricula') }}" id="num_mat" size=30>
                 @if($errors->has('matricula'))
                     <span class="help-block">
                         {{ $errors->first('matricula') }}
@@ -47,11 +60,11 @@
 
             <div class="sexopol {{ $errors->has('sexo') ? 'has-error' : '' }} ">
                 <label for="sexo">Sexo:</label><br>
-                <select id="sex" name="sexo">
-                    <option >-------</option>
+                <select id="sex" value="{{old('sexo')}}" name="sexo">
+                    <option value="{{''}}" >-------</option>
                     <option name="sexo">Masculino</option>
                     <option name="sexo">Feminino</option>
-                </select>
+                </select><br>
                 @if($errors->has('sexo'))
                     <span class="help-block">
                         {{ $errors->first('sexo') }}
@@ -126,12 +139,12 @@
                 @endif
             </div>
 
-            <div class="confirmarsen {{ $errors->has('senha') ? 'has-error' : '' }} " >
-                <label for="senha">Confirmar Senha:</label>
-                <input type="password" class="form-control" name="senha" id="senhap">
-                @if($errors->has('senha'))
+            <div class="confirmarsen {{ $errors->has('senhaConfirma') ? 'has-error' : '' }} " >
+                <label for="senhaConfirma">Confirmar Senha:</label>
+                <input type="password" class="form-control" name="senhaConfirma" id="senhap">
+                @if($errors->has('senhaConfirma'))
                     <span class="help-block" >
-                        {{ $errors->first('senha') }}
+                        {{ $errors->first('senhaConfirma') }}
                     </span>
                 @endif
             </div>

@@ -59,7 +59,7 @@ class RegisterController extends Controller
         if($validacao->fails())
         {
             return redirect()->back()
-            ->witherrors($validacao->errors())
+            ->withErrors($validacao->errors())
             ->withInput($request->all());
         }
 
@@ -95,7 +95,8 @@ class RegisterController extends Controller
         'pelotao'           => 'required',
         'rg'                => 'required',
         'cpf'               => 'required',
-        'senha'             => 'required',];
+        'senha'             => 'required',
+        'senhaConfirma'     => 'required | same:senha',];
 
         return Validator::make($data, $regras);
     }

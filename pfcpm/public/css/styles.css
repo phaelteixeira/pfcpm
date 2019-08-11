@@ -1,12 +1,4 @@
-#tel{
-    position: relative;
-    background-image:linear-gradient( rgba(255, 255, 255, 0.770) 0%,rgba(255, 255, 255, 0.770) 100%), url("../imgs/PMBA.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-position-x: top center;
-    background-attachment: fixed;
-    
-}
+
 
 .img2{
     position: relative;
@@ -358,11 +350,31 @@ div#div_pol{
 }
 
 .patenteTela{
-    margin-top: -125px;
-    margin-left: 56%;
+    flex: auto;
+    position:  relative;
+    top: -15px;
+    left: 27%;
+    width: 150px;
+}
+
+select#patente{
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+option#postos{
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+option#graduacao{
+    font-size: 12pt;
+    font-weight: bold;
 }
 
 .nomepol{
+    flex: auto;
     margin-right: 50%;
     margin-left: 20px;
     margin-top: 5px;
@@ -374,16 +386,17 @@ input#nomepol{
 }
 
 .sexopol{
+    flex: auto;
     position: relative;
-    top: 50px;
-    margin-left: 230px;
-    margin-right: 10%;
+    top: -40px;
+    left: 19%;
 }
 
 .mat{
+    flex: auto;
     position: relative;
-    margin-left: 5px;
-    top: 118px;
+    left: 5px;
+    top: 28px;
 }
 
 input#num_mat{
@@ -392,9 +405,10 @@ input#num_mat{
 }
 
 .fotopol{
+    flex: auto;
     position: relative;
-    top: 30px;
-    margin-left: 20px;
+    top: 50px;
+    left: 20px;
 }
 
 input#fotopol{
@@ -404,8 +418,8 @@ input#fotopol{
 .cpfpol{
     flex: auto;
     position: relative;
-    top: 68px;
-    margin-left: 5px;
+    top: 10px;
+    left: 5px;
 }
 
 input#cpfpol{
@@ -415,7 +429,8 @@ input#cpfpol{
 .rgpol{
     flex: auto;
     position: relative;
-    margin-left: 220px;
+    top: -58px;
+    left: 18%;
 }
 
 input#rgpol{
@@ -423,10 +438,11 @@ input#rgpol{
 }
 
 .cidadepol{
+    flex: auto;
     position: relative;
-    top: 40px;
-    margin-left: 8%;
-    margin-right: 955px;
+    top: -80px;
+    left: 11%;
+    width: 300px;
 }
 
 input#cidadepol{
@@ -434,17 +450,19 @@ input#cidadepol{
 }
 
 .estadopol{
+    flex: auto;
     position: relative;
-    top: 110px;
-    margin-right: 94%;
-    margin-left: 20px;
+    top: -12px;
+    left: 20px;
+    width:80px;
 }
 
 .datanascP{
+    flex: auto;
     position: relative;
-    top: 70px;
-    margin-left: 20px;
-    margin-right: 85%;
+    top: -20px;
+    left: 20px;
+    width: 150px;
 }
 
 #dataNascimento{
@@ -462,10 +480,11 @@ input#estadopol{
 }
 
 .pelotaopol{
-    position: absolute;
-    top: 618px;
-    margin-right: 68%;
-    margin-left: 230px;
+    flex: auto;
+    position: relative;
+    top: -88px;
+    left: 230px;
+    width: 200px;
 }
 
 input#pelotao{
@@ -482,17 +501,18 @@ button#btnpol{
 }
 
 .sen{
+    flex: auto;
     position: relative;
-    top: 100px;
-    margin-left: 20px;
-    margin-right: 85%;
+    top: -22px;
+    left: 20px;
+    width: 200px;
 }
 
 .confirmarsen{
     position: relative;
-    top: 33px;
-    margin-left: 17%;
-    margin-right: 69.3%;
+    top: -90px;
+    left: 19%;
+    width: 200px;
 }
 
 input#senhap{
