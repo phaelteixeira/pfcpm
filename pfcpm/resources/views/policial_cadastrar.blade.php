@@ -9,17 +9,17 @@
                 <label for="nomepol">Nome Completo:</label>
                 <input class="form-control" name="nome" value="{{old('nome')}}" id="nomepol" size=30>
                 @if($errors->has('nome'))
-                    <span class="help->block">
+                    <span style="color: red" class="help->block">
                         {{$errors->first('nome')}}
                     </span>
                 @endif
             </div>
 
-            <div class="fotopol {{ $errors->has('foto') ? 'has->error' : '' }} ">
+            <div class="fotopol {{ $errors->has('foto') ? 'has-error' : '' }} ">
                 <label for="fotopol">Foto:</label><br>
                 <input type="file" name="foto" id="fotopol" value="{{ old('foto') }}"><br>
                 @if($errors->has('foto'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('foto') }}
                     </span>
                 @endif
@@ -42,7 +42,7 @@
                     <option name="patente">Soldado 1ª Classe</option>
                 </select>
                 @if($errors->has('patente'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('patente') }}
                     </span>
                 @endif
@@ -52,7 +52,7 @@
                 <label for="matricula">Número de matrícula:</label>
                 <input class="form-control" name="matricula" value="{{ old('matricula') }}" id="num_mat" size=30>
                 @if($errors->has('matricula'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('matricula') }}
                     </span>
                 @endif
@@ -66,7 +66,7 @@
                     <option name="sexo">Feminino</option>
                 </select><br>
                 @if($errors->has('sexo'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('sexo') }}
                     </span>
                 @endif
@@ -76,7 +76,7 @@
                 <label for="cpfpol">CPF:</label>
                 <input class="form-control" name="cpf" id="cpfpol" value="{{ old('cpf') }}" >
                 @if($errors->has('cpf'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('cpf') }}
                     </span>
                 @endif
@@ -85,7 +85,7 @@
                 <label for="rgpol">RG:</label>
                 <input class="form-control" name="rg" id="rgpol" value="{{ old('rg') }}" >
                 @if($errors->has('rg'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('rg') }}
                     </span>
                 @endif
@@ -94,7 +94,7 @@
                 <label for="estadopol">Estado:</label>
                 <input class="form-control" name="estado" id="estadopol" value="{{ old('estado') }}" >
                 @if($errors->has('estado'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('estado') }}
                     </span>
                 @endif
@@ -103,7 +103,7 @@
                 <label for="cidadepol">Cidade</label>
                 <input class="form-control" name="cidade" id="cidadepol" value="{{ old('cidade') }}" >
                 @if($errors->has('cidade'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('cidade') }}
                     </span>
                 @endif
@@ -113,7 +113,7 @@
                 <label for="dataNascimento">Data de Nascimento:</label>
                 <input type="date" class="form-control" name="dataNascimento" value="{{ old('dataNascimento') }}" id="dataNascimento">
                 @if($errors->has('dataNascimento'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('dataNascimento') }}
                     </span>
                 @endif
@@ -123,7 +123,7 @@
                 <label for="pelotao">Unidade:</label>
                 <input class="form-control" name="pelotao" id="pelotao" value="{{ old('pelotao') }}" >
                 @if($errors->has('pelotao'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('pelotao') }}
                     </span>
                 @endif
@@ -133,7 +133,7 @@
                 <label for="senhap">Senha:</label>
                 <input type="password" class="form-control" name="senha" id="senhap">
                 @if($errors->has('senha'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('senha') }}
                     </span>
                 @endif
@@ -143,7 +143,7 @@
                 <label for="senhaConfirma">Confirmar Senha:</label>
                 <input type="password" class="form-control" name="senhaConfirma" id="senhap">
                 @if($errors->has('senhaConfirma'))
-                    <span class="help-block" >
+                    <span style="color: red" class="help-block" >
                         {{ $errors->first('senhaConfirma') }}
                     </span>
                 @endif

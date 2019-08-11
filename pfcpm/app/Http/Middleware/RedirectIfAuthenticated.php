@@ -36,7 +36,7 @@ class RedirectIfAuthenticated
     {
         $regras=[
             'nome'              => 'required',
-            'matricula'         => 'required | unique:Users,',
+            'matricula'         => 'required ',
             'foto'              => 'required',
             'patente'           => 'required',
             'dataNascimento'    => 'required',

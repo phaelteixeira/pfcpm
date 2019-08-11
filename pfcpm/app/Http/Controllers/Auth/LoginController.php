@@ -50,7 +50,14 @@ class LoginController extends Controller
 
         if(Auth::attempt($credenciais))
         {
-            return redirect()->route('inicio.create');
+            if(Auth::User()->patente == 'Soldado 1ª Classe')
+            {
+                return view('inicial_policial');
+            }
+            else
+            {
+                return view('inicial');
+            }
         }else{
             return redirect()->back()->with('msg',"Acesso negado com estas credenciais");
         }

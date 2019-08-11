@@ -187,9 +187,10 @@ input#imp{
 }
 
 .cpfsus{
-    position: absolute;
-    margin-left: 20px;
-    top:340px;
+    position: relative;
+    left: 20px;
+    top:40px;
+    width: 200px;
 }
 
 input#cpfsus{
@@ -197,9 +198,10 @@ input#cpfsus{
 }
 
 .rgsus{
-    position: absolute;
-    top: 340px;
-    margin-left: 225px;
+    position: relative;
+    top: 70px;
+    width: 200px;
+    left: 20px;
 }
 
 input#rgsus{
@@ -260,8 +262,8 @@ input#crimesus{
 .sexo{
     position: relative;
     top: 40px;
-    margin-left: 228px;
-    margin-right: 85%;
+    left: 228px;
+    width: 100px ;
 }
 
 select#sex{
@@ -308,7 +310,7 @@ input#pai{
 }
 
 .btnsus{
-    position: absolute;
+    position: relative;
     left: 83%;
     margin: 20px;
     top: 100%;
@@ -330,8 +332,6 @@ table#tbsus{
     position: relative;
     top: 60px;
     margin-left: 20px;
-    margin-right: 90%;
-    width: 20px;
     word-wrap: break-word ;
 }
 
