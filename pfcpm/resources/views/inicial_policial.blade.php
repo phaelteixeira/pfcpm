@@ -37,8 +37,6 @@
                             Listas
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-                            <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('permutas.index')}}">Permutas Solicitadas</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('index')}}">Permutas Aceitas</a>
@@ -46,7 +44,7 @@
                     </li>         
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Usuário <span class="caret"></span>
+                        {{Auth::User()->nome}} <span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

@@ -1,4 +1,9 @@
-@extends('inicial')
+@if(Auth::User()->patente == 'Soldado 1ª Classe')
+    @extends('inicial_policial');
+@endif
+@if(Auth::User()->patente != 'Soldado 1ª Classe')
+    @extends('inicial');
+@endif
 
 @section('body')
     <form action="{{route('permuta.index')}}" >

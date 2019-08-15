@@ -21,6 +21,7 @@ Route::get('/cadastro', function(){
 
 
 Route::post('registro', 'Auth\RegisterController@create')->name('create');
+Route::post('registro', 'Auth\RegisterController@registrar')->name('registrar');
 
 
 Route::group(['middleware'=>['auth']], function()

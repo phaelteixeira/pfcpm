@@ -59,7 +59,7 @@ class SuspeitoController extends Controller
             $sus->rg = $request->input('rg');
             $sus->sexo = $request->input('sexo');
             $sus->estado = $request->input('estado');
-            $sus->cidade = $request->input('cidade');
+            $sus->cidade = $request->input('cidadesus');
             $sus->endereco = $request->input('enderecosus');
             $sus->quantidadeCrime = '';
             $sus->localAtuacao = $request->input('localAtuacao');
@@ -112,7 +112,7 @@ class SuspeitoController extends Controller
         $suspeito->rg = $request->input('rg');
         $suspeito->sexo = $request->input('sexo');
         $suspeito->estado = $request->input('estado');
-        $suspeito->cidade = $request->input('cidade');
+        $suspeito->cidade = $request->input('cidadesus');
         $suspeito->endereco = $request->input('enderecosus');
         $suspeito->quantidadeCrime = '';
         $suspeito->localAtuacao = $request->input('localAtuacao');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Login;
+use Auth;   
 
 use Illuminate\Http\Request;
 
@@ -26,7 +27,15 @@ class HomeController extends Controller
 
     public function create()
     {
-        return view('inicial');
+        if(Auth::User()->patente == 'Soldado 1ª Classe')
+        {
+            return view('inicial_policial');
+        }
+        else
+        {
+            return view('inicial');
+        }
+            
     }
 
     public function store (Request $request)

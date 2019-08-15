@@ -74,7 +74,7 @@
             </div>
             <div class="estadosus {{$errors->has('estado') ? 'has-error' : '' }} ">
                 <label for="estadosus">Estado:</label>
-                <input class="form-control" name="estado" id="cidadesus" values=" {{old('estado')}} ">
+                <input class="form-control" name="estado" id="cidadesus" value=" {{old('estado')}} ">
                 @if($errors->has('estado'))
                     <span style="color: red" class="help-block">
                         {{$errors->first('estado')}}
@@ -83,7 +83,7 @@
             </div>
             <div class="cidadesus {{$errors->has('cidadesus') ? 'has-error' : ''}} ">
                 <label for="cidadesus">Cidade:</label>
-                <input class="form-control" name="cidade" id="cidadesus" values="{{old('cidadesus')}}" >
+                <input class="form-control" name="cidadesus" id="cidadesus" value="{{old('cidadesus')}}" >
                 @if($errors->has('cidadesus'))
                     <span style="color: red" class="help-block">
                         {{$errors->first('cidadesus')}}

@@ -78,8 +78,35 @@ class RegisterController extends Controller
             'password'          => bcrypt($request->senha),
         ]);
 
-        return redirect()->route('/');
+        return redirect()->route('inicio.create');
         
+    }
+
+    protected function registrar(Request $request)
+    {
+        $validacao = $this->Validator($request->all());
+        if($validacao->fails())
+        {
+            return redirect()->back()
+            ->withErrors($validacao->errors())
+            ->withInput($request->all());
+        }
+
+        \DB::table('users')->insert([
+            'nome'              => $request->nome,
+            'matricula'         => $request->matricula,
+            'foto'              => $request->foto,
+            'patente'           => $request->patente,
+            'dataNascimento'    => $request->dataNascimento,
+            'sexo'              => $request->sexo,
+            'cidade'            => $request->cidade,
+            'estado'            => $request->estado,
+            'pelotao'           => $request->pelotao,
+            'rg'                => $request->rg,
+            'cpf'               => $request->cpf,
+            'password'          => bcrypt($request->senha),
+        ]);
+        return redirect()->route('inicio.index');
     }
 
     public function Validator($data)
