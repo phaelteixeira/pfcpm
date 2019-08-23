@@ -45,7 +45,11 @@ class LoginController extends Controller
     {
         $credenciais = $this->Validate(request(),[
             $this->username() => 'required',
-            'password'        => 'required'  
+            'password'        => 'required',  
+        ],
+        [
+            'required'              => 'Campo :attribute Obrigatório',
+            'password.required'     => 'Campo Senha é Obrigatório'
         ]);
 
         if(Auth::attempt($credenciais))
@@ -59,7 +63,7 @@ class LoginController extends Controller
                 return view('inicial');
             }
         }else{
-            return redirect()->back()->with('msg',"Acesso negado com estas credenciais");
+            return redirect()->back()->with('msg',"Matrícula ou Senha incorreta");
         }
     }
 

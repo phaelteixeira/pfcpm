@@ -9,7 +9,7 @@
     <title>Cadastro</title>
 </head>
 <body>
-    <form action="{{route('registrar')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('registro')}}" method="post" enctype="multipart/form-data">
         <h1>Cadastro Policial</h1>
         @csrf
         <div id="div_pol">

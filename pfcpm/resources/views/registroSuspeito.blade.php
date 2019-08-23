@@ -16,16 +16,16 @@
             <P style="font-weight: bold;" class="registroSu">ENDEREÇO:<br><p class="registropais">{{$suspeito->endereco}}</p></P>
             <P style="font-weight: bold;" class="registroSu">NOMDE DO PAI:<br><p class="registropais">{{$suspeito->nomePai}}</p></P>
             <P style="font-weight: bold;" class="registroSu">NOMDE DA MÃE:<br><p class="registropais">{{$suspeito->nomeMae}}</p></P>
-            <P style="font-weight: bold;" class="registroSu">CRIME:<br><p class="registropais">{{$suspeito->crime}}</p></P>
             <P style="font-weight: bold;" class="registroSu">LOCAL DE ATUAÇÃO:<br><p class="registropais">{{$suspeito->localAtuacao}}</p></P>
             <P style="font-weight: bold;" class="registroObs">OBSERVAÇÕES RELACIONADAS AO SUSPEITO:<br><p class="registroObss">{{$suspeito->obs}}</p></P>
         </div>
 
         <form action="{{route('suspeitos.destroy', $suspeito)}}" method="POST">
             @csrf
-            <a style= " position:relative; left: 55px; width: 100px; " class = "btn btn-success" href="{{route('crimes.edit', $suspeito)}}">Registrar Crime</a>
+            <a style= " position:relative; left: 55px; width: 150px; " class = "btn btn-success" href="{{route('registrar', $suspeito)}}">Registrar Crime</a>
+            <a style= " position:relative; left: 110px; width: 150px; " class = "btn btn-success" href="{{route('crimes', $suspeito)}}">Visualizar Crimes</a>
             @method('DELETE')
-            <button style=" position: relative; left: 58%; width:100px; margin:20px; " type="submit" class = "btn btn-danger">Excluir</button>
+            <button style=" position: relative; left: 20%; width:150px; margin:20px; " type="submit" class = "btn btn-danger">Excluir Registro</button>
         </form> 
     </div>
 @endsection('body')

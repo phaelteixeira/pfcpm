@@ -85,6 +85,12 @@ class SuspeitoController extends Controller
         return view('registroSuspeito', compact('suspeito'));
     }
 
+    public function Listacrimes($crime)
+    {
+        $crimes = Crime::all();
+        return view('lista_Crime', compact('crime', 'crimes'));
+    }
+
 
     /**
      * Show the form for editing the specified resource.

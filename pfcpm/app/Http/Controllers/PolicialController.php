@@ -84,11 +84,10 @@ class PolicialController extends Controller
      * @param  \App\Policial  $policial
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Policial $policial)
+    public function update(Request $request, User $policial)
     {
-        $policial->num_mat = $request->input("num_mat");
         $policial->nome = $request->input("nome");
-        $policial->patente = $requeste->inpput('patente');
+        $policial->patente = $request->input('patente');
         $path=$request->file("foto")->store('imagens', 'public');
         $policial->foto = $path;
         $policial->sexo = $request->input('sexo');
@@ -98,7 +97,7 @@ class PolicialController extends Controller
         $policial->pelotao = $request->input("pelotao");
         $policial->rg = $request->input("rg");
         $policial->cpf = $request->input("cpf");
-        $policial->senha = $request->input("senha");
+        $policial->password = bcrypt($request->input("senha"));
         $policial->save();
         return redirect()->route('policial.index');
     }

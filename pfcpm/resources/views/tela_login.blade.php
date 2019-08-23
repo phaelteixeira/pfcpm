@@ -12,13 +12,16 @@
     <div id="divexterna">
         <img id="img" src="/imgs/PMBA.png" width="100" height="100" alt="">
         <h1>Login</h1>
+        @if(session('msg'))
+            <div class="alert alert-danger">{{session('msg')}}</div>
+        @endif
         <form action="{{route('login')}}" method="post"> 
             {{csrf_field()}}
             <div class="{{ $errors->has('matricula') ? 'has->error' : '' }}">   
                 <label id= "label" for="matricula">Nº da matrícula</label>
                 <input name="matricula" id="matricula" class="form-control" size=20 >
                 @if($errors->has('matricula'))
-                    <span class="help-block">
+                    <span style="color: red" class="help-block">
                         {{ $errors->first('matricula') }}
                     </span>
                 @endif
@@ -27,7 +30,7 @@
                 <label id= "label" for="senha">Senha</label>
                 <input  type="password" name="password" id="senha" class="form-control" size=20 > 
                 @if( $errors->has('password') )
-                    <span class=" help-block " >
+                    <span style="color: red" class=" help-block " >
                         {{ $errors->first('password') }}
                     </span>
                 @endif

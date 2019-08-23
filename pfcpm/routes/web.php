@@ -20,13 +20,12 @@ Route::get('/cadastro', function(){
 });
 
 
-Route::post('registro', 'Auth\RegisterController@create')->name('create');
-Route::post('registro', 'Auth\RegisterController@registrar')->name('registrar');
+Route::post('cadastro', 'Auth\RegisterController@create')->name('create');
+Route::post('registro', 'Auth\RegisterController@registrar')->name('registro');
 
 
 Route::group(['middleware'=>['auth']], function()
 {
-    Route::get('suspeito/{$id}', 'SuspeitoController@crime')->name('viewCrime');
     Route::resource('suspeitos', 'SuspeitoController');
     Route::resource('policial', 'PolicialController');
     Route::resource('inicio', 'HomeController');
@@ -36,8 +35,9 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('permutas', 'PermutarController');
     Route::resource('crimes', 'CrimeController');
     Route::get('permuta', 'PermutarController@indexer')->name('index');
-    Route::get('crime/{$id}', 'CrimeController@crime')->name('viewCrime');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
+    Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
 });
 
 
