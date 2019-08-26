@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Permutar;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PermutarController extends Controller
 {
@@ -44,23 +45,31 @@ class PermutarController extends Controller
      */
     public function store(Request $request)
     {
-        $permutas = new Permutar();
-        $permutas->nome = $request->input('nome');
-        $permutas->matricula = $request->input('matricula');
-        $permutas->local = $request->input('local');
-        $permutas->dia_do_servico = $request->input('dia');
-        $permutas->hora_inicial = $request->input('das');
-        $permutas->hora_final = $request->input('as');
-        $permutas->escalado = "";
-        $permutas->escaladoMatricula = "";
-        $permutas->escaladoLocal = "";
-        $permutas->escaladoDia_do_servico = "";
-        $permutas->escaladoHora_inicial = "";
-        $permutas->escaladoHora_final = "";
-        $permutas->virtude = $request->input('virtude');
-        $permutas->status = "Espera";
-        $permutas->save();
-        return redirect()->route('permutas.index');
+        $validacao = $this->validator($request->all());
+        if($validacao->fails()){
+            return redirect()->back()
+            ->witherrors($validacao->errors())
+            ->withInput($request->all());
+        }else{
+            $permutas = new Permutar();
+            $permutas->nome = $request->input('nome');
+            $permutas->matricula = $request->input('matricula');
+            $permutas->local = $request->input('local');
+            $permutas->dia_do_servico = $request->input('dia');
+            $permutas->hora_inicial = $request->input('das');
+            $permutas->hora_final = $request->input('as');
+            $permutas->escalado = "";
+            $permutas->escaladoMatricula = "";
+            $permutas->escaladoLocal = "";
+            $permutas->escaladoDia_do_servico = "";
+            $permutas->escaladoHora_inicial = "";
+            $permutas->escaladoHora_final = "";
+            $permutas->virtude = $request->input('virtude');
+            $permutas->status = "Espera";
+            $permutas->save();
+            return redirect()->route('permutas.index');
+        }
+        
     }
 
     /**
@@ -128,5 +137,30 @@ class PermutarController extends Controller
     public function destroy(Permutar $permuta)
     {
         //
+    }
+
+    public function Validator($date)
+    {
+        $regras = [
+            'nome'              => 'required',
+            'matricula'         => 'required',
+            'local'             => 'required',
+            'dia'               => 'required',
+            'das'               => 'required',
+            'as'                => 'required',
+            'virtude'           => 'required'
+        ];
+
+        $mensagens = [
+            'nome.required'         => 'Nome Obrigatório',
+            'matricula.required'    => 'Campo Matricula Obrigatório',
+            'local.required'        => 'Campo Local Obrigatório',
+            'dia.required'          => 'Campo Dia Obrigatório',
+            'das.required'          => 'Campo Obrigatório',
+            'as.required'           => 'Campo Obrigatório',
+            'virtude.required'      => 'Campo Obrigatório',          
+        ];
+
+        return Validator::make($date, $regras, $mensagens);
     }
 }

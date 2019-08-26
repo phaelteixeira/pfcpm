@@ -6,39 +6,84 @@
         <div>
             <h1 id="titu">Solicitação de Permuta</h1>
 
-            <div class="escalado">
+            <div class="escalado {{$errors->has('nome') ? 'has-error' : ''}}">
                 <label for="escalado">Eu: </label>
                 <input id="imp" type="text" class="form-control" value="{{ Auth::User()->nome }}" name="nome" id="nome" size=30>
+                @if($errors->has('nome'))
+                    <span style="color: red" class="help-block">
+                        {{$error->first('nome') }}
+                    </span>
+                @endif
             </div>
 
-            <div class="escalado">
-                <label for="escalado">Matricula: </label>
+            <div class="escalado {{$errors->has('matricula') ? 'has-error' : ''}}">
+                <label for="escalado ">Matricula: </label>
                 <input id="imp" type="text" class="form-control" value=" {{ Auth::User()->matricula }} " name="matricula" id="matricula" size=30>
+                @if($errors->has('matricula'))
+                    <span style="color: red" class="help-block">
+                        {{$errors->first('matricula')}}
+                    </span>
+                @endif
             </div>
 
-            <div class="escalado">
+            <div class="escalado {{$errors->has('local') ? 'has-error' : ''}}">
                 <label for="escalado">Local: </label>
-                <input id="imp" type="text" class="form-control" name="local" id="local" size=30>
+                <input id="imp" type="text" class="form-control" name="local" id="local" value = "{{ old('local') }}" size=30>
+                @if($errors->has('local'))
+                    <span style="color: red" class="help-block">
+                        {{$errors->first('local')}}
+                    </span>
+                @endif
             </div>
 
-            <div class="dia">
+            <div class="dia {{$errors->has('dia') ? 'has-error' : ''}}">
                 <label for="dia">no dia</label>
-                <input type="date" class="form-control" name="dia" id="dia" size=30>
+                <input type="date" class="form-control" name="dia" value="{{ old('dia') }}" id="dia" size=30>
+                @if($errors->has('dia'))
+                    <span style="color: red" class="help-block">
+                        {{$errors->first('dia')}}
+                    </span>
+                @endif
             </div>
-            <div class="hora">
+            <div class="hora {{$errors->has('das') ? 'has-das' : ''}}">
                 <label for="hora">Das:</label>
-                <input type="time" class="form-control" name="das" id="hora"  size=30> 
+                <input type="time" class="form-control" name="das" value="{{ old('das') }}" id="hora"  size=30> 
+                @if($errors->has('das'))
+                    <span style="color: red" class="help-block">
+                        {{$errors->first('das')}}
+                    </span>
+                @endif
             </div>
-            <div class="ass">
+            <div class="ass {{$errors->has('as') ? 'has-error' : ''}}">
                 <label for="hora">Às:</label>
-                <input type="time" class="form-control" name="as" id="hora"  size=30> 
+                <input type="time" class="form-control" name="as" value="{{old('as')}}" id="hora"  size=30> 
+                @if($errors->has('as'))
+                    <span class="help-block">
+                        {{$errors->first('as')}}
+                    </span>
+                @endif
             </div>
-            <div class="virtude">
+            <div class="virtude {{$errors->has('virtude') ? 'has->errror' : ''}}">
                 <label for="virtude">Tendo em vista:</label><br>
-                <textarea name="virtude" id="virtude" ></textarea>
+                <textarea name="virtude" id="virtude" >{{old('virtude')}}</textarea><br>
+                @if($errors->has('virtude'))
+                    <span class="help-block">
+                        {{$errors->first('virtude')}}
+                    </span>
+                @endif
             </div>
             <div class="btnpermuta">
-                <button type="submit" id="btnpermuta" class="btn btn-primary">OK</button>
+                <input type="button" id="btnpermuta" class="btn btn-primary" value="OK" onclick="confirma()" >
+            </div>
+
+            <div id="popupcx">
+                <div id="popupimg" >
+                    <img src="/imgs/PMBA.png" width="50" height="50" alt="">
+                </div>
+                <p id="popuptxt">Deseja realmente fazer isso!</p>
+                <p>
+                <input type="submit" id="popupbtnsim" disabled="true"  value="SIM" class="btn btn-success" ><input type="button" onclick="nao()"  id="popupbtnnao" value="NÃO" class="btn btn-danger">
+                </p>
             </div>
     </form>
 @endsection('body')

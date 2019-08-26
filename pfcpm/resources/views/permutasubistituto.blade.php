@@ -67,8 +67,17 @@
                     <label for="hora">Às:</label>
                     <input type="time" class="form-control" name="assub" id="hora"  size=30> 
                 </div>
-                <button  id="btndispensa" class="btn btn-primary">OK</button>
+                <a onclick="confirma()" id="btndispensa" class="btn btn-primary">OK</a>
             </div>
+        </div>
+        <div id="popupcx">
+            <div id="popupimg" >
+                <img src="/imgs/PMBA.png" width="50" height="50" alt="">
+            </div>
+            <p id="popuptxt">Deseja realmente fazer isso!</p>
+            <p>
+            <button id="popupbtnsim" class="btn btn-success" >SIM</button><input type="button" onclick="nao()"  id="popupbtnnao" value="NÃO" class="btn btn-danger">
+            </p>
         </div>
         
     </form>

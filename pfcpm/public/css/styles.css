@@ -991,3 +991,54 @@ li#tabsus{
 li#tabela2{
     height: 50px;
 }
+
+
+/* Configurações de errors */
+
+span.help-block{
+    color: red;
+}
+
+/* Telas pupup */
+
+div#popupcx{
+    display: none;
+    border: #000000 solid 1px;
+    top: 200px;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 200px;
+    z-index: 1000;
+}
+
+p#popuptxt{
+    position: relative;
+    color: #000000;
+    text-align: center;
+    top: 40px;
+}
+
+#popupbtnsim{
+    height: 35px;
+    width: 100px;
+    margin-left: 30px;
+    margin-top: 100px;
+}
+
+#popupbtnnao{
+    height: 35px;
+    width: 100px;
+    margin-left: 140px;
+    margin-top: 100px;
+    
+}
+
+div#popupimg{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

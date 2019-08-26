@@ -19,6 +19,10 @@ Route::get('/cadastro', function(){
     return view('cadastro');
 });
 
+route::get('/teste', function(){
+    return view('teste');
+});
+
 
 Route::post('cadastro', 'Auth\RegisterController@create')->name('create');
 Route::post('registro', 'Auth\RegisterController@registrar')->name('registro');
