@@ -1,6 +1,4 @@
-@if(Auth::User()->patente == 'Soldado 1ª Classe')
-    @extends('inicial_policial');
-@endif
+@extends('inicial')
 
 @section('body')
 <form action="{{route('abono.store')}}" method="POST">

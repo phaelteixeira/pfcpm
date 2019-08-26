@@ -29,7 +29,7 @@
             <div class="patenteTela  {{ $errors->has('patente') ? 'has-error' : '' }}">
                 <label for="pelotao">Patente:</label>
                 <select  name="patente" id="patente">
-                    <option disabled  name="patente" selected>{{$policial->patente}}</option>
+                    <option   name="patente" selected>{{$policial->patente}}</option>
                     <option  id="postos" disabled>======POSTOS======</option>
                     <option name="patente">Coronel</option>
                     <option name="patente">Tenente-Coronel</option>

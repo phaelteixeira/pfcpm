@@ -48,4 +48,9 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function confirmaPermuta()
+    {
+        return redirect()->route('inicio.create');
+    }
 }

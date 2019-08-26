@@ -36,6 +36,7 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('crimes', 'CrimeController');
     Route::get('permuta', 'PermutarController@indexer')->name('index');
     Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/inicio', 'HomeController@confirmaPermuta')->name('inicio');
     Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
 });

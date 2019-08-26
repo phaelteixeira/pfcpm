@@ -23,8 +23,9 @@
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
             
                 @if($permuta->matricula == Auth::User()->matricula)
-                    <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permutas.edit', $permuta)}}">OK</a>
+                    <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('inicio')}}">OK</a>
                 @endif
+                
             </div>
         </div>
     </form>
