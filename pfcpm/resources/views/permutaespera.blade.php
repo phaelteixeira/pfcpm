@@ -21,10 +21,10 @@
                 <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
                 <p>Feira de Santana, ____/____/_____</p>
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
-            
                 @if($permuta->matricula != Auth::User()->matricula)
                     <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permutas.edit', $permuta)}}">Aceitar</a>
                 @endif
+                
             </div>
         </div>
     </form>

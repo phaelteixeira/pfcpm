@@ -35,7 +35,7 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('inicio', 'HomeController');
     Route::resource('dispensa', 'DispensaController');
     Route::resource('abono', 'AbonoController');
-    Route::resource('login', 'LoginController');
+    Route::resource('login', 'Auth\LoginController');
     Route::resource('permutas', 'PermutarController');
     Route::resource('crimes', 'CrimeController');
     Route::get('permuta', 'PermutarController@indexer')->name('index');
@@ -43,9 +43,10 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('/inicio', 'HomeController@confirmaPermuta')->name('inicio');
     Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
+    Route::get('permuta/spo', 'PermutarController@enviarSPO')->name('enviarSPO');
 });
 
+Route::Auth();
 
 
-Auth::routes();
 

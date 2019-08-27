@@ -1003,7 +1003,7 @@ span.help-block{
 
 div#popupcx{
     display: none;
-    border: #000000 solid 1px;
+    border: #b1b0b0 solid 1px;
     top: 200px;
     position: fixed;
     margin-left: auto;
@@ -1011,8 +1011,10 @@ div#popupcx{
     left: 0;
     right: 0;
     width: 400px;
-    height: 200px;
+    height: 150px;
     z-index: 1000;
+    background: rgba(245, 231, 231, 0.925);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 }
 
 p#popuptxt{
@@ -1026,14 +1028,14 @@ p#popuptxt{
     height: 35px;
     width: 100px;
     margin-left: 30px;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 #popupbtnnao{
     height: 35px;
     width: 100px;
     margin-left: 140px;
-    margin-top: 100px;
+    margin-top: 50px;
     
 }
 

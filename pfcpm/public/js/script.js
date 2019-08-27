@@ -6,6 +6,10 @@ function confirma(){
     
 }
 
+function confirmarPermuta(){
+    alert('Permuta confirmada, Aguardar liberação da SPO e do CMD de pelotão')
+}
+
 function nao(){
     location.href = "";
 }
