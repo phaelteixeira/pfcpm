@@ -17,6 +17,8 @@ class UsersTableSeeder extends Seeder
             'foto'              => 'olkdjnmdçl',
             'patente'           => 'patente',
             'dataNascimento'    => 'lçkjhg',
+            'chefedeSetor'      => 'Sim',
+            'setor'             => 'SPO',
             'sexo'              => 'sexo',
             'cidade'            => 'co´polkjn',
             'estado'            => 'lkjhg',

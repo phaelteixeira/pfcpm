@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PFC-PM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 </head>
@@ -50,7 +51,9 @@
                             <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
                             <a id="dropdown" class="dropdown-item" href="{{route('permutas.index')}}">Permutas Solicitadas</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('index')}}">Permutas Aceitas</a>
+                            @if(Auth::User()->setor == 'SPO' && Auth::User()->chefedeSetor == 'Sim' || Auth::User()->setor == 'PELOTÃO' && Auth::User()->chefedeSetor == 'Sim')
+                                <a id="dropdown" class="dropdown-item" href="{{route('index')}}">Permutas</a>
+                            @endif
                         </div>
                     </li>         
                     <li class="nav-item dropdown">

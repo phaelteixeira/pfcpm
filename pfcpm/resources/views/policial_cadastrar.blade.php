@@ -72,6 +72,36 @@
                 @endif
             </div>
 
+            <div class="setorTela  {{ $errors->has('setor') ? 'has-error' : '' }}">
+                <label for="setor">Setor:</label>
+                <select name="setor" id="patente">
+                    <option disabled selected>---SELECIONE SETOR---</option>
+                    <option name="setor">SPO</option>
+                    <option name="setor">SSO</option>
+                    <option name="setor">CORSET</option>
+                    <option name="setor">SOINT</option>
+                    <option name="setor">PELOTÃO</option>
+                    <option name="setor">ALMOXARIFADO</option>              
+                </select>
+                @if($errors->has('patente'))
+                    <span style="color: red" class="help-block">
+                        {{ $errors->first('patente') }}
+                    </span>
+                @endif
+            </div>
+            
+            <p class ="optchefe {{$errors->has('rad') ? 'has-error' : ''}} ">Chefe de Setor: 
+                <input type="radio" name="rad" value="Sim" id="sim" >
+                <label for="nao">SIM</label>
+                <input type="radio" name="rad" value="Não" id="nao">
+                <label for="nao">NÃO</label>
+                @if($errors->has('rad'))
+                    <span class="help-block">
+                        {{$errors->first('rad')}}
+                    </span>
+                @endif
+            </p>
+
             <div class="cpfpol col-sm-2 {{ $errors->has('cpf') ? 'has-error' : '' }} ">
                 <label for="cpfpol">CPF:</label>
                 <input class="form-control" name="cpf" id="cpfpol" value="{{ old('cpf') }}" >

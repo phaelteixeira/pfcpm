@@ -27,6 +27,10 @@ class CreatePermutarsTable extends Migration
             $table->string('escaladoDia_do_servico');
             $table->string('escaladoHora_inicial');
             $table->string('escaladoHora_final');
+            $table->string('dataSPO');
+            $table->string('assinaturaSPO');
+            $table->string('optCMD');
+            $table->string('assinaturaCMD');
             $table->string('virtude');
             $table->string('status');
             $table->timestamps();

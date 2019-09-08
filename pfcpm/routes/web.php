@@ -24,7 +24,7 @@ route::get('/teste', function(){
 });
 
 
-Route::post('cadastro', 'Auth\RegisterController@create')->name('create');
+Route::post('cadastro', 'Auth\RegisterController@create')->name('create');      
 Route::post('registro', 'Auth\RegisterController@registrar')->name('registro');
 
 
@@ -43,7 +43,10 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('/inicio', 'HomeController@confirmaPermuta')->name('inicio');
     Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
-    Route::get('permuta/spo', 'PermutarController@enviarSPO')->name('enviarSPO');
+    Route::get('confirma/{id}', 'PermutarController@atualizarStatus')->name('atualizarStatus');
+    Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
+    Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');
+    Route::get('teste', 'PermutarController@teste')->name('teste');
 });
 
 Route::Auth();

@@ -1,36 +1,41 @@
-@if(Auth::User()->patente == 'Soldado 1ª Classe')
-    @extends('inicial_policial');
-@endif
-@if(Auth::User()->patente != 'Soldado 1ª Classe')
-    @extends('inicial');
-@endif
+@extends('inicial')
 
 @section('body')
-    <form action="{{route('permuta.index')}}" >
-        <h1 id="titu"> Solicitação de Permuta</h1>
+        <h1 id="titu"> Permuta</h1>
         <div id="permuta">
-            @foreach($permutas as $permuta)
             <div id="spo">
             <p id="via">VIA DA SPO</p>
-                <p id="spo">AUTORIZO EM___/___/___ _____________________  Chefe da SPO</P>
-                <div id="cmd">
-                <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO (          ) INDEFERIMENTO (  ) _____________________<br>CMD PEL</p>
+                <p id="spo">AUTORIZO EM {{ date('d/m/Y', strtotime($permuta->dataSPO))}} <p style="position: relative; top: -60px"> {{$permuta->assinaturaSPO}}</p> 
+                <p style="position: relative; top: -90px">_______________</p> <br >  <p style="position: relative; top: -130px"> Chefe da SPO</P>
+                
             </div>
+            <div style="position:relative; top:-70px; left :900px" class="cmd">
+                @if($permuta->optCMD == 'Deferimento')
+                    <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO ( X ) INDEFERIMENTO (  ) 
+                    <p style="position: relative; top: -15px">{{$permuta->assinaturaCMD}}</p>
+                    <p style="position: relative; top: -45px"> _____________________</p>
+                    <p style="position: relative; top: -65px">CMD PEL</p>
+                @endif
+                @if($permuta->optCMD == 'Indeferimento')
+                    <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO (  ) INDEFERIMENTO ( X ) 
+                    <p style="position: relative; top: -70px" >{{$permuta->assinaturaCMD}}</p> <p> _____________________</p><br>CMD PEL</p>
+                @endif
             </div>
-            <p style="position: relative; text-align:center; top:80px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>
-            <div style="position: relative; top:100px">
+            <p style="position: relative; text-align:center; top:-40px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>
+            <div style="position: relative; top:-20px; text-align: justify-center">
                 <h1 id="tpermuta"><b>PERMUTA</b></h1>
-                <p style="position: relative; right:80px">Eu, {{$permuta->nome}}, Mat.:{{$permuta->matricula}} solicito a V.Sª permulta do serviço </p>
-                <p style="position: relative; right:-7px">para o qual estou devidamente escalado no {{$permuta->local}} no dia {{$permuta->dia_do_servico}} das {{$permuta->hora_inicial}} às {{$permuta->hora_final}}</p>
-                <p style="position: relative; right:9px">como o,_________________________, Mat.:_______________ que se encontra escalado no ___________</p>
-                <p style="position: relative; right:9px">no dia ____/____/____, das______às_________, tendo em vista___________________________________</p>
-                <p style="position: relative; right:9px">__________________________________________________________________________________________</p>
+                <p >Eu, {{$permuta->nome}}, Mat.:{{$permuta->matricula}} solicito a V.Sª permulta do serviço </p>
+                <p >para o qual estou devidamente escalado no {{$permuta->local}} no dia {{$permuta->dia_do_servico}} das {{$permuta->hora_inicial}} às {{$permuta->hora_final}}</p>
+                <p >como o,{{$permuta->escalado}}, Mat.:{{$permuta->escaladoMatricula}} que se encontra escalado no {{$permuta->escaladoLocal}}</p>
+                <p>no dia{{ date('d/m/Y', strtotime($permuta->escaladoDia_do_servico))}}, das {{$permuta->escaladoHora_inicial}} às {{$permuta->escaladoHora_final}}, tendo em vista{{$permuta->virtude}}</p>
                 <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
                 <p>Feira de Santana, ____/____/_____</p>
-                <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
+                <p style="position: relative; right:200px">{{$permuta->nome}}</p>
+                <p style="position: relative; top: -30px; right:200px">__________________________________</p>
+                <p style="position: relative; top: -30px; right:200px">Solicitante</p> 
+                <p style="position: relative; left:200px; top:-117px">{{$permuta->escalado}}</p>
+                <p style="position: relative; left:200px; top:-147px">__________________________________</p>
+                <p style="position: relative; top: -148px; left:200px">Substituto</p>            
             </div>
-            @endforeach
-            <button classs="btn btn-primary">Solicitar Permuta</button>
         </div>
-    </form>
 @endsection('body')

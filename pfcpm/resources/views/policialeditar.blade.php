@@ -51,7 +51,7 @@
 
             <div class="mat col-sm-2 {{ $errors->has('matricula') ? 'has-error' : '' }}">
                 <label for="matricula">Número de matrícula:</label>
-                <input class="form-control" disabled name="matricula" value="{{ $policial->matricula }}" id="num_mat" size=30>
+                <input class="form-control"  name="matricula" value="{{ $policial->matricula }}" id="num_mat" size=30>
                 @if($errors->has('matricula'))
                     <span style="color: red" class="help-block">
                         {{ $errors->first('matricula') }}
@@ -72,6 +72,52 @@
                     </span>
                 @endif
             </div>
+
+            <div class="setorTela  {{ $errors->has('setor') ? 'has-error' : '' }}">
+                <label for="setor">Setor:</label>
+                <select name="setor" id="patente">
+                    <option name= "setor"  selected>{{$policial->setor}}</option>
+                    <option name="setor">SPO</option>
+                    <option name="setor">SSO</option>
+                    <option name="setor">CORSET</option>
+                    <option name="setor">SOINT</option>
+                    <option name="setor">PELOTÃO</option>
+                    <option name="setor">ALMOXARIFADO</option>              
+                </select>
+                @if($errors->has('setor'))
+                    <span style="color: red" class="help-block">
+                        {{ $errors->first('setor') }}
+                    </span>
+                @endif
+            </div>
+
+            @if($policial->chefedeSetor == 'Sim')
+                <p class ="optchefe {{$errors->has('rad') ? 'has-error' : ''}} ">Chefe de Setor: 
+                    <input type="radio" name="rad" checked value="Sim" id="sim" >
+                    <label for="nao"> SIM</label>
+                    <input type="radio" name="rad" value="Não" id="nao">
+                    <label for="nao"> NÃO</label>
+                    @if($errors->has('rad'))
+                        <span class="help-block">
+                            {{$errors->first('rad')}}
+                        </span>
+                    @endif
+                </p>
+            @endif
+
+            @if($policial->chefedeSetor == 'Não')
+                <p class ="optchefe {{$errors->has('rad') ? 'has-error' : ''}} ">Chefe de Setor: 
+                    <input type="radio" name="rad" value="{{Sim}}" id="sim" >
+                    <label for="nao">SIM</label>
+                    <input type="radio" name="rad" checked value="Não" id="nao">
+                    <label for="nao">NÃO</label>
+                    @if($errors->has('rad'))
+                        <span class="help-block">
+                            {{$errors->first('rad')}}
+                        </span>
+                    @endif
+                </p>
+            @endif
 
             <div class="cpfpol col-sm-2 {{ $errors->has('cpf') ? 'has-error' : '' }} ">
                 <label for="cpfpol">CPF:</label>

@@ -70,6 +70,8 @@ class RegisterController extends Controller
             'patente'           => $request->patente,
             'dataNascimento'    => $request->dataNascimento,
             'sexo'              => $request->sexo,
+            'chefedeSetor'      => $request->rad,
+            'setor'             => $request->setor,
             'cidade'            => $request->cidade,
             'estado'            => $request->estado,
             'pelotao'           => $request->pelotao,

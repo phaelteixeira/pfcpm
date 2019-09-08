@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Patente;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class PolicialController extends Controller
@@ -45,6 +46,8 @@ class PolicialController extends Controller
             'patente'           => $request->patente,
             'dataNascimento'    => $request->dataNascimento,
             'sexo'              => $request->sexo,
+            'chefedeSetor'      => $request->rad,
+            'setor'             => $request->setor,
             'cidade'            => $request->cidade,
             'estado'            => $request->estado,
             'pelotao'           => $request->pelotao,
@@ -86,20 +89,29 @@ class PolicialController extends Controller
      */
     public function update(Request $request, User $policial)
     {
-        $policial->nome = $request->input("nome");
-        $policial->patente = $request->input('patente');
-        $path=$request->file("foto")->store('imagens', 'public');
-        $policial->foto = $path;
-        $policial->sexo = $request->input('sexo');
-        $policial->cidade = $request->input("cidade");
-        $policial->dataNascimento = $request->input('dataNascimento');
-        $policial->estado = $request->input("estado");
-        $policial->pelotao = $request->input("pelotao");
-        $policial->rg = $request->input("rg");
-        $policial->cpf = $request->input("cpf");
-        $policial->password = bcrypt($request->input("senha"));
-        $policial->save();
-        return redirect()->route('policial.index');
+        $validacao = $this->Validator($request->all());
+        if($validacao->fails()){
+            return redirect()->back()
+            ->witherrors($validacao->errors())
+            ->withInput($request->all());
+        }else{
+            $policial->nome = $request->input("nome");
+            $policial->patente = $request->input('patente');
+            $path=$request->file("foto")->store('imagens', 'public');
+            $policial->foto = $path;
+            $policial->sexo = $request->input('sexo');
+            $policial->cidade = $request->input("cidade");
+            $policial->dataNascimento = $request->input('dataNascimento');
+            $policial->estado = $request->input("estado");
+            $policial->pelotao = $request->input("pelotao");
+            $policial->rg = $request->input("rg");
+            $policial->chefedeSetor = $request->input('rad');
+            $policial->setor = $request->input('setor');
+            $policial->cpf = $request->input("cpf");
+            $policial->password = bcrypt($request->input("senha"));
+            $policial->save();
+            return redirect()->route('policial.index');
+        }
     }
 
     /**
@@ -112,5 +124,32 @@ class PolicialController extends Controller
     {
         $policial->delete();
         return redirect()->route('policial.index');
+    }
+
+    public function Validator($data)
+    {
+        $regras=[
+            'nome'              => 'required',
+            'matricula'         => 'required ',
+            'foto'              => 'required',
+            'patente'           => 'required',
+            'dataNascimento'    => 'required',
+            'sexo'              => 'required',
+            'cidade'            => 'required',
+            'estado'            => 'required',
+            'pelotao'           => 'required',
+            'rg'                => 'required',
+            'cpf'               => 'required',
+            'senha'             => 'required',
+            'rad'               => 'required',
+            'senhaConfirma'     => 'required | same:senha',];
+
+        $mensagens=[
+            'required'                   => 'Campo Obrigatório',
+            'matricula.unique'           => 'Matrícula já existe',
+            'same'                       => 'Senhas não coincidem '      
+        ];
+
+        return Validator::make($data, $regras, $mensagens);
     }
 }

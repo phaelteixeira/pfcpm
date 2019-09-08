@@ -47,24 +47,13 @@ class RedirectIfAuthenticated
             'rg'                => 'required',
             'cpf'               => 'required',
             'senha'             => 'required',
+            'rad'               => 'required',
             'senhaConfirma'     => 'required | same:senha',];
 
         $mensagens=[
-            'nome.required'              => 'Campo Nome é obrigatório.',
-            'matricula.required'         => 'Campo Matrícula é obrigatório.',
-            'foto.required'              => 'Campo Foto é obrigatório.',
-            'patente.required'           => 'Campo Patente é obrigatório.',
-            'dataNascimento.required'    => 'Campo Data de Nascimento é obrigatório.',
-            'sexo.required'              => 'Campo Sexo é obrigatório.',
-            'cidade.required'            => 'Campo Cidade é obrigatório.',
-            'estado.required'            => 'Campo Estado é obrigatório.',
-            'pelotao.required'           => 'Campo Unidade é obrigatório.',
-            'rg.required'                => 'Campo RG é obrigatório.',
-            'cpf.required'               => 'Campo CPF é obrigatório.',
-            'senha.required'             => 'Campo Senha é obrigatório.',
-            'senhaConfirma.required'     => 'Campo Comfirmar Senha é obrigatório.',
-            'same'                       => 'As senhas digitadas não coincidem .',
-            'matricula.unique'           => 'Matrícula já existe'   
+            'required'                   => 'Campo Obrigatório',
+            'matricula.unique'           => 'Matrícula já existe',
+            'same'                       => 'Senhas não coincidem '      
         ];
 
         return Validator::make($data, $regras, $mensagens);

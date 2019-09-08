@@ -357,6 +357,26 @@ div#div_pol{
     width: 150px;
 }
 
+.setorTela{
+    flex: auto;
+    position:  relative;
+    top: -107px;
+    left: 29%;
+    width: 150px;
+}
+
+.optchefe{
+    position: relative;
+    top: -70px;
+    left: 20px;
+    border: solid 1pt rgb(170, 162, 162);
+    border-radius: 5px;
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 select#patente{
     background-color: rgba(0, 0, 0, 0.1);
     padding: 6px;
@@ -418,7 +438,7 @@ input#fotopol{
 .cpfpol{
     flex: auto;
     position: relative;
-    top: 10px;
+    top: -70px;
     left: 5px;
 }
 
@@ -429,7 +449,7 @@ input#cpfpol{
 .rgpol{
     flex: auto;
     position: relative;
-    top: -58px;
+    top: -138px;
     left: 18%;
 }
 
@@ -440,7 +460,7 @@ input#rgpol{
 .cidadepol{
     flex: auto;
     position: relative;
-    top: -80px;
+    top: -160px;
     left: 11%;
     width: 300px;
 }
@@ -452,7 +472,7 @@ input#cidadepol{
 .estadopol{
     flex: auto;
     position: relative;
-    top: -12px;
+    top: -92px;
     left: 20px;
     width:80px;
 }
@@ -460,7 +480,7 @@ input#cidadepol{
 .datanascP{
     flex: auto;
     position: relative;
-    top: -20px;
+    top: -110px;
     left: 20px;
     width: 150px;
 }
@@ -482,7 +502,7 @@ input#estadopol{
 .pelotaopol{
     flex: auto;
     position: relative;
-    top: -88px;
+    top: -178px;
     left: 230px;
     width: 200px;
 }
@@ -503,14 +523,14 @@ button#btnpol{
 .sen{
     flex: auto;
     position: relative;
-    top: -22px;
+    top: -132px;
     left: 20px;
     width: 200px;
 }
 
 .confirmarsen{
     position: relative;
-    top: -90px;
+    top: -200px;
     left: 19%;
     width: 200px;
 }
@@ -525,28 +545,38 @@ div#permuta{
 }
 
 div#spo{
-    position: absolute;
-    top: 150px;
+    position: relative;
+    top: 50px;
     text-align: center;
     border: 1px solid black;
     margin-left: 20px;
     padding: 10px;
     width: 180px;
     height: 110px;
-    left: 200px;
+    left: 200px; 
 }
 
-div#cmd{
+.cmd{
     position: relative;
     text-align: center;
     border: 1px solid black;
-    right: -660px;
-    top: -159px;
+    top: -70px;  
+    left: 900px;  
     padding: 5px;
     padding-top: 5px;
     line-height: -320pt;
     width: 260px;
     height: 130px;
+}
+
+.divpermuta{
+    text-align: center;
+
+}
+
+.corpoPermuta{
+    position: relative;
+    text-align: center;
 }
 
 p#via{
@@ -599,6 +629,55 @@ textarea#virtude{
 #btnpermuta{
     width: 170px;
     height: 38px;
+}
+
+.butaoSPO{
+    position: relative;
+    top: -30px;
+    border-radius: 5px;
+}
+
+a#btncmdSim{
+    position: relative;
+    background: green;
+    top: 10px;
+    border: #b1b0b0;
+    left: -110px;
+}
+a#btncmdNao{
+    position: relative;
+    background: red;
+    top: -25px;
+    border: #b1b0b0;
+    left: -45px;
+}
+a#btncmdRefazer{
+    position: relative;
+    background: yellow;
+    top: -60px;
+    border: #b1b0b0;
+    left: 65px;
+}
+
+a#btnspoSim{
+    position: relative;
+    background: green;
+    border: #b1b0b0;
+    left: -68px;
+}
+a#btnspoNao{
+    position: relative;
+    background: red;
+    border: #b1b0b0;
+    left: -10px;
+    top: -35px;
+}
+a#btnspoRefazer{
+    position: relative;
+    background: yellow;
+    border: #b1b0b0;
+    top: -70px;
+    left: 100px;
 }
 
 /*TELA REGISTRO DE POLICIAL*/

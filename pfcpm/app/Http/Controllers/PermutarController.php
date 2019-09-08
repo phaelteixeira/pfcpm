@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Permutar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class PermutarController extends Controller
 {
@@ -23,6 +24,12 @@ class PermutarController extends Controller
     {
         $permutas = Permutar::all();
         return view ('listaAceita', compact('permutas'));
+    }
+
+    public function teste()
+    {
+        $permutas = Permutar::all();
+        return view('permuta', compact('permutas'));
     }
 
     /**
@@ -64,6 +71,10 @@ class PermutarController extends Controller
             $permutas->escaladoHora_final = "";
             $permutas->virtude = $request->input('virtude');
             $permutas->status = "Espera";
+            $permutas->dataSPO = "";
+            $permutas->assinaturaSPO = "";
+            $permutas->optCMD = "";
+            $permutas->assinaturaCMD = "";
             $permutas->save();
             return redirect()->route('permutas.index');
         }
@@ -82,9 +93,13 @@ class PermutarController extends Controller
         {
             return view('permutaespera', compact('permuta'));
         }
-        if($permuta->status == "Aceita")
+        if($permuta->status == "Aceita" || $permuta->status == "Confirmada" || $permuta->status == "Confirmada pelo SPO")
         {
             return view('permutaAceita', compact('permuta'));
+        }
+        if($permuta->status == "Confirmada e Finalizada")
+        {
+            return view('permuta', compact('permuta'));
         }
     }
 
@@ -108,7 +123,7 @@ class PermutarController extends Controller
      */
     public function update(Request $request, Permutar $permuta)
     {
-        $validacao = $this->validator($request->all());
+        $validacao = $this->validatorUpdate($request->all());
         if($validacao->fails()){
             return redirect()->back()
             ->witherrors($validacao->errors())
@@ -128,23 +143,42 @@ class PermutarController extends Controller
             $permuta->escaladoHora_final = $request->input('assub');
             $permuta->virtude = $request->input('virtude');
             $permuta->status = "Aceita";
+            $permuta->dataSPO = "";
+            $permuta->assinaturaSPO = "";
+            $permuta->optCMD = "";
+            $permuta->assinaturaCMD = "";
             $permuta->save();
             return redirect()->route('permutas.index');
         }
     }
 
-    public function enviarSPO()
+    public function atualizarStatus($id)
     {
-        return view('permutaSPO');
+        \DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Confirmada'
+        ]);
+        return redirect()->route('inicio');
     }
 
-    public function confirmacaoSPO()
+    public function SPO($id)
     {
-        return redirect()->route('enviarCMD');
+        \DB::table('permutars')->where('id', $id)->update([
+            'status'        => 'Confirmada pelo SPO',
+            'dataSPO'       => NOW(),
+            'assinaturaSpo' => Auth::user()->nome
+        ]);
+        return redirect()->route('inicio');
     }
-    public function confirmacaoCMD()
-    {
 
+    public function CMD($id)
+    {
+        \DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Confirmada e Finalizada',
+            'optCMD'       => 'Deferimento',
+            'assinaturaCMD' => Auth::user()->nome
+        ]);
+
+        return redirect()->route('inicio');
     }
 
     /**
@@ -159,7 +193,7 @@ class PermutarController extends Controller
         return redirect()->route('permutas.index');
     }
 
-    public function validator($date)
+    public function validatorUpdate($date)
     {
         $regras = [
             'nome'                  => 'required',
@@ -174,6 +208,25 @@ class PermutarController extends Controller
             'diasub'                => 'required',
             'dassub'                => 'required',
             'assub'                 => 'required',
+            'virtude'               => 'required',
+        ];
+
+        $mensagens = [
+            'required'              => 'Campo Obrigatório',      
+        ];
+
+        return Validator::make($date, $regras, $mensagens);
+    }
+
+    public function validator($date)
+    {
+        $regras = [
+            'nome'                  => 'required',
+            'matricula'             => 'required',
+            'local'                 => 'required',
+            'dia'                   => 'required',
+            'das'                   => 'required',
+            'as'                    => 'required',
             'virtude'               => 'required',
         ];
 
