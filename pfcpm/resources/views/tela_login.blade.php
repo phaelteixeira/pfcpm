@@ -26,9 +26,9 @@
                     </span>
                 @endif
             </div>
-            <div class=" {{ $errors->has('senha') ? 'has-error' : '' }} " >
-                <label id= "label" for="senha">Senha</label>
-                <input  type="password" name="password" id="senha" class="form-control" size=20 > 
+            <div class=" {{ $errors->has('password') ? 'has-error' : '' }} " >
+                <label id= "label" for="password">Senha</label>
+                <input  type="password" name="password" id="password" class="form-control" size=20 > 
                 @if( $errors->has('password') )
                     <span style="color: red" class=" help-block " >
                         {{ $errors->first('password') }}

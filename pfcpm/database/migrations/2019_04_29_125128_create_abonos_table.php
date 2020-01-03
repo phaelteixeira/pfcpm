@@ -16,13 +16,15 @@ class CreateAbonosTable extends Migration
         Schema::create('abonos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nome');
-            $table->integer('num_mat');
+            $table->string('num_mat');
             $table->string('substituto');
-            $table->integer('mat_sub');
+            $table->string('mat_sub');
             $table->string('servico');
             $table->string('funcao');
-            $table->date('data');
-            $table->time('horario');
+            $table->string('data');
+            $table->string('das');
+            $table->string('as');
+            $table->string('status');
             $table->timestamps();
         });
     }

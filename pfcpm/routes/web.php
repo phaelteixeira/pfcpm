@@ -35,18 +35,22 @@ Route::group(['middleware'=>['auth']], function()
     Route::resource('inicio', 'HomeController');
     Route::resource('dispensa', 'DispensaController');
     Route::resource('abono', 'AbonoController');
-    Route::resource('login', 'Auth\LoginController');
+    Route::resource('inicial', 'Auth\LoginController');
     Route::resource('permutas', 'PermutarController');
     Route::resource('crimes', 'CrimeController');
     Route::get('permuta', 'PermutarController@indexer')->name('index');
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/inicio', 'HomeController@confirmaPermuta')->name('inicio');
+    Route::get('home', 'HomeController@home')->name('home');
+    Route::get('excluirpermuta/{id}', 'PermutarController@deletar')->name('deletar');
     Route::get('/registrar_crime/{suspeito}', 'CrimeController@registrar')->name('registrar');
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
     Route::get('confirma/{id}', 'PermutarController@atualizarStatus')->name('atualizarStatus');
     Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
+    Route::get('SPOregeitada/{id}', 'PermutarController@SPOnao')->name('sponao');
+    Route::get('SPOrefazer/{id}', 'PermutarController@SPOrefazer')->name('sporefazer');
     Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');
     Route::get('teste', 'PermutarController@teste')->name('teste');
+    
+    //Route::get('abono_sub/{id}', 'AbonoController')->name('sub');
 });
 
 Route::Auth();

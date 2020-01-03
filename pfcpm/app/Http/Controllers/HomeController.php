@@ -17,7 +17,7 @@ class HomeController extends Controller
 
     /**
      * Show the application dashboard.
-     *
+     *  
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
@@ -25,16 +25,9 @@ class HomeController extends Controller
         return view('tela_login');
     }
 
-    public function create()
+    public function home()
     {
-        if(Auth::User()->patente == 'Soldado 1ª Classe')
-        {
-            return view('inicial_policial');
-        }
-        else
-        {
-            return view('inicial');
-        }
+        return view('inicial');
             
     }
 
@@ -51,6 +44,6 @@ class HomeController extends Controller
 
     public function confirmaPermuta()
     {
-        return redirect()->route('inicio.create');
+        return redirect()->route('policial\inicio.create');
     }
 }

@@ -20,7 +20,7 @@ class SuspeitoController extends Controller
     {
         $suspeito = Suspeito::all();
         $crimes = Crime::all();
-        return view('lista_suspeito', compact('suspeito'));
+        return view('suspeito/lista_suspeito', compact('suspeito'));
         
     }
 
@@ -32,7 +32,7 @@ class SuspeitoController extends Controller
      */
     public function create()
     {
-        return view('cadastrar_suspeito');
+        return view('suspeito/cadastrar_suspeito');
     }
 
     /**
@@ -82,13 +82,13 @@ class SuspeitoController extends Controller
      */
     public function show(Suspeito $suspeito)
     {
-        return view('registroSuspeito', compact('suspeito'));
+        return view('suspeito/registroSuspeito', compact('suspeito'));
     }
 
     public function Listacrimes($crime)
     {
         $crimes = Crime::all();
-        return view('lista_Crime', compact('crime', 'crimes'));
+        return view('crime/lista_Crime', compact('crime', 'crimes'));
     }
 
 
@@ -100,7 +100,7 @@ class SuspeitoController extends Controller
      */
     public function edit(Suspeito $suspeito)
     {
-        return view('suspeitoeditar', compact('suspeito'));
+        return view('suspeito/suspeitoeditar', compact('suspeito'));
     }
 
     /**

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -54,14 +54,8 @@ class LoginController extends Controller
 
         if(Auth::attempt($credenciais))
         {
-            if(Auth::User()->patente == 'Soldado 1ª Classe')
-            {
-                return view('inicial_policial');
-            }
-            else
-            {
-                return view('inicial');
-            }
+                return redirect()->route('home');
+        
         }else{
             return redirect()->back()->with('msg',"Matrícula ou Senha incorreta");
         }

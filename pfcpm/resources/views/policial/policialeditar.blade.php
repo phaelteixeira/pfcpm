@@ -103,11 +103,9 @@
                         </span>
                     @endif
                 </p>
-            @endif
-
-            @if($policial->chefedeSetor == 'Não')
+            @else
                 <p class ="optchefe {{$errors->has('rad') ? 'has-error' : ''}} ">Chefe de Setor: 
-                    <input type="radio" name="rad" value="{{Sim}}" id="sim" >
+                    <input type="radio" name="rad" value="Sim" id="sim" >
                     <label for="nao">SIM</label>
                     <input type="radio" name="rad" checked value="Não" id="nao">
                     <label for="nao">NÃO</label>

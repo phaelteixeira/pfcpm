@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Permutar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PermutarController extends Controller
 {
@@ -17,19 +18,19 @@ class PermutarController extends Controller
     public function index()
     {
         $permutas = Permutar::all();
-        return view ('listaEspera', compact('permutas'));
+        return view ('permuta/listaEspera', compact('permutas'));
     }
 
     public function indexer()
     {
         $permutas = Permutar::all();
-        return view ('listaAceita', compact('permutas'));
+        return view ('permuta/listaAceita', compact('permutas'));
     }
 
     public function teste()
     {
         $permutas = Permutar::all();
-        return view('permuta', compact('permutas'));
+        return view('permuta/permuta', compact('permutas'));
     }
 
     /**
@@ -39,7 +40,7 @@ class PermutarController extends Controller
      */
     public function create()
     {
-        return view('telapermuta');
+        return view('permuta/telapermuta');
     }
 
     /**
@@ -91,15 +92,15 @@ class PermutarController extends Controller
     {
         if($permuta->status == "Espera")
         {
-            return view('permutaespera', compact('permuta'));
+            return view('permuta/permutaespera', compact('permuta'));
         }
         if($permuta->status == "Aceita" || $permuta->status == "Confirmada" || $permuta->status == "Confirmada pelo SPO")
         {
-            return view('permutaAceita', compact('permuta'));
+            return view('permuta/permutaAceita', compact('permuta'));
         }
         if($permuta->status == "Confirmada e Finalizada")
         {
-            return view('permuta', compact('permuta'));
+            return view('permuta/permuta', compact('permuta'));
         }
     }
 
@@ -111,7 +112,7 @@ class PermutarController extends Controller
      */
     public function edit(Permutar $permuta)
     {
-        return view('permutasubistituto', compact('permuta'));
+        return view('permuta/permutasubistituto', compact('permuta'));
     }
 
     /**
@@ -154,7 +155,7 @@ class PermutarController extends Controller
 
     public function atualizarStatus($id)
     {
-        \DB::table('permutars')->where('id', $id)->update([
+        DB::table('permutars')->where('id', $id)->update([
             'status'    => 'Confirmada'
         ]);
         return redirect()->route('inicio');
@@ -162,17 +163,22 @@ class PermutarController extends Controller
 
     public function SPO($id)
     {
-        \DB::table('permutars')->where('id', $id)->update([
-            'status'        => 'Confirmada pelo SPO',
-            'dataSPO'       => NOW(),
-            'assinaturaSpo' => Auth::user()->nome
-        ]);
-        return redirect()->route('inicio');
+        echo('Ok');
+    }
+
+    public function SPOnao($id)
+    {
+        echo('Não');
+    }
+
+    public function SPOrefazer($id)
+    {
+        echo('refazer');
     }
 
     public function CMD($id)
     {
-        \DB::table('permutars')->where('id', $id)->update([
+        DB::table('permutars')->where('id', $id)->update([
             'status'    => 'Confirmada e Finalizada',
             'optCMD'       => 'Deferimento',
             'assinaturaCMD' => Auth::user()->nome
@@ -189,7 +195,14 @@ class PermutarController extends Controller
      */
     public function destroy(Permutar $permuta)
     {
-        $permuta->delete();
+       
+        
+    }
+
+    
+    public function deletar($permuta)
+    {
+        DB::table('permutars')->where('id', $permuta)->delete();
         return redirect()->route('permutas.index');
     }
 

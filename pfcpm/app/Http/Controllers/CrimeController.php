@@ -18,7 +18,7 @@ class CrimeController extends Controller
         $crime = Crime::all();
         $suspeito = Suspeito::all();
         foreach($suspeito as $suspeito);
-        return view('lista_crime', compact('crime', 'suspeito'));
+        return view('crime/lista_crime', compact('crime', 'suspeito'));
     }
 
     /**
@@ -58,7 +58,7 @@ class CrimeController extends Controller
      */
     public function show(Suspeito $crime)
     {
-        return view('tela_crime', compact('crime'));
+        return view('crime/tela_crime', compact('crime'));
     }
 
 
@@ -69,7 +69,7 @@ class CrimeController extends Controller
         {
             if($crime->id_suspeito == $id)
             {
-                return view('registrarCrime', compact('crime', 'id'));
+                return view('crime/registrarCrime', compact('crime', 'id'));
             }
         }
     }
@@ -82,7 +82,7 @@ class CrimeController extends Controller
      */
     public function edit(Crime $crime)
     {
-        return view('editarCrime', compact('crime'));
+        return view('crime/editarCrime', compact('crime'));
     }
 
     /**

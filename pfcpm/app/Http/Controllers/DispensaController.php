@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Dispensa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Auth;
 
 class DispensaController extends Controller
 {
@@ -15,7 +17,7 @@ class DispensaController extends Controller
     public function index()
     {
         $dispensa = Dispensa::all();
-        return view ('listaDispensa', compact('dispensa'));
+        return view ('dispensa/listaDispensa', compact('dispensa'));
     }
 
     /**
@@ -25,7 +27,7 @@ class DispensaController extends Controller
      */
     public function create()
     {
-        return view('dispensa');
+        return view('dispensa/dispensa');
     }
 
     /**
@@ -36,14 +38,25 @@ class DispensaController extends Controller
      */
     public function store(Request $request)
     {
-        $dispensa = new Dispensa();
-        $dispensa->escalado = $request->input("escalado");
-        $dispensa->dia_do_servico = $request->input("dia");
-        $dispensa->hora_inicial = $request->input("das");
-        $dispensa->hora_final = $request->input("as");
-        $dispensa->virtude = $request->input("virtude");
-        $dispensa->save();
-        return redirect()->route('dispensa.create');
+        $validacao = $this->Validator($request->all());
+        if($validacao->fails())
+        {
+            return redirect()->back()
+            ->withErrors($validacao->errors())
+            ->withInput($request->all());
+        }else{   
+            $dispensa = new Dispensa();
+            $dispensa->solicitante = Auth::User()->nome;
+            $dispensa->matricula = Auth::User()->matricula;
+            $dispensa->escalado = $request->input("escalado");
+            $dispensa->dia_do_servico = $request->input("dia");
+            $dispensa->hora_inicial = $request->input("das");
+            $dispensa->hora_final = $request->input("as");
+            $dispensa->virtude = $request->input("virtude");
+            $dispensa->Status = "Aguardando Confirmação";
+            $dispensa->save();
+            return redirect()->route('dispensa.index');
+        }
     }
 
     /**
@@ -54,7 +67,9 @@ class DispensaController extends Controller
      */
     public function show(Dispensa $dispensa)
     {
-        //
+        if($dispensa->Status == 'Aguardando Confirmação'){
+            return view('dispensa/tela_dispensa', compact('dispensa'));
+        }
     }
 
     /**
@@ -89,5 +104,20 @@ class DispensaController extends Controller
     public function destroy(Dispensa $dispensa)
     {
         //
+    }
+
+    public function Validator($data)
+    {
+        $regras=[
+            'escalado' =>'required',
+            'dia' =>'required',
+            'das' =>'required',
+            'as' =>'required',
+            'virtude' =>'required',
+        ];
+        $mensagens=['required' => 'Campo Obrigatório'];
+
+
+        return Validator::make($data, $regras, $mensagens);
     }
 }

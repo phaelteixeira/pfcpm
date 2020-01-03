@@ -6,6 +6,7 @@
     <title>PFC-PM</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
 </head>
@@ -20,17 +21,19 @@
             <div  class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('inicio.create')}}">Início <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('home')}}">Início <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cadastrar
-                        </a>
-                        <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.create')}}">Cadastrar Suspeito</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('policial.create')}}">Cadastrar Policial</a>            
-                        </div>
-                    </li>
+                    @if(Auth::User()->setor == 'SPO' && Auth::User()->chefedeSetor == 'Sim' || Auth::User()->setor == 'PELOTÃO' && Auth::User()->chefedeSetor == "Sim")
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cadastrar
+                            </a>
+                            <div  class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.create')}}">Cadastrar Suspeito</a>
+                                <a id="dropdown" class="dropdown-item" href="{{route('policial.create')}}">Cadastrar Policial</a>            
+                            </div>
+                        </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Solicitações
@@ -48,12 +51,14 @@
                         </a>
                         <div id="dropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-                            <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
-                            <a id="dropdown" class="dropdown-item" href="{{route('permutas.index')}}">Permutas Solicitadas</a>
                             @if(Auth::User()->setor == 'SPO' && Auth::User()->chefedeSetor == 'Sim' || Auth::User()->setor == 'PELOTÃO' && Auth::User()->chefedeSetor == 'Sim')
                                 <a id="dropdown" class="dropdown-item" href="{{route('index')}}">Permutas</a>
+                                <a id="dropdown" class="dropdown-item" href="{{route('policial.index')}}">Policial</a>
                             @endif
+                            <a id="dropdown" class="dropdown-item" href="{{route('suspeitos.index')}}">Suspeito</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('permutas.index')}}">Permutas Solicitadas</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('dispensa.index')}}">Dispensa Solicitadas</a>
+                            <a id="dropdown" class="dropdown-item" href="{{route('abono.index')}}">Abono Solicitados</a>
                         </div>
                     </li>         
                     <li class="nav-item dropdown">
@@ -62,12 +67,15 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                        <a id="dropdown" class="dropdown-item" href="{{route('policial.edit', Auth::User()->id)}}">Editar Perfil</a>
+
                             <a id="dropdown" class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
                                 {{ __('Sair') }}
                             </a>
-
+ 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -79,6 +87,9 @@
     @hasSection('body')
          @yield('body')
     @endif
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/"></script>
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>  
     <script type="text/javascript" src="{{asset('js/script.js')}}"></script>
 </body>

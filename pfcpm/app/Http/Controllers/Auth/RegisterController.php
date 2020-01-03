@@ -98,6 +98,8 @@ class RegisterController extends Controller
             'nome'              => $request->nome,
             'matricula'         => $request->matricula,
             'foto'              => $request->foto,
+            'chefedeSetor'      => $request->rad,
+            'setor'             => $request->setor,
             'patente'           => $request->patente,
             'dataNascimento'    => $request->dataNascimento,
             'sexo'              => $request->sexo,
@@ -108,7 +110,7 @@ class RegisterController extends Controller
             'cpf'               => $request->cpf,
             'password'          => bcrypt($request->senha),
         ]);
-        return redirect()->route('inicio.index');
+        return redirect()->route('/');
     }
 
     public function Validator($data)

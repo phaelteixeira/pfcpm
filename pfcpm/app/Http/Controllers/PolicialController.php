@@ -17,7 +17,7 @@ class PolicialController extends Controller
     public function index()
     {
         $policial = User::all();
-        return view('lista_policiais', compact('policial'));
+        return view('policial/lista_policiais', compact('policial'));
     }
 
     /**
@@ -28,7 +28,7 @@ class PolicialController extends Controller
     public function create()
     {
         $patente = new Patente();
-        return view('policial_cadastrar', compact('patente'));
+        return view('policial/policial_cadastrar', compact('patente'));
     }
 
     /**
@@ -66,7 +66,7 @@ class PolicialController extends Controller
      */
     public function show(User $policial)
     {
-        return view('registroPolicial', compact('policial'));
+        return view('policial/registroPolicial', compact('policial'));
     }
 
     /**
@@ -77,7 +77,7 @@ class PolicialController extends Controller
      */
     public function edit(User $policial)
     {
-        return view('policialeditar', compact('policial'));
+        return view('policial/policialeditar', compact('policial'));
     }
 
     /**

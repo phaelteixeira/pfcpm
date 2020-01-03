@@ -2,7 +2,7 @@
 
 @section('body')
     <div class="registrosuspeito">
-        <div class="registrosus">
+        <div class="registrosus"> 
             <h2 style="text-align: center; margin-top: 10px;">Registro do Suspeito</h2>
             <p style="font-weight: bold;" class="registroSn">NOME:<br><p class="registronome">{{$suspeito->nome}}</p></p>
             <p style="font-weight: bold;" class="registroSf"><br> <img style="width: 100px; height: 100px;" src="../storage/{{$suspeito->foto}}"/></p>

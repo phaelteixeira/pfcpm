@@ -642,21 +642,20 @@ a#btncmdSim{
     background: green;
     top: 10px;
     border: #b1b0b0;
-    left: -110px;
 }
 a#btncmdNao{
     position: relative;
     background: red;
-    top: -25px;
+    top: 10px;
     border: #b1b0b0;
-    left: -45px;
+    left: 20px;
 }
 a#btncmdRefazer{
     position: relative;
     background: yellow;
-    top: -60px;
+    top: 10px;
     border: #b1b0b0;
-    left: 65px;
+    left: 40px;
 }
 
 a#btnspoSim{
@@ -669,14 +668,13 @@ a#btnspoNao{
     position: relative;
     background: red;
     border: #b1b0b0;
-    left: -10px;
-    top: -35px;
+    left: -40px;
 }
 a#btnspoRefazer{
     position: relative;
     background: yellow;
     border: #b1b0b0;
-    top: -70px;
+    top: -35px;
     left: 100px;
 }
 
@@ -1122,4 +1120,11 @@ div#popupimg{
     position: absolute;
     top: 10px;
     left: 10px;
+}
+
+/*ABONO*/
+
+.tabelaAbono{
+    position: relative;
+    left: 20%;
 }

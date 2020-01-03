@@ -15,11 +15,14 @@ class CreateDispensasTable extends Migration
     {
         Schema::create('dispensas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('Solicitante');
+            $table->string('Matricula');
             $table->string('escalado');
             $table->string('dia_do_servico');
             $table->string('hora_inicial');
             $table->string('hora_final');
             $table->string('virtude');
+            $table->string('Status');
             $table->timestamps();
         });
     }
