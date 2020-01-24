@@ -94,11 +94,20 @@ class PermutarController extends Controller
         {
             return view('permuta/permutaespera', compact('permuta'));
         }
+        if($permuta->status == "Aceitar"){
+            return view('permuta/permutasubistituto', compact('permuta'));
+        }
         if($permuta->status == "Aceita" || $permuta->status == "Confirmada" || $permuta->status == "Confirmada pelo SPO")
         {
             return view('permuta/permutaAceita', compact('permuta'));
         }
-        if($permuta->status == "Confirmada e Finalizada")
+        if($permuta->status == "Refazer" && $permuta->matricula == Auth::user()->matricula){
+            return view('permuta/refazerPermuta', compact('permuta'));
+        }
+        if($permuta->status == "Refazer" && $permuta->matricula != Auth::user()->matricula){
+            return view('erro');
+        }
+        if($permuta->status == "Confirmada e Finalizada" || $permuta->status == "Nâo Autorizada")
         {
             return view('permuta/permuta', compact('permuta'));
         }
@@ -110,9 +119,30 @@ class PermutarController extends Controller
      * @param  \App\Permutar  $permutar
      * @return \Illuminate\Http\Response
      */
-    public function edit(Permutar $permuta)
+    public function edit(Request $request, Permutar $permuta)
     {
-        return view('permuta/permutasubistituto', compact('permuta'));
+        if($permuta->status == 'Refazer')
+        {   
+            $validacao = $this->validator($request->all());
+            if($validacao->fails()){
+                return redirect()->back()
+                ->witherrors($validacao->errors())
+                ->withInput($request->all());
+            }else{
+                DB::table('permutars')->where('id', $permuta->id)->update([
+                    'nome'              => $request->input('nome'),
+                    'matricula'         => $request->input('matricula'),
+                    'local'             => $request->input('local'),
+                    'dia_do_servico'    => $request->input('dia'),
+                    'hora_inicial'      => $request->input('das'),
+                    'hora_final'        => $request->input('as'), 
+                    'virtude'           => $request->input('virtude'),
+                    'status'            => 'Espera',
+                ]);
+
+                return redirect()->route('home');
+            }
+        }
     }
 
     /**
@@ -153,27 +183,51 @@ class PermutarController extends Controller
         }
     }
 
+    public function refazerPermuta($permuta)
+    {
+       echo($permuta);
+    }
+
+    public function aceitar($id)
+    {
+        DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Aceitar'
+        ]);
+        return redirect()->route('permutas.show', compact('id'));
+    }
+
     public function atualizarStatus($id)
     {
         DB::table('permutars')->where('id', $id)->update([
             'status'    => 'Confirmada'
         ]);
-        return redirect()->route('inicio');
+        return redirect()->route('home');
     }
 
     public function SPO($id)
     {
-        echo('Ok');
+        DB::table('permutars')->where('id', $id)->update([
+            'status'        => 'Confirmada pelo SPO',
+            'dataSpo'       => now(),
+            'assinaturaSPO' => Auth::user()->nome
+        ]);
+        return redirect()->route('home');
     }
 
-    public function SPOnao($id)
+    public function nao($id)
     {
-        echo('Não');
+        DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Nâo Autorizada'
+        ]);
+        return redirect()->route('home');
     }
 
-    public function SPOrefazer($id)
+    public function refazer($id)
     {
-        echo('refazer');
+        DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Refazer'
+        ]);
+        return redirect()->route('home');
     }
 
     public function CMD($id)
@@ -184,7 +238,18 @@ class PermutarController extends Controller
             'assinaturaCMD' => Auth::user()->nome
         ]);
 
-        return redirect()->route('inicio');
+        return redirect()->route('home');
+    }
+
+    public function naoCMD($id)
+    {
+        DB::table('permutars')->where('id', $id)->update([
+            'status'    => 'Nâo Autorizada',
+            'optCMD'       => 'Indeferimento',
+            'assinaturaCMD' => Auth::user()->nome
+        ]);
+
+        return redirect()->route('home');
     }
 
     /**

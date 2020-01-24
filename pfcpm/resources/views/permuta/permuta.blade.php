@@ -5,7 +5,8 @@
         <div id="permuta">
             <div id="spo">
             <p id="via">VIA DA SPO</p>
-                <p id="spo">AUTORIZO EM {{ date('d/m/Y', strtotime($permuta->dataSPO))}} <p style="position: relative; top: -60px"> {{$permuta->assinaturaSPO}}</p> 
+                <p id="spo">AUTORIZO EM {{ date('d/m/Y', strtotime($permuta->dataSPO))}} 
+                <p style="position: relative; top: -60px"> {{$permuta->assinaturaSPO}}</p> 
                 <p style="position: relative; top: -90px">_______________</p> <br >  <p style="position: relative; top: -130px"> Chefe da SPO</P>
                 
             </div>
@@ -18,7 +19,9 @@
                 @endif
                 @if($permuta->optCMD == 'Indeferimento')
                     <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO (  ) INDEFERIMENTO ( X ) 
-                    <p style="position: relative; top: -70px" >{{$permuta->assinaturaCMD}}</p> <p> _____________________</p><br>CMD PEL</p>
+                    <p style="position: relative; top: -15px">{{$permuta->assinaturaCMD}}</p>
+                    <p style="position: relative; top: -45px"> _____________________</p>
+                    <p style="position: relative; top: -65px">CMD PEL</p>
                 @endif
             </div>
             <p style="position: relative; text-align:center; top:-40px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>

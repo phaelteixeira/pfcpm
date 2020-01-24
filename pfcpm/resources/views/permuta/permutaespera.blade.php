@@ -7,23 +7,9 @@
             <div id="spo">
             <p id="via">VIA DA SPO</p>
                 <p id="spo">AUTORIZO EM___/___/___ _____________________  Chefe da SPO</P>
-                @if(Auth::user()->setor == 'SPO' && Auth::user()->chefedeSetor == 'Sim')
-                    <div class="butaoSPO">
-                        <a type="button" style="color: black ;position: relative; left: -60px; width:40px; height: 25px; background: green ;text-align: center" href="">OK</a>
-                        <a type="button" style="color: black ;position: relative;left:-50px ;width:40px; height: 25px; background: red;text-align: center" href="">Não</a>
-                        <a type="button" style="color: black ;position: relative; top: -25px; left: 80px ; width:150px; height: 25px; background: yellow;text-align: center" href="">Refazer Permuta</a>
-                    </div>
-                @endif
             </div>
             <div class="cmd">
                 <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO (          ) INDEFERIMENTO (  ) _____________________<br>CMD PEL</p>
-                @if(Auth::user()->setor == 'PELOTÃO' && Auth::user()->chefedeSetor == 'Sim')
-                    <div class="butaoSPO">
-                        <a type="button" style="color: black ;position: relative; left: -60px; width:40px; height: 25px; background: green ;text-align: center" href="">OK</a>
-                        <a type="button" style="color: black ;position: relative;left:-50px ;width:40px; height: 25px; background: red;text-align: center" href="">Não</a>
-                        <a type="button" style="color: black ;position: relative; top: -25px; left: 80px ; width:150px; height: 25px; background: yellow;text-align: center" href="">Refazer Permuta</a>
-                    </div>
-                @endif
             </div>
             <p style="position: relative; text-align:center; top:80px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>
             <div style="position: relative; top:100px">
@@ -36,7 +22,7 @@
                 <p>Feira de Santana, ____/____/_____</p>
                 <p style="position: relative; right:200px">__________________________________<br>Solicitante <p style="position: relative; left:200px; top:-62px">__________________________________<br>Substituto</p></p>                    
                 @if($permuta->matricula != Auth::User()->matricula)
-                    <a style="position: relative; top: -50px" class="btn btn-success" href="{{route('permutas.edit', $permuta)}}">Aceitar</a>
+                    <a style="position: relative; top: -50px" data-confirm='data-confirm' class="btn btn-success" href="{{route('aceitar', $permuta)}}">Aceitar</a>
                 @endif
                 
             </div>

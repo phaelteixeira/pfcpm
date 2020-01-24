@@ -45,10 +45,13 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('suspeito/{id}', 'SuspeitoController@Listacrimes')->name('crimes');
     Route::get('confirma/{id}', 'PermutarController@atualizarStatus')->name('atualizarStatus');
     Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
-    Route::get('SPOregeitada/{id}', 'PermutarController@SPOnao')->name('sponao');
-    Route::get('SPOrefazer/{id}', 'PermutarController@SPOrefazer')->name('sporefazer');
+    Route::get('SPOregeitada/{id}', 'PermutarController@nao')->name('nao');
+    Route::get('SPOregeitada/{id}', 'PermutarController@naoCMD')->name('naoCMD');
+    Route::get('aceitar/{id}', 'PermutarController@aceitar')->name('aceitar');
+    Route::get('SPOrefazer/{id}', 'PermutarController@refazer')->name('refazer');
     Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');
     Route::get('teste', 'PermutarController@teste')->name('teste');
+    Route::get('Atualizarpermuta/{id}, PermutarController@refazerPermuta')->name('refazerPermuta');
     
     //Route::get('abono_sub/{id}', 'AbonoController')->name('sub');
 });

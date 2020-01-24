@@ -1,26 +1,26 @@
 @extends('inicial')
 
 @section('body')
-<h1 id="titu"> Solicitação de </h1>
+<h1 id="titu"> Solicitação de Permuta </h1>
 <div id="spo">
     <p id="via">VIA DA SPO</p>
     <p id="spo">AUTORIZO EM___/___/___ _____________________ Chefe da SPO</P>
     <div style="display: none"><input type="text" id="idPermuta" value="{{$permuta->id}}"></div>
-    @if(Auth::user()->setor == 'SPO' && Auth::user()->chefedeSetor == 'Sim')
+    @if(Auth::user()->setor == 'SPO' && Auth::user()->chefedeSetor == 'Sim' && $permuta->status != 'Aceita' && $permuta->status != "Confirmada pelo SPO")
     <div class="butaoSPO">
         <a href="{{route('spo', $permuta->id)}}" class="btn btn-primary" id="btnspoSim" data-confirm='data-confirm'>OK</a>
-        <a href="{{route('sponao', $permuta->id)}}" data-confirm='data-confirm' class="btn btn-primary" id="btnspoNao">Não</a>
-        <a href="{{route('sporefazer', $permuta->id)}}" class="btn btn-primary" id="btnspoRefazer" data-confirm='data-confirm'>Refazer Permuta</a>
+        <a href="{{route('nao', $permuta->id)}}" data-confirm='data-confirm' class="btn btn-primary" id="btnspoNao">Não</a>
+        <a href="{{route('refazer', $permuta->id)}}" class="btn btn-primary" id="btnspoRefazer" data-confirm='data-confirm'>Refazer Permuta</a>
     </div>
     @endif
 </div>
 </div>
 <div class="cmd">
     <p>COMANDANTE DO PELOTÃO <br> OPINO POR: DEFERIMENTO ( ) INDEFERIMENTO ( ) _____________________<br>CMD PEL</p>
-    @if(Auth::user()->setor == 'PELOTÃO' && Auth::user()->chefedeSetor == 'Sim')
-        <a href="{{route('cmd', $permuta->id)}}" type="button" class="btn btn-primary" id="btncmdSim">OK</a>
-        <a href="{{route('cmd', $permuta->id)}}" class="btn btn-primary" id="btncmdNao">Não</a>
-        <a href="{{route('cmd', $permuta->id)}}" class="btn btn-primary" id="btncmdRefazer">Refazer Permuta</a>
+    @if(Auth::user()->setor == 'PELOTÃO' && Auth::user()->chefedeSetor == 'Sim' && $permuta->status == "Confirmada pelo SPO")
+        <a href="{{route('cmd', $permuta->id)}}" type="button" class="btn btn-primary" id="btncmdSim" data-confirm='data-confirm'>OK</a>
+        <a href="{{route('naoCMD', $permuta->id)}}" class="btn btn-primary" id="btncmdNao" data-confirm='data-confirm'>Não</a>
+        <a href="{{route('refazer', $permuta->id)}}" class="btn btn-primary" id="btncmdRefazer" data-confirm='data-confirm'>Refazer Permuta</a>
     @endif
 </div>
 <div class="divpermuta">
@@ -39,7 +39,7 @@
     </div>
 </div>
 @if($permuta->matricula == Auth::User()->matricula && $permuta->status == 'Aceita')
-<a style="position: relative; top: -50px; left:50%" class="btn btn-success" onclick="confirmarPermuta()" href="{{route('atualizarStatus', $permuta->id)}}">OK</a>
+<a style="position: relative; top: -50px; left:50%" class="btn btn-success" data-confirm='data-confirm' onclick="confirmarPermuta()" href="{{route('atualizarStatus', $permuta->id)}}" >OK</a>
 @endif
 
 @endsection('body')

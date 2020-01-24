@@ -6,7 +6,7 @@
         @method('PUT')
         <div>
             <div>
-            <h1 id="titu">Aceitar de permuta</h1>
+            <h1 id="titu">Solicitação de permuta</h1>
             <h2>Dados do Solicitante</h2>
             
                 <div class="escalado {{$errors->has('nome') ? 'has-error' : ''}} ">
