@@ -46,7 +46,8 @@ Route::group(['middleware'=>['auth']], function()
     Route::get('confirma/{id}', 'PermutarController@atualizarStatus')->name('atualizarStatus');
     Route::get('confirmaSPO/{id}', 'PermutarController@SPO')->name('spo');
     Route::get('SPOregeitada/{id}', 'PermutarController@nao')->name('nao');
-    Route::get('SPOregeitada/{id}', 'PermutarController@naoCMD')->name('naoCMD');
+    Route::get('CMDregeitada/{id}', 'PermutarController@naoCMD')->name('naoCMD');
+    Route::get('imprimirPermuta/{permuta}', 'PermutarController@imprimir')->name('imprimir');
     Route::get('aceitar/{id}', 'PermutarController@aceitar')->name('aceitar');
     Route::get('SPOrefazer/{id}', 'PermutarController@refazer')->name('refazer');
     Route::get('confirmaCMD/{id}', 'PermutarController@CMD')->name('cmd');

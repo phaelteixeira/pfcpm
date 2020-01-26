@@ -314,4 +314,9 @@ class PermutarController extends Controller
 
         return Validator::make($date, $regras, $mensagens);
     }
+
+    public function imprimir(Permutar $permuta)
+    {
+        return view('gerar_pdf', compact('permuta'));
+    }
 }

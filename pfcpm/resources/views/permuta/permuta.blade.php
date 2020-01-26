@@ -1,7 +1,6 @@
 @extends('inicial')
 
 @section('body')
-        <h1 id="titu"> Permuta</h1>
         <div id="permuta">
             <div id="spo">
             <p id="via">VIA DA SPO</p>
@@ -24,11 +23,11 @@
                     <p style="position: relative; top: -65px">CMD PEL</p>
                 @endif
             </div>
-            <p style="position: relative; text-align:center; top:-40px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>
-            <div style="position: relative; top:-20px; text-align: justify-center">
+            <p style="position: relative; text-align:center; top:-150px">POLÍCIA MILITAR DA BAHIA <br> COMANDO DE POLICIAMENTO REGIONAL LESTE <br> 65ª CIPM - FEIRA DE SANTANA</p>
+            <div style="position: relative; top:-120px; text-align: justify-center">
                 <h1 id="tpermuta"><b>PERMUTA</b></h1>
                 <p >Eu, {{$permuta->nome}}, Mat.:{{$permuta->matricula}} solicito a V.Sª permulta do serviço </p>
-                <p >para o qual estou devidamente escalado no {{$permuta->local}} no dia {{$permuta->dia_do_servico}} das {{$permuta->hora_inicial}} às {{$permuta->hora_final}}</p>
+                <p >para o qual estou devidamente escalado no {{$permuta->local}} no dia {{ date('d/m/Y', strtotime($permuta->dia_do_servico))}} das {{$permuta->hora_inicial}} às {{$permuta->hora_final}}</p>
                 <p >como o,{{$permuta->escalado}}, Mat.:{{$permuta->escaladoMatricula}} que se encontra escalado no {{$permuta->escaladoLocal}}</p>
                 <p>no dia{{ date('d/m/Y', strtotime($permuta->escaladoDia_do_servico))}}, das {{$permuta->escaladoHora_inicial}} às {{$permuta->escaladoHora_final}}, tendo em vista{{$permuta->virtude}}</p>
                 <p><b>Declaro que a referida permuta está em conformidade com o preceituado no Art. 2º § 2º, Portaria N° 067 - CG/11.</b></p>
@@ -40,5 +39,6 @@
                 <p style="position: relative; left:200px; top:-147px">__________________________________</p>
                 <p style="position: relative; top: -148px; left:200px">Substituto</p>            
             </div>
+            <a href="{{route('imprimir', $permuta)}}" class="btn btn" style="position: relative; top: -250px; height: 40px; width: 150px; color: white; background-color: blue;">IMPRIMIR</a>
         </div>
 @endsection('body')
